@@ -72,7 +72,7 @@
 <!-- end video -->
 
 <!-- start text baner -->
-<div class="container-fluid bg-danger txt-banner">
+<div class="container-fluid bg-danger txt-banner mt-4">
     <div class="row bottom-banner">
         <div class="col-sm">
             <h5><i class="fas fa-users mr-3"></i>Courses</h5>
@@ -94,10 +94,16 @@
 <!-- end text baner -->
 
 <!-- Start Sourses  -->
-<div class="card-deck mt-4">
-    <a href="#" class="btn" style="text-align: left; padding:0px;">
+
+<!-- end courses -->
+<div class="container mt-2">
+    <div class="row">\
+        <!-- b1 -->
+        <div class="col ">
+        <a href="#" class="btn" style="text-align: left; padding:0px; margin:0px;">
         <div class="card">
-            <img src="image/coursese/B1.jpg" class="card-img-top" alt="B1"/>
+            <img src="image/courses/B1.png" class="card-img-top" alt="B1"/>
+            
             <div class="card-body">
                 <h5 class="card-title"> Learn B1</h5>
                 <p class="card-text">
@@ -107,11 +113,79 @@
                 Chương trình giúp học viên tự tin giao tiếp trong nhiều tình huống thực tế và mở cánh cửa cho việc tiếp cận nhiều cơ hội học tập và nghề nghiệp mới."
                 </p>
             </div>
+
+            <div class="card-footer">
+                <p class="card-text d-inline">
+                    Price: 
+                    <small>
+                        <del>&#8377 3000</del>
+                    </small>
+                    <span class="font-weight-bolder">&#8377 300 <span>
+                    </p>
+                    <a class="btn btn-primary text-white font-weight-bolder float-right" href="#">Tham Gia</a>
+            </div>
+        </div>
+        </a>
+        </div>
+        <!-- b2 -->
+        <div class="col ">
+        <a href="#" class="btn" style="text-align: left; padding:0px;">
+        <div class="card">
+            <img src="image/courses/B2.png" class="card-img-top" alt="B2"/>
+            
+            <div class="card-body">
+                <h5 class="card-title"> Learn B2</h5>
+                <p class="card-text">
+                "Khóa học B2 là chương trình học tiếng ngoại ngữ cấp độ trung cao, dành cho những học viên muốn phát triển kỹ năng ngôn ngữ của mình đến mức độ trung cao. 
+                Trong khóa học này, chú trọng vào việc mở rộng từ vựng, nâng cao kỹ năng nghe và nói, cũng như phát triển khả năng đọc và viết. 
+                Học viên sẽ đạt được khả năng sử dụng ngôn ngữ linh hoạt và hiểu rõ hơn về văn hóa ngôn ngữ. 
+                Khóa học B2 giúp họ tự tin giao tiếp trong nhiều bối cảnh, từ công việc đến giao tiếp xã hội và du lịch."
+                </p>
+            </div>
+
+            <div class="card-footer">
+                <p class="card-text d-inline">
+                    Price: 
+                    <small>
+                        <del>&#8377 4000</del>
+                    </small>
+                    <span class="font-weight-bolder">&#8377 400 <span>
+                    </p>
+                    <a class="btn btn-primary text-white font-weight-bolder float-right" href="#">Tham Gia</a>
+            </div>
         </div>
     </a>
+        </div>
+        <div class="col ">
+        <a href="#" class="btn" style="text-align: left; padding:0px;">
+        <div class="card">
+            <img src="image/courses/B2.png" class="card-img-top" alt="B2"/>
+            
+            <div class="card-body">
+                <h5 class="card-title"> Learn C1</h5>
+                <p class="card-text">
+                "Khóa học B2 là chương trình học tiếng ngoại ngữ cấp độ trung cao, dành cho những học viên muốn phát triển kỹ năng ngôn ngữ của mình đến mức độ trung cao. 
+                Trong khóa học này, chú trọng vào việc mở rộng từ vựng, nâng cao kỹ năng nghe và nói, cũng như phát triển khả năng đọc và viết. 
+                Học viên sẽ đạt được khả năng sử dụng ngôn ngữ linh hoạt và hiểu rõ hơn về văn hóa ngôn ngữ. 
+                Khóa học B2 giúp họ tự tin giao tiếp trong nhiều bối cảnh, từ công việc đến giao tiếp xã hội và du lịch."
+                </p>
+            </div>
 
+            <div class="card-footer ">
+                <p class="card-text d-inline">
+                    Price: 
+                    <small>
+                        <del>&#8377 4000</del>
+                    </small>
+                    <span class="font-weight-bolder">&#8377 400 <span>
+                    </p>
+                    <a class="btn btn-primary text-white font-weight-bolder float-right" href="#">Tham Gia</a>
+            </div>
+        </div>
+    </a>
+        
+    </div>
 </div>
-
 
 
     <script src="js/bootstrap.min.js"> </script>
