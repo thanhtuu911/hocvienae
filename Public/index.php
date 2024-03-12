@@ -8,7 +8,7 @@ if (isset($_REQUEST["action"])) {
 
 switch ($action) {
     case "null":
-        include("main.php");
+        include("home.php");
         break;
 
     case "intro":

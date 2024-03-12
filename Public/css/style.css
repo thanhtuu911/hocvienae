@@ -1,9 +1,6 @@
-.navbar-brand {
-    height: 100;
-    width: 100;
+.navbar-brand .item{
     
 }
-
 .custom-nav .custom-nav-item a{
     color: #fff !important;
 }
@@ -12,9 +9,8 @@
     border: soild #dc3545;
     border-radius: 10px;
 }
-.navbar-brand .image{
-border-left: 20px;
-}
+
+
 .remove-vid-marg{
     margin: 0px;
     padding: 0px;
@@ -51,7 +47,7 @@ video{
 }
 
 @media screen and(min-width: 0px)and(max-width:700px) {
-.my-content, .txt-banner{
+.my-content, .txt-banner, .stripe{
     display: none;
 }
 .vid-content{
@@ -66,7 +62,25 @@ video{
     background-color: none;
     border: none;
     border-radius: none;
+}   
 }
 
-    
+ .card-footer a{
+    margin-left: 40px;
+    float: right;
+}
+
+.stripe{
+    background-image: linear-gradient(240deg, #ed2344, #93291e);
+    padding: 3rem;
+    height: 13rem;
+    margin-top: 4rem;
+    transform: rotate(10deg);
+    z-index: -5;
+    float: right;
+}
+.container-fluid a:hover{
+color: aqua;
+background-color:red;
+border-radius: 5px;
 }
