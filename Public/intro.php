@@ -79,6 +79,9 @@ bản ngữ đến các hoạt động ngoại khóa và sự tương tác với
 
 </html>
 
+<?php
+include("inc/bottom.php");
+?>
 
 
 
