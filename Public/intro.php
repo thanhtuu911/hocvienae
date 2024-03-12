@@ -1,6 +1,10 @@
 <?php
 include("inc/top.php");
 ?>
+<?php
+include("inc/carousel.php");
+?>
+
 <div class="text-center">
     <h1 class="text p-5">GIỚI THIỆU</h1>
 </div>
