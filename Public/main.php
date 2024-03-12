@@ -33,7 +33,7 @@ include("inc/video.php");
 <div class="card-deck mt-4">
     <a href="#" class="btn" style="text-align: left; padding:0px;">
         <div class="card">
-            <img src="image/courses/B1.jpg" class="card-img-top" alt="B1"/>
+            <img src="../image/courses/B1.png" class="card-img-top" alt="B1"/>
             <div class="card-body">
                 <h5 class="card-title"> Learn B1</h5>
                 <p class="card-text">
@@ -45,8 +45,10 @@ include("inc/video.php");
             </div>
         </div>
     </a>
-
 </div>
+
+&nbsp;
+&nbsp; 
 
 <?php
 include("inc/bottom.php");
