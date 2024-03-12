@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="style1.css">
-</head>
-<body>
+<?php
+include("inc/top.php");
+?>
+<div class= "text-center p-5" >
 	<h1>AE The American English School</h1>
 	<p>Mon - Sat: 8:00 - 17:30</p>
 	<p>Contact: ttnnae@americanenglish.edu.vn</p>
@@ -12,5 +10,7 @@
 	<h2>English Program</h2>
 	<p>Chương trình Ngoại ngữ AE – Khám phá thế giới với tiếng Anh!</p>
 	<script src="script.js"></script>
-</body>
-</html>
+</div>
+<?php
+include("inc/bottom.php");
+?>
