@@ -25,9 +25,9 @@
 
    
     <!-- Start Navigation -->
-    <nav class="navbar navbar-expand-sm navbar-dark  pl-3 fixed-top" style="background-color: #2C3D57;">
+    <nav class="navbar navbar-expand-sm navbar-dark  pl-5 fixed-top" style="background-color: #2C3D57;">
    
-        <div class="container-fluid  pl-3">
+        <div class="container-fluid  pl-5">
             <div>
                 <a class="navbar-brand" href="index.php"><img  src="../image/logo/LogoAE2.jpg" alt="logo" width="160" height="80"></a>
             </div>
@@ -36,20 +36,21 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav  custom-nav pl-2">
-                    <li class="nav-item custom-nav-item"><a href="index.php?action=home" class="nav-link">Home</a></li>
-                    <li class="nav-item custom-nav-item"><a href="index.php?action=intro" class="nav-link">Introduct</a></li>
+                <ul class="navbar-nav  custom-nav pl-5">
+                    <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php?action=intro" class="nav-link">Introduce</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Courses</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Payment</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Contact</a></li>      
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Feedback</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Logout</a></li>
+                    
+                    <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Logout</a></li> -->
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Login</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Sigup</a></li>
                 </ul>
              
-            </div>~
+            </div>
             <!-- <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
