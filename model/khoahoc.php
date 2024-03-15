@@ -1,5 +1,5 @@
 <?php
-class DANHMUC // tên bảng khóa học
+class KHOAHOC // tên bảng khóa học
 {
      private $id;
      private $tenkhoahoc;
@@ -47,11 +47,11 @@ class DANHMUC // tên bảng khóa học
     }
 
     // Lấy danh sách
-    public function laydanhmuc()
+    public function laykhoahoc()
     {
         $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT * FROM danhmuc";
+            $sql = "SELECT * FROM khoahoc";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();

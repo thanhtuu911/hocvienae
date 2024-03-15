@@ -18,5 +18,8 @@ switch ($action) {
     case "home":
         include("home.php");
         break;
+    case "dangky":
+        include("register.php");
+        break;
     }
 ?>

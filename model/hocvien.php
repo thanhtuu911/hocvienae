@@ -1,5 +1,5 @@
 <?php
-class HOCVIEN //tên bảng học viên
+class NGUOIDUNG 
 {
     private $id;
     private $hoten;
@@ -45,7 +45,7 @@ class HOCVIEN //tên bảng học viên
     public function setdiachi($value){ $this->diachi = $value; }
   
 	
-//mà chỉnh xog hết đi hả push luôn
+
 	public function kiemtranguoidunghople($email, $matkhau)
 	{
 		$db = DATABASE::connect();

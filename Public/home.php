@@ -4,7 +4,7 @@ include("inc/top.php");
 <?php include("inc/video.php"); 
 ?>
 <!-- start text baner -->
-<div class="container-fluid bg-danger txt-banner mt-4">
+<div class="container-fluid bg-danger txt-banner mt-1">
     <div class="row bottom-banner">
         <div class="col-sm">
             <h5><i class="fas fa-users mr-3"></i>Courses</h5>
@@ -28,7 +28,7 @@ include("inc/top.php");
 <!-- Start Sourses  -->
 
 <!-- end courses -->
-<div class="container mt-2">
+<div class="container mt-5">
     <div class="row">
         <!-- b1 -->
         <div class="col ">
@@ -121,7 +121,7 @@ include("inc/top.php");
 
 
 <!-- Student -->
-<div class="container-fluid mt-5" style="background-color: #487289;" id="Feedback">
+<!-- <div class="container-fluid mt-5" style="background-color: #487289;" id="Feedback">
 <h1 class="text-center testyheading p-4"> Student Feedback</h1>
     <div class="row">
         <div class="col-md-12">
@@ -144,8 +144,9 @@ include("inc/top.php");
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- end Student -->
+
 
 
 

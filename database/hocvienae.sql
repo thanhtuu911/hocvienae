@@ -8,8 +8,14 @@ CREATE TABLE `hocvien` (
   `diachi` varchar(255)
 );
 
+CREATE TABLE `danhmuc` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `tendanhmuc` varchar(255)
+);
+
 CREATE TABLE `khoahoc` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `danhmuc_id` int,
   `tenkhoahoc` varchar(255) NOT NULL,
   `chitiet` varchar(255) NOT NULL,
   `phi` float
@@ -36,6 +42,13 @@ CREATE TABLE `dangky` (
   `hocvien_id` int,
   `lophoc_id` int,
   `ngaydangky` date
+);
+
+CREATE TABLE `ketqua` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `hocvien_id` int,
+  `lophoc_id` int,
+  `ketqua` float
 );
 
 CREATE TABLE `nguoidung` (
@@ -74,3 +87,9 @@ ALTER TABLE `dangky` ADD FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
 ALTER TABLE `hoadonct` ADD FOREIGN KEY (`hoadon_id`) REFERENCES `hoadon` (`id`);
 
 ALTER TABLE `hoadonct` ADD FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
+
+ALTER TABLE `khoahoc` ADD FOREIGN KEY (`danhmuc_id`) REFERENCES `danhmuc` (`id`);
+
+ALTER TABLE `ketqua` ADD FOREIGN KEY (`hocvien_id`) REFERENCES `hocvien` (`id`);
+
+ALTER TABLE `ketqua` ADD FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);

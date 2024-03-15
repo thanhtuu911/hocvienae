@@ -8,11 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AweSome -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!--owl  -->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
-
+    <!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- theme -->
+    <link rel="stylesheet" type="text/css" href="css/adminlte.min.css">
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>AE</title>
 </head>
-<body>
+<body id="top">
 
    
     <!-- Start Navigation -->
@@ -37,17 +41,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav  custom-nav pl-5">
-                    <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item custom-nav-item"><a href="index.php?action=intro" class="nav-link">Introduce</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Courses</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Payment</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Contact</a></li>      
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Feedback</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Trang Chủ</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php?action=intro" class="nav-link">Giới Thiệu AE</a></li>
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Du Học</a></li>
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>      
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Hoạt Động</a></li>
                     
                     <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Logout</a></li> -->
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Login</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Sigup</a></li>
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#stuLoginModalCenter">Login</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php?action=dangky" class="nav-link" data-bs-toggle="modal" data-bs-target="#stuRegterModalCenter">Sigup</a></li>
                 </ul>
              
             </div>
