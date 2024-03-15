@@ -1,7 +1,7 @@
 CREATE TABLE `hocvien` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `hoten` varchar(255) NOT NULL,
-  `namsinh` date,
+  `namsinh` varchar(255),
   `gioitinh` varchar(255),
   `email` varchar(255),
   `sodienthoai` varchar(255),
