@@ -42,7 +42,27 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul class="navbar-nav  custom-nav pl-5">
                     <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Trang Chủ</a></li>
-                    <li class="nav-item custom-nav-item"><a href="index.php?action=intro" class="nav-link">Giới Thiệu AE</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                         data-bs-toggle="dropdown" aria-expanded="false">Trung Tâm AE</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" class="nav-link" href="index.php?action=lanhdao">Ban Lãnh Đạo AE </a></li>
+                                <li><a class="dropdown-item"  class="nav-link" href="index.php?action=hoatdong"> Du Học Sinh </a></li>
+                                <li><a class="dropdown-item" class="nav-link" href="index.php?action=intro"> Chương trình Ngoại Ngữ AE` </a></li>       
+                        </ul>
+                    </li>
+                    <!-- <li class="dropdown">
+                    <a class="dropdown-toggle dropdown-toggle-split" href="#" role="button" id="dropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Giới Thiệu AE
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" class="nav-link" href="index.php?action=lanhdao">Ban Lãnh Đạo AE</a>
+                            <a class="dropdown-item" class="nav-link" href="index.php?action=hoatdong">Du Học Sinh</a>
+                            <a class="dropdown-item" class="nav-link" href="index.php?action=intro">Chương trình Ngoại Ngữ AE</a>
+                        </div>
+                    </li> -->
+                    <li class="nav-item custom-nav-item"><a href="" class="nav-link">Giới Thiệu AE</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Du Học</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>      
