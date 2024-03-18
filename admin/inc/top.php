@@ -26,7 +26,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar  ">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="">
-          <span class="align-middle"> America English</span>
+          <span class="align-middle"> American English</span>
         </a>
 
 				<ul class="sidebar-nav">
@@ -58,9 +58,21 @@
 						</a>
 					</li>
 
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlhocvien") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../qlhocvien/index.php">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Học Viên</span>
+						</a>
+					</li>
+					
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlkhoahoc") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qlkhoahoc/index.php">
 						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Khóa Học</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qllop") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../qllop/index.php">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Lớp</span>
 						</a>
 					</li>
 

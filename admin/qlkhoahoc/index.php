@@ -28,7 +28,7 @@ switch($action){
         break;
 	case "xulythem":	
 		// xử lý file upload
-		$hinhanh = "images/products/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+		$hinhanh = "image/courses/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
 		$duongdan = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
 		move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
 		// xử lý thêm		
@@ -36,8 +36,9 @@ switch($action){
 		$khoahochh->settenkhoahoc($_POST["txttenkhoahoc"]);
         $khoahochh->setdanhmuc_id($_POST["optdanhmuc"]);
 		$khoahochh->setchitiet($_POST["txtmota"]);
+		$khoahochh->setphi($_POST["txtphi"]);
         $khoahochh->sethinhanh($hinhanh);
-		$kh->($khoahochh);
+        $kh->themkhoahoc($khoahochh);
 		$khoahoc = $kh->laykhoahoc();
 		include("main.php");
         break;
@@ -76,12 +77,9 @@ switch($action){
         $khoahochh->setid($_POST["txtid"]);
         $khoahochh->setdanhmuc_id($_POST["optdanhmuc"]);
         $khoahochh->settenkhoahoc($_POST["txttenhang"]);
-        $khoahochh->setmota($_POST["txtmota"]);
-        $khoahochh->setgiagoc($_POST["txtgiagoc"]);
-        $khoahochh->setgiaban($_POST["txtgiaban"]);
-        $khoahochh->setsoluongton($_POST["txtsoluongton"]);
-        $khoahochh->setluotxem($_POST["txtluotxem"]);
-        $khoahochh->setluotmua($_POST["txtluotmua"]);
+        $khoahochh->setchitiet($_POST["txtmota"]);
+        $khoahochh->setphi($_POST["txtgiagoc"]);
+        
         $khoahochh->sethinhanh($_POST["txthinhcu"]);
 
         // upload file mới (nếu có)

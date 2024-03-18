@@ -5,7 +5,7 @@
 <form method="post" enctype="multipart/form-data" action="index.php">
 <input type="hidden" name="action" value="xulythem">
 <div class="mb-3 mt-3">
-	<label for="optdanhmuc" class="form-label">Hãng sản xuất</label>
+	<label for="optdanhmuc" class="form-label">Danh Mục</label>
 	<select class="form-select" name="optdanhmuc">
 	<?php
 	foreach($danhmuc as $d):
@@ -17,21 +17,15 @@
 	</select>
 </div>
 <div class="mb-3 mt-3">
-	<label for="txttenmathang" class="form-label">Tên mặt hàng</label>
-	<input class="form-control" type="text" name="txttenmathang" placeholder="Nhập tên" required>
+	<label for="txttenkhoahoc" class="form-label">Tên Khóa Học</label>
+	<input class="form-control" type="text" name="txttenkhoahoc" placeholder="Nhập tên khóa học" required>
 </div>
+
 <div class="mb-3 mt-3">
-	<label for="txtgianhap" class="form-label">Giá nhập</label>
-	<input class="form-control" type="number" name="txtgianhap" value="0">
+	<label for="txtgiaban" class="form-label">Phí</label>
+	<input class="form-control" type="number" name="txtphi" value="0">
 </div>
-<div class="mb-3 mt-3">
-	<label for="txtgiaban" class="form-label">Giá bán</label>
-	<input class="form-control" type="number" name="txtgiaban" value="0">
-</div>
-<div class="mb-3 mt-3">
-	<label for="txtsoluong" class="form-label">Số lượng</label>
-	<input class="form-control" type="number" name="txtsoluong" value="0">
-</div>
+
 <div class="mb-3 mt-3">
 	<label for="txtmota" class="form-label">Mô tả</label>
 	<textarea id="txtmota" rows="5" class="form-control" name="txtmota" placeholder="Nhập mô tả" required></textarea>

@@ -1,5 +1,5 @@
 <?php
-class KHOAHOC // tên bảng khóa học
+class KHOAHOC
 {
      private $id;
      private $danhmuc_id;
@@ -193,26 +193,18 @@ class KHOAHOC // tên bảng khóa học
     public function suakhoahoc($khoahoc){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "UPDATE khoahoc SET tenkhoahoc=:tenkhoahoc,
-                                        mota=:mota,
-                                        giagoc=:giagoc,
-                                        giaban=:giaban,
-                                        soluongton=:soluongton,
-                                        danhmuc_id=:danhmuc_id,
-                                        hinhanh=:hinhanh,
-                                        luotxem=:luotxem,
-                                        luotmua=:luotmua
+            $sql = "UPDATE khoahoc SET danhmuc_id=:danhmuc_id,
+                                        tenkhoahoc=:tenkhoahoc,
+                                        chitiet=:chitiet,
+                                        phi=:phi,
+                                        hinhanh=:hinhanh
                                         WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":tenkhoahoc", $khoahoc->tenkhoahoc);
-            $cmd->bindValue(":mota", $khoahoc->mota);
-            $cmd->bindValue(":giagoc", $khoahoc->giagoc);
-            $cmd->bindValue(":giaban", $khoahoc->giaban);
-            $cmd->bindValue(":soluongton", $khoahoc->soluongton);
             $cmd->bindValue(":danhmuc_id", $khoahoc->danhmuc_id);
+            $cmd->bindValue(":tenkhoahoc", $khoahoc->tenkhoahoc);
+            $cmd->bindValue(":chitiet", $khoahoc->chitiet);
+            $cmd->bindValue(":phi", $khoahoc->phi);
             $cmd->bindValue(":hinhanh", $khoahoc->hinhanh);
-            $cmd->bindValue(":luotxem", $khoahoc->luotxem);
-            $cmd->bindValue(":luotmua", $khoahoc->luotmua);
             $cmd->bindValue(":id", $khoahoc->id);
             $result = $cmd->execute();            
             return $result;

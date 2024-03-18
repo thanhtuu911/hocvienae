@@ -19,7 +19,7 @@
       <label>Chọn quyền</label>
       <select class="form-control" name="optloaind">                
           <option value="1">Quản trị</option>
-          <option value="2" selected>Thành viên</option>
+          <option value="2" selected>Học viên</option>
           <option value="3">Khách hàng</option>
       </select></div>
       <div class="my-3">
