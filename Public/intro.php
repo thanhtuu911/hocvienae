@@ -5,11 +5,8 @@ include("inc/top.php");
 include("inc/carousel.php");
 ?>
 
-<?php
-include("inc/hocvienduhoc.php");
-?>
 <div class="text-center">
-    <h1 class="text p-5">GIỚI THIỆU</h1>
+    <h1 class="text p-5">Trung Tâm Ngoại Ngữ American English </h1>
 </div>
 
 <style>
@@ -31,9 +28,9 @@ include("inc/hocvienduhoc.php");
     }
 </style>
 
-<div class="row-5 mt-4 text-dark">
+<div class="mt-0 m-5 text-dark">
 <p><span style="font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: 
-    var( --e-global-typography-text-font-weight ); font-size: 0.9375rem;">
+    var( --e-global-typography-text-font-weight );">
 Chương trình Ngoại ngữ AE &#8211; Khám phá thế giới với tiếng Anh!</span></p>
 <p>Bạn đang tìm kiếm một chương trình đào tạo tiếng Anh chuyên nghiệp và đa dạng? Hãy cùng AE &#8211; 
     Trung tâm Ngoại ngữ hàng đầu, khám phá hành trình học tiếng Anh với một loạt các khóa học phù hợp với mọi độ tuổi 
