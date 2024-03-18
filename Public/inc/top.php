@@ -46,7 +46,7 @@
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Du Học</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>      
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Hoạt Động</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php?action=hoatdong" class="nav-link">Hoạt Động</a></li>
                     
                     <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Logout</a></li> -->
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li>

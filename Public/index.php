@@ -21,5 +21,8 @@ switch ($action) {
     case "dangky":
         include("register.php");
         break;
-    }
+    case "hoatdong":
+        include("hoatdong.php");
+        break;
+}
 ?>

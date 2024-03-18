@@ -5,6 +5,9 @@ include("inc/top.php");
 include("inc/carousel.php");
 ?>
 
+<?php
+include("inc/hocvienduhoc.php");
+?>
 <div class="text-center">
     <h1 class="text p-5">GIỚI THIỆU</h1>
 </div>
@@ -28,7 +31,7 @@ include("inc/carousel.php");
     }
 </style>
 
-<div class="row-5 m-4 text-dark">
+<div class="row-5 mt-4 text-dark">
 <p><span style="font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: 
     var( --e-global-typography-text-font-weight ); font-size: 0.9375rem;">
 Chương trình Ngoại ngữ AE &#8211; Khám phá thế giới với tiếng Anh!</span></p>
@@ -71,13 +74,6 @@ bản ngữ đến các hoạt động ngoại khóa và sự tương tác với
 </div>
 </div>
 </section>
-
-
-
- 
-</body>
-
-</html>
 
 <?php
 include("inc/bottom.php");
