@@ -24,5 +24,17 @@ switch ($action) {
     case "hoatdong":
         include("hoatdong.php");
         break;
+    case "lanhdao":
+        include("lanhdao.php");
+        break;
+    case "my":
+        include("detailMy.php");
+        break;
+    case "duc":
+        include("detailDuc.php");
+        break;
+    case "uc":
+        include("detailUc.php");
+        break;
 }
 ?>

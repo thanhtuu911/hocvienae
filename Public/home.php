@@ -7,19 +7,19 @@ include("inc/top.php");
 <div class="container-fluid bg-danger txt-banner mt-1">
     <div class="row bottom-banner">
         <div class="col-sm">
-            <h5><i class="fas fa-users mr-3"></i>Courses</h5>
+            <h5><i class="fas fa-users mr-3"></i> Courses</h5>
         </div>
 
         <div class="col-sm">
-            <h5><i class="fa-sharp fa-solid fa-person-chalkboard"></i></i>Expert Instructors</h5>
+            <h5><i class="fa-sharp fa-solid fa-person-chalkboard"></i></i> Expert Instructors</h5>
         </div>
 
         <div class="col-sm">
-            <h5><i class="fa fa-keyboard mr-3"></i>Lifetime Access</h5>
+            <h5><i class="fa fa-keyboard mr-3"></i> Lifetime Access</h5>
         </div>
 
         <div class="col-sm">
-            <h5><i class="fa-light fa-indian-rupee-sign"></i> Money Back Guarantee</h5>
+            <h5><i class="fa-solid fa-coins"></i></i> Money Back Guarantee</h5>
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@ include("inc/top.php");
                     </small>
                     <span class="font-weight-bolder">&#8377 300 <span>
                     </p>
-                    <a class="btn btn-primary text-white font-weight-bolder float-right" href="#">Tham Gia</a>
+                    <a class="btn btn-primary text-white font-weight-bolder float-right" href="#"> Tham Gia</a>
             </div>
         </div>
         </a>

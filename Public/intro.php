@@ -7,9 +7,16 @@ include("inc/carousel.php");
 
 
 <div class="text-center">
-    <h1 class="text p-5">Trung Tâm Ngoại Ngữ American English </h1>
+    <h1 class="mt-5 m-3 ">Trung Tâm Ngoại Ngữ American English </h1>
 </div>
 
+    
+<div class="text-center">
+   <h5 class=" mt-2 m-1 p-5 "><i> Trung Tâm Tư Vấn Du học – Ngoại ngữ AE. Môi trường Anh văn chuyên nghiệp, hiệu quả.</i>
+    Với đội ngũ giảng viên, trợ giảng nhiệt tình, năng động, có trình độ chuyên môn cao, có kinh nghiệm trong quá trình giảng dạy tiếng anh nhiều năm.
+     Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy, trong công tác đào tạo thế hệ trẻ.</i></h5>
+    <h1>-------- <i class="fa-solid fa-graduation-cap"></i> -------- </h1></h3>
+</div>
 <style>
     .h1{
         color: #225470;
@@ -29,7 +36,7 @@ include("inc/carousel.php");
     }
 </style>
 
-<div class="mt-0 m-5 text-dark">
+<div class="text-dark p-5 ">
 <p><span style="font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: 
     var( --e-global-typography-text-font-weight );">
 Chương trình Ngoại ngữ AE &#8211; Khám phá thế giới với tiếng Anh!</span></p>
