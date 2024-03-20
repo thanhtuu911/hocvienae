@@ -8,8 +8,8 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
+  
+  <div class="carousel-item active" >
       <img src="../image/carousel/a1.png" class="d-block w-100"  alt="...">
     </div>
     <div class="carousel-item">
@@ -28,6 +28,7 @@
       <img src="../image/carousel/a6.png" class="d-block w-100" alt="...">
     </div>
   </div>
+ 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
