@@ -57,6 +57,7 @@ include("inc/top.php");
     </div>
   </div>
 </center>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -66,6 +67,33 @@ include("inc/top.php");
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<h3 class="text-md-center mt-3"> Chương trình Du học nghề tại Đức </h3> 
+<h3 class="text-md-center">Xây Dựng Tương Lai Vững Chắc Với AE </h3>
+
+<div class="m-5">
+<p>Bạn đam mê nghề nghiệp và muốn có cơ hội học tập và làm việc ở nước ngoài? Trung Tâm tư vấn Du học &#8211; Ngoại Ngữ AE mang đến cho bạn chương trình Du học nghề tại Đức đầy hấp dẫn và đa dạng.</p>
+    <p>Du học nghề kép tại CHLB Đức:</p>
+    <p>Bạn đã tốt nghiệp THPT và mong muốn trau dồi kỹ năng nghề nghiệp tại Đức? Chương trình Du học
+       nghề kép tại CHLB Đức của chúng tôi sẽ giúp bạn thực hiện ước mơ này. Yêu cầu tham gia đơn giản với tuổi 
+       từ 18-30, trình độ tiếng Đức tối thiểu B1 (nếu chưa có, bạn sẽ được trung tâm AE đào tạo) và sức khỏe tốt.</p>
+    <p>Quyền lợi của ứng viên sẽ khiến bạn không thể chối từ: Miễn 100% học phí tại Tây Đức,
+       lương thực tập hàng tháng từ 939-1.139 EURO, cơ hội việc làm sau khi tốt nghiệp với mức lương từ 2600&#8211;3000 EURO mỗi tháng.
+        Bạn cũng sẽ được cam kết có việc làm 100% sau khi tốt nghiệp, nhận bằng cấp có giá trị quốc tế và không phát sinh chi phí.
+         Sau 5 năm học tại CHLB Đức, bạn còn có cơ hội định cư và nhập quốc tịch sau 8 năm.</p>
+    <p>
+        <strong>Các ngành nghề đào tạo:</strong>
+    </p>
+    <p>Hệ cao đẳng nghề (Được học liên thông lên cấp cao hơn)</p>
+    <p>&#8211; Các nghề: Công nghệ tự động hóa; Gia công kim loại; Điện tử; Cơ điện tử Ô tô, Cơ khí điện lạnh; Khối nghề cơ khí, vận tải; Thuế; Công nghệ thông tin; Nhà hàng-Khách sạn; Bán hàng, CN chế biến thực phẩm, Đầu bếp, Làm bánh &#8230;.
+    Học tại hệ thống đào tạo nghề trên toàn lãnh thổ nước Đức, chủ yếu tập trung tại Tây Đức (Tùy nghề và thời điểm nhập học).</p>
+    <p>&#8211; Khối nghề: Điều dưỡng &#8211; Học viên học tại hệ thống đào tạo nghề Điều dưỡng theo Dự án điều dưỡng mà Trung tâm Ngoại ngữ &#8211; Du học AE cùng các đối tác Đức phối hợp triển khai.</p>
+    <p>&#8211; Khối nghề: Xây dựng – Học viên sẽ học tại hệ thống đào tạo của Tập đoàn BIW – CHLB Đức.&nbsp;</p>
+</div>
+
+<div class="text-center mt-auto">
+  <a class="btn btn-info text-dark" href="#"><h4> Đăng ký Khóa Học</h4> </a>
+</div>
+
 <?php
 include("inc/bottom.php");
 ?>

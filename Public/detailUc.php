@@ -65,9 +65,34 @@ include("inc/top.php");
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+
+</div>
+<h3 class="text-md-center mt-3"> Chương trình Du học nghề tại Úc </h3> 
+<h3 class="text-md-center">Xây Dựng Tương Lai Vững Chắc Với AE </h3>
+
+<div class="text-left m-5">
+    <p>Bạn đam mê nghề nghiệp và muốn có cơ hội học tập và làm việc ở nước ngoài? Trung Tâm tư vấn Du học &#8211;Ngoại Ngữ AE mang đến cho bạn chương trình Du học nghề tại Úc đầy hấp dẫn và đa dạng.</p>
+    <p>Du học nghề tại Úc:</p>
+    <p>Nếu Úc là điểm đến của bạn, chương trình Du học nghề tại Úc sẽ là sự lựa chọn hoàn hảo. Độ tuổi của bạn từ 18-25 tuổi, tốt nghiệp THPT với điểm bình quân lớp 11 và 12 từ 6.5 trở lên, sức khỏe tốt và không yêu cầu chứng chỉ ngoại ngữ. Trung tâm tư vấn du học AE sẽ đồng hành và đào tạo bạn.</p>
+    <p>Quyền lợi của ứng viên khi tham gia chương trình Du học nghề tại Úc
+    cũng vô cùng hấp dẫn: Học phí thấp chỉ từ 5000$ AU một học kỳ, lương thực tập từ 500% &#8211;1000$ AU một tuần,
+     cơ hội việc làm sau khi tốt nghiệp với mức lương từ 4000$-8000$ AU một tháng. Bạn sẽ được cam kết có việc làm 100%,
+      nhận bằng cấp có giá trị quốc tế và lộ trình định cư rõ ràng, minh bạch. Đặc biệt, không phát sinh chi phí đáng lo ngại.</p>
+    <p>Hãy trao cơ hội cho tương lai của bạn với chương trình Du học nghề tại Úc &#8211;Đức cùng Trung Tâm tư vấn Du học &#8211;Ngoại Ngữ AE. Liên hệ với chúng tôi ngay hôm nay để biết thêm thông tin chi tiết và nhận tư vấn miễn phí.</p>
+    <p>
+    <strong>Các ngành nghề đào tạo:</strong>
+    </p>
+    <p>Hệ cao đẳng nghề 2 năm (Được học liên thông lên cấp cao hơn):</p>
+    <p>* Các ngành học ưu tiên:</p>
+    <p>&#8211;Quản trị khách sạn, Xây dựng/Kỹ thuật, Công nghệ ô tô, Công nghệ thông tin, Giáo dục &amp;học tập, Dịch vụ cộng đồng.</p>
+    <p>* Các ngành học tuyển thường xuyên:</p>
+    <p>&#8211;Quản lý bếp, Ốp lát tường và sàn, Thiết kế xây dựng dân dụng, Công nghệ Ô tô, Công nghệ điện ô tô, Công nghệ Cơ khí Xe hạng nhẹ, Chẩn Đoán Cơ Khí Ô Tô, Quản lý ô tô, Công nghệ thông tin (Chuyên ngành An ninh mạng), Công nghệ thông tin (Chuyên ngành KỸ THUẬT MẠNG VIỄN THÔNG), Giáo dục và Chăm sóc Mầm non, Quản lý (Học tập), Dịch vụ Cộng đồng</p>
+    <p>Hỗ trợ Người cao tuổi. Học tại hệ thống đào tạo nghề trên toàn lãnh thổ nước Úc, chủ yếu tập trung tại Sydney.</p>
 </div>
 
-
+<div class="text-center mt-auto">
+  <a type="button" class="btn btn-info text-dark " href="#"><h4> Đăng ký Khóa Học</h4> </a>
+</div>
 
 <?php
 include("inc/bottom.php");

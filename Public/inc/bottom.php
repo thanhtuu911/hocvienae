@@ -1,11 +1,6 @@
-&emsp;
-&emsp;
-&emsp;
 <div class="elementor-widget-container">
-	<h1 class="text-center elementor-heading-title elementor-size-default p-5">TẠI SAO NÊN CHỌN AE?</h1>
+	<h2 class="text-center elementor-heading-title elementor-size-default p-5">TẠI SAO NÊN CHỌN AE?</h2>
 </div>
-
-&emsp;
 
 <div class="container text-center">
 	<div class="row row-cols-4">
