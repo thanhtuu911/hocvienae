@@ -50,9 +50,9 @@ include("inc/top.php");
                 <p class="card-text d-inline">
                     Price: 
                     <small>
-                        <del>&#8377 3000</del>
+                        <del> 3000</del>
                     </small>
-                    <span class="font-weight-bolder">&#8377 300 <span>
+                    <span class="font-weight-bolder" ><i class="fa-solid fa-hand-holding-dollar"></i> 300 <span>
                     </p>
                     <a class="btn btn-primary text-white font-weight-bolder float-right" href="#"> Tham Gia</a>
             </div>
@@ -79,9 +79,9 @@ include("inc/top.php");
                 <p class="card-text d-inline">
                     Price: 
                     <small>
-                        <del>&#8377 4000</del>
+                        <del > 4000</del>
                     </small>
-                    <span class="font-weight-bolder">&#8377 400 <span>
+                    <span class="font-weight-bolder" ><i class="fa-solid fa-hand-holding-dollar"></i> 400 <span>
                     </p>
                     <a class="btn btn-primary text-white font-weight-bolder " href="#">Tham Gia</a>
             </div>
@@ -107,11 +107,11 @@ include("inc/top.php");
                 <p class="card-text d-inline">
                     Price: 
                     <small>
-                        <del>&#8377 4000</del>
+                        <del> 4000</del>
                     </small>
-                    <span class="font-weight-bolder">&#8377 400 <span>
+                    <span class="font-weight-bolder"><i class="fa-solid fa-hand-holding-dollar"></i> 400 <span>
                     </p>
-                    <a class="btn btn-primary text-white font-weight-bolder  " href="#">Tham Gia</a>
+                    <a class="btn btn-primary text-white font-weight-bolder " href="#">Tham Gia</a>
             </div>
         </div>
     </a>
