@@ -5,7 +5,7 @@
 	Thêm Học Viên
 </a>
 <br> 
-<!-- main.php -->
+
 <div class="container">
     <table class="table">
         <thead>
@@ -22,19 +22,19 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($hocvien as $hv) : ?>
+            <?php foreach ($hocvien as $h) : ?>
                 <tr>
-                    <td><?php echo $hv['id']; ?></td>
-                    <td><?php echo $hv['hoten']; ?></td>
-                    <td><?php echo $hv['namsinh']; ?></td>
-                    <td><?php echo $hv['gioitinh']; ?></td>
-                    <td><?php echo $hv['email']; ?></td>
-                    <td><?php echo $hv['sodienthoai']; ?></td>
-                    <td><?php echo $hv['diachi']; ?></td>
-                    <td><img src="<?php echo $hv['hinhanh']; ?>" alt="Hình ảnh" style="width: 50px;"></td>
+                    <td><?php echo $h['id']; ?></td>
+                    <td><?php echo $h['hoten']; ?></td>
+                    <td><?php echo $h['namsinh']; ?></td>
+                    <td><?php echo $h['gioitinh']; ?></td>
+                    <td><?php echo $h['email']; ?></td>
+                    <td><?php echo $h['sodienthoai']; ?></td>
+                    <td><?php echo $h['diachi']; ?></td>
+                    <td><img src="<?php echo $h['hinhanh']; ?>" alt="Hình ảnh" style="width: 50px;"></td>
                     <td>
-                        <a href="index.php?action=sua&id=<?php echo $hv['id']; ?>" class="btn btn-primary">Sửa</a>
-                        <a href="index.php?action=xoa&id=<?php echo $hv['id']; ?>" class="btn btn-danger">Xóa</a>
+                        <a href="index.php?action=sua&id=<?php echo $h['id']; ?>" class="btn btn-primary">Sửa</a>
+                        <a href="index.php?action=xoa&id=<?php echo $h['id']; ?>" class="btn btn-danger">Xóa</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -64,7 +64,7 @@ switch($action){
     //     break;
     case "sua":
         if(isset($_GET["id"])){ 
-            $hocvien = $hv->layhocvientheoid($_GET["id"]);
+            $h = $hv->layhocvientheoid($_GET["id"]);
             $hocvien = $hv->layhocvien(); 
             include("updateform.php");
         }
@@ -73,33 +73,28 @@ switch($action){
             include("main.php");            
         }
         break;
+    // Xử lý case "sửa"
     case "xulysua":
-        $hocvienhh = new HOCVIEN();
-        $hocvienhh->setid($_POST["txtid"]);
-        $hocvienhh->sethoten($_POST["txthoten"]);
-		$hocvienhh->setnamsinh($_POST["txtnamsinh"]);
-		$hocvienhh->setgioitinh($_POST["txtgioitinh"]);
-		$hocvienhh->setemail($_POST["txtemail"]);
-		$hocvienhh->setsodienthoai($_POST["txtsdt"]);
-		$hocvienhh->setdiachi($_POST["txtdiachi"]);
-        $hocvienhh->sethinhanh($_POST["txthinhcu"]);
-
-        // upload file mới (nếu có)
-        if($_FILES["filehinhanh"]["name"]!=""){
-            // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
-            $hinhanh = "images/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
-            $hocvienhh->sethinhanh($hinhanh);
-            $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
-            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
-        }
-        
-        // sửa mặt hàng
-        $hv->suahocvien($hocvienhh);         
-    
-        // hiển thị ds mặt hàng
-        $hocvien = $hv->layhocvien();    
-        include("main.php");
-        break;
+            $hocvienhh = new HOCVIEN();
+            $hocvienhh->setid($_POST["id"]);
+            $hocvienhh->sethoten($_POST["hoten"]);
+            $hocvienhh->setNamsinh($_POST["namsinh"]);
+            $hocvienhh->setgioitinh($_POST["gioitinh"]);
+            $hocvienhh->setemail($_POST["email"]);
+            $hocvienhh->setsodienthoai($_POST["sodienthoai"]);
+            $hocvienhh->setdiachi($_POST["diachi"]);
+            // Kiểm tra xem có hình ảnh mới được tải lên không
+            if(isset($_FILES["hinhanh"]) && $_FILES["hinhanh"]["error"] == 0) {
+                $hinhanh = "images/" . basename($_FILES["hinhanh"]["name"]);
+                $hocvienhh->sethinhanh($hinhanh);
+                $duongdan = "../../" . $hinhanh;
+                move_uploaded_file($_FILES["hinhanh"]["tmp_name"], $duongdan);
+            }
+            // Gọi hàm suahocvien để cập nhật thông tin học viên
+            $hv->suahocvien($hocvienhh);
+            $hocvien = $hv ->layhocvien();
+            include("main.php");
+            break;
 
     default:
         break;

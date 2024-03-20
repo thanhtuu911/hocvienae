@@ -22,7 +22,7 @@
 </div> 
 <div class="my-3">    
 	<label>Phí</label>    
-	<input class="form-control" type="number" name="txtgiagoc" value="<?php echo ($m["phi"]) ; ?>" required>
+	<input class="form-control" type="number" name="txtgiagoc"required value="<?php echo ($m["phi"]) ; ?>" >
 </div> 
 
 <div class="my-3">

@@ -90,12 +90,21 @@ class HOCVIEN
     }
 
     // Hàm hiển thị danh sách học viên
-    public static function layhocvien()
+    public  function layhocvien()
     {
         $dbcon = DATABASE::connect();
-        $sql = "SELECT * FROM hocvien";
-        $result = $dbcon->query($sql);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        try{
+            $sql = "SELECT * FROM hocvien ";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
     }
 
     // Hàm thêm học viên mới
@@ -140,7 +149,7 @@ class HOCVIEN
     }
 
     // Hàm sửa thông tin học viên
-    public function suahocvien($hocvien)
+    public function suahocvien( $hocvien)
 {
     $dbcon = DATABASE::connect();
     try {
@@ -154,22 +163,23 @@ class HOCVIEN
                     hinhanh = :hinhanh 
                 WHERE id = :id";
         $cmd = $dbcon->prepare($sql);
-        $cmd->bindValue(':hoten', $hocvien->gethoten());
-        $cmd->bindValue(':namsinh', $hocvien->getnamsinh());
-        $cmd->bindValue(':gioitinh', $hocvien->getgioitinh());
-        $cmd->bindValue(':email', $hocvien->getemail());
-        $cmd->bindValue(':sodienthoai', $hocvien->getsodienthoai());
-        $cmd->bindValue(':diachi', $hocvien->getdiachi());
-        $cmd->bindValue(':hinhanh', $hocvien->gethinhanh());
-        $cmd->bindValue(':id', $hocvien->getid());
-        return $cmd->execute();
+        $cmd->bindValue(':hoten', $hocvien->hoten);
+        $cmd->bindValue(':namsinh', $hocvien->namsinh);
+        $cmd->bindValue(':gioitinh', $hocvien->gioitinh);
+        $cmd->bindValue(':email', $hocvien->email);
+        $cmd->bindValue(':sodienthoai', $hocvien->sodienthoai);
+        $cmd->bindValue(':diachi', $hocvien->diachi);
+        $cmd->bindValue(':hinhanh', $hocvien->hinhanh);
+        $cmd->bindValue(':id', $hocvien->id);
+        $result = $cmd->execute();
+        return $result;
     } catch (PDOException $e) {
         // Xử lý ngoại lệ nếu có
         echo "Lỗi: " . $e->getMessage();
-        return false; // Trả về false để biểu thị thất 
+        return false; // Trả về false để biểu thị thất bại
     }
-
 }
+
 
 public  function layhocvientheoid($id)
 {
