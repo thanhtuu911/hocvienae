@@ -13,7 +13,7 @@
                 <input type="hidden" name="txthinhanh" value="<?php echo $_SESSION["nguoidung"]["hinhanh"]; ?>" >
                 <input type="hidden" name="action" value="xlhoso" >
                 <div class="text-center">
-                  <img class="img-thumbnail" src="<?php if ($_SESSION["nguoidung"]["hinhanh"]==NULL) echo "../../images/logo/logo.png"; else echo "../../images/logo/" . $_SESSION["nguoidung"]["hinhanh"]; ?>" alt="<?php echo $_SESSION["nguoidung"]["hoten"]; ?>" width="100px">
+                  <img class="img-thumbnail" src="<?php if ($_SESSION["nguoidung"]["hinhanh"]==NULL) echo "../../image/account/2.jpg"; else echo "../../image/account/" . $_SESSION["nguoidung"]["hinhanh"]; ?>" alt="<?php echo $_SESSION["nguoidung"]["hoten"]; ?>" width="100px">
                 </div>
                 <input type="hidden" name="txtid" value="<?php echo $_SESSION["nguoidung"]["id"]; ?>">
                 <div class="my-3">    

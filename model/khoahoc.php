@@ -1,4 +1,5 @@
 <?php
+//  require_once(__DIR__ . "/../model/database.php");
 class KHOAHOC
 {
      private $id;
@@ -117,38 +118,38 @@ class KHOAHOC
             exit();
         }
     }
-    // Cập nhật lượt xem
-    public function tangluotxem($id){
-        $dbcon = DATABASE::connect();
-        try{
-            $sql = "UPDATE khoahoc SET luotxem=luotxem+1 WHERE id=:id";
-            $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":id", $id);
-            $result = $cmd->execute();            
-            return $result;
-        }
-        catch(PDOException $e){
-            $error_message = $e->getMessage();
-            echo "<p>Lỗi truy vấn: $error_message</p>";
-            exit();
-        }
-    }
+    // // Cập nhật lượt xem
+    // public function tangluotxem($id){
+    //     $dbcon = DATABASE::connect();
+    //     try{
+    //         $sql = "UPDATE khoahoc SET luotxem=luotxem+1 WHERE id=:id";
+    //         $cmd = $dbcon->prepare($sql);
+    //         $cmd->bindValue(":id", $id);
+    //         $result = $cmd->execute();            
+    //         return $result;
+    //     }
+    //     catch(PDOException $e){
+    //         $error_message = $e->getMessage();
+    //         echo "<p>Lỗi truy vấn: $error_message</p>";
+    //         exit();
+    //     }
+    // }
     // Lấy mặt hàng xem nhiều
-    public function laykhoahocxemnhieu(){
-        $dbcon = DATABASE::connect();
-        try{
-            $sql = "SELECT * FROM khoahoc ORDER BY luotxem DESC LIMIT 3";
-            $cmd = $dbcon->prepare($sql);
-            $cmd->execute();
-            $result = $cmd->fetchAll();
-            return $result;
-        }
-        catch(PDOException $e){
-            $error_message = $e->getMessage();
-            echo "<p>Lỗi truy vấn: $error_message</p>";
-            exit();
-        }
-    }
+    // public function laykhoahocxemnhieu(){
+    //     $dbcon = DATABASE::connect();
+    //     try{
+    //         $sql = "SELECT * FROM khoahoc ORDER BY luotxem DESC LIMIT 3";
+    //         $cmd = $dbcon->prepare($sql);
+    //         $cmd->execute();
+    //         $result = $cmd->fetchAll();
+    //         return $result;
+    //     }
+    //     catch(PDOException $e){
+    //         $error_message = $e->getMessage();
+    //         echo "<p>Lỗi truy vấn: $error_message</p>";
+    //         exit();
+    //     }
+    // }
 
     // Thêm mới
     public function themkhoahoc($khoahoc){

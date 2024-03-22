@@ -13,6 +13,9 @@
 							<ul class="list-inline">
 								<li class="list-inline-item">
 									<a class="text-muted" href="">Hỗ trợ</a>
+									<!-- <a  href="Public/home.php">
+									<i class="align-middle me-1" data-feather="key"></i> Về lại trang chủ -->
+								</a>
 								</li>								
 							</ul>
 						</div>

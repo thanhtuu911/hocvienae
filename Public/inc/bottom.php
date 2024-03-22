@@ -168,8 +168,12 @@
 <footer class="container-fluid  text-center p-2 mt-5" style="background-color: #225470;">
   <small class="text-white"> </small>
     Copyright &copy; 2024 || Designed<br>
-    By Thanh Tu and Hoai Thanh || <a class="btn btn-info" href="#login" data-toggle="modal" data-target="#adminLoginModalCenter">Admin Login</a>
+    By Thanh Tu and Hoai Thanh 
   </small>
+  <small>
+	<!-- <a class="btn btn-info" href="#login" data-toggle="modal" data-target="#adminLoginModalCenter">Admin Login</a> -->
+	<a class="btn btn-info" href="../admin/ktnguoidung/index.php" >Admin Login</a>
+	</small>
 </footer>
 <!-- End Footer -->
 

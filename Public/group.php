@@ -1,29 +1,10 @@
 <?php
 include("inc/top.php");
 ?>
-<?php include("inc/video.php");
-?>
-<?php
-foreach ($danhmuc as $d) {
-    $i = 0;
-?>
-    <div class="row mt-3 ">
-        <h3><a class="text-decoration-none text-info " href="index.php?action=group&id=<?php echo $d["id"]; ?>">
-                <?php echo $d["tendanhmuc"]; ?></a></h3>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col">
-                <!-- <h1>Danh sách khóa học</h1> -->
-            </div>
-        </div>
-
-
+ <div class="container mt-5">
+        <h1>Danh mục: <?php echo $tendm; ?></h1>
         <div class="row mt-3">
-            <?php foreach ($khoahoc as $mh) {
-                if ($mh["danhmuc_id"] == $d["id"] && $i < 4) {
-                    $i++;
-            ?>
+            <?php foreach ($khoahoc as $mh): ?>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <img src="<?php echo $mh['hinhanh']; ?>" class="card-img-top" alt="<?php echo $mh['tenkhoahoc']; ?>">
@@ -34,27 +15,14 @@ foreach ($danhmuc as $d) {
                                 <div class="btn-group">
                                     <a href="index.php?action=detail&id=<?php echo $mh['id']; ?>" class="btn btn-sm btn-outline-secondary">Xem chi tiết</a>
                                 </div>
-                                <small class="text-muted"><?php echo number_format($mh['phi']); ?> VNĐ</small>
+                                <small class="text-muted"><?php echo $mh['phi']; ?></small>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-            <?php 
-                }  
-            } ?>
+            <?php endforeach; ?>
         </div>
     </div>
-<?php
-
-}
-?>
-
-
-
-
-
 <?php
 include("inc/bottom.php");
 ?>

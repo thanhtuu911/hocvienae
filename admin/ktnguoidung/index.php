@@ -73,7 +73,8 @@ switch($action){
          if (isset($_POST["txtemail"]) && isset($_POST["txtmatkhaumoi"]) )
             $nd->doimatkhau($_POST["txtemail"],$_POST["txtmatkhaumoi"]);
         include("main.php");
-        break; 
+        break;
+           
     default:
         break;
 }
