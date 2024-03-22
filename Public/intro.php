@@ -1,14 +1,11 @@
 <?php
 include("inc/top.php");
 ?>
-
-<!-- <?php
-include("inc/carousel.php");
-?> -->
+<div> <?php include("inc/carousel.php"); ?> </div>
 
 
-<div class=" container align-items-center  mt-5 p-3 ">
-    <h1 class=' text-md-center p-3 mt-3'>Trung Tâm Ngoại Ngữ American English </h1>
+<div class=" container align-items-center px-4 px-lg-5  mt-5  p-5 ">
+    <h1 class='text-md-center p-3 mt-3'>Trung Tâm Ngoại Ngữ American English </h1>
 </div>
 
 
