@@ -91,7 +91,7 @@ include("inc/top.php");
 </div>
 
 <div class="text-center mt-auto">
-  <a type="button" class="btn btn-info text-dark " href="#"><h4> Đăng ký Khóa Học</h4> </a>
+  <a type="button" class="btn btn-info text-dark " href="index.php?action=dangki "><h4> Đăng ký Khóa Học</h4> </a>
 </div>
 
 <?php

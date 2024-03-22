@@ -36,5 +36,8 @@ switch ($action) {
     case "uc":
         include("detailUc.php");
         break;
+    case "dangki":
+        include("dangki.php");
+        break;
 }
 ?>

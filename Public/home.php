@@ -37,12 +37,13 @@ include("inc/top.php");
             <img src="../image/courses/B1.png" class="card-img-top" alt="B1"/>
             
             <div class="card-body">
-                <h5 class="card-title"> Learn B1</h5>
+                <h5 class="card-title"> Du Học Mỹ</h5>
                 <p class="card-text">
-                "Khóa học B1 là một chương trình học tiếng ngoại ngữ cấp độ trung cấp, 
-                dành cho những người học đã có kiến thức cơ bản và muốn nâng cao khả năng giao tiếp của mình. 
-                Trong khóa học này, học viên sẽ được hướng dẫn về ngữ pháp, từ vựng và kỹ năng nghe, nói, đọc, viết, nhằm đạt được trình độ B1 theo khung tham chiếu Châu Âu. 
-                Chương trình giúp học viên tự tin giao tiếp trong nhiều tình huống thực tế và mở cánh cửa cho việc tiếp cận nhiều cơ hội học tập và nghề nghiệp mới."
+                "Mỹ có chất lượng giáo dục cao đi kèm với đó là hàng loạt các trường Đại học đứng đầu bảng xếp hạng thế giới như Đại học Harvard, Đại học Stanford,...
+                 Ngoài ra, Mỹ còn đào tạo đa dạng các ngành học với hệ thống kiến thức được kiểm duyệt vô cùng nghiêm ngặt.</p>
+                 <p> Hơn nữa, Mỹ có tổng 50 khu tiểu liên Bang và 1 đặc khu liên Bang (gồm 48 tiểu Bang lục địa), 
+                 cùng với vô số chủng tộc như người bản địa, người da màu, người châu Á định cư - tạo nên một nền văn hoá vô cùng đa dạng và phong phú. Khi sinh sống tại đây, bạn sẽ được tiếp xúc với nhiều nền văn hóa khác nhau,
+                 do đó, cải thiện được những kinh nghiệm sống, kiến thức thực tiễn và mở rộng vốn hiểu biết của bản thân"
                 </p>
             </div>
 
@@ -66,12 +67,14 @@ include("inc/top.php");
             <img src="../image/courses/B2.png" class="card-img-top" alt="B2"/>
             
             <div class="card-body">
-                <h5 class="card-title"> Learn B2</h5>
+                <h5 class="card-title"> Du học Australia</h5>
                 <p class="card-text">
-                "Khóa học B2 là chương trình học tiếng ngoại ngữ cấp độ trung cao, dành cho những học viên muốn phát triển kỹ năng ngôn ngữ của mình đến mức độ trung cao. 
-                Trong khóa học này, chú trọng vào việc mở rộng từ vựng, nâng cao kỹ năng nghe và nói, cũng như phát triển khả năng đọc và viết. 
-                Học viên sẽ đạt được khả năng sử dụng ngôn ngữ linh hoạt và hiểu rõ hơn về văn hóa ngôn ngữ. 
-                Khóa học B2 giúp họ tự tin giao tiếp trong nhiều bối cảnh, từ công việc đến giao tiếp xã hội và du lịch."
+                "Du học Úc đã khẳng định vị thế của mình nhờ vào chất lượng giảng dạy, nghiên cứu chuyên sâu, và môi trường sinh sống,
+                 học tập lý tưởng. Úc đáp ứng nhu cầu của sinh viên quốc tế từ khắp nơi trên thế giới.</p>
+                <p> Sinh viên du học ở Úc cũng được trải nghiệm các nền văn hóa đa dạng và tiếp cận ý tưởng đổi mới. Hệ thống giáo dục Úc cung cấp tất
+                cả các cấp độ, với chính sách và pháp luật nhằm đảm bảo chất lượng giáo dục và bảo vệ 
+                quyền lợi của sinh viên quốc tế. Với danh tiếng quốc tế ấn tượng, sinh viên tốt nghiệp từ các trường Úc được săn đón trên toàn 
+                thế giới, do hệ thống giáo dục Úc được quản lý cẩn thận để duy trì các tiêu chuẩn cao và hình ảnh đất nước."
                 </p>
             </div>
 
@@ -94,12 +97,15 @@ include("inc/top.php");
             <img src="../image/courses/B2.png" class="card-img-top" alt="B2"/>
             
             <div class="card-body">
-                <h5 class="card-title"> Learn C1</h5>
+                <h5 class="card-title"> Du Học Đức</h5>
                 <p class="card-text">
-                "Khóa học B2 là chương trình học tiếng ngoại ngữ cấp độ trung cao, dành cho những học viên muốn phát triển kỹ năng ngôn ngữ của mình đến mức độ trung cao. 
-                Trong khóa học này, chú trọng vào việc mở rộng từ vựng, nâng cao kỹ năng nghe và nói, cũng như phát triển khả năng đọc và viết. 
-                Học viên sẽ đạt được khả năng sử dụng ngôn ngữ linh hoạt và hiểu rõ hơn về văn hóa ngôn ngữ. 
-                Khóa học B2 giúp họ tự tin giao tiếp trong nhiều bối cảnh, từ công việc đến giao tiếp xã hội và du lịch."
+                "Đức là một thiên đường giáo dục đại học. Không giống như ở bất kỳ quốc gia nào khác, du học Đức, bạn sẽ tìm thấy
+                 nhiều trường đại học được xếp hạng trên toàn thế giới, vô số khóa học để lựa chọn trong số đó, các bằng cấp có giá 
+                 trị toàn cầu hứa hẹn khả năng tuyển dụng cao và chi phí sinh hoạt hợp lý.</p>
+
+                <p> Với hơn 357.000 sinh viên quốc tế mong muốn lấy bằng đại học ở Đức, không có gì ngạc nhiên khi Đức được
+                 xếp hạng là một trong những điểm đến hàng đầu cho du học sinh trên thế giới. Mỗi năm, hàng ngàn học giả 
+                 từ mọi nơi tin tưởng học tập tại các trường đại học ở Đức, và lý do cho sự tin tưởng này rất rõ ràng."
                 </p>
             </div>
 
