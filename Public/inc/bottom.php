@@ -1,5 +1,5 @@
 <div class="elementor-widget-container">
-	<h2 class="text-center elementor-heading-title elementor-size-default p-5">TẠI SAO NÊN CHỌN AE?</h2>
+	<h2 class="text-md-center mt-5 p-5">TẠI SAO NÊN CHỌN AE?</h2>
 </div>
 
 <div class="container text-center">

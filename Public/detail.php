@@ -3,10 +3,10 @@
 include("inc/top.php");
 ?>
 
-<div class="container mt-5 ">
+<div class="container mt-5 m-5 p-5">
     <div class="col-sm-9">      
 
-      <h3 class="text-info"><?php echo $khct["tenkhoahoc"]; ?></h3>
+      <h3 class="text-info mt-5"><?php echo $khct["tenkhoahoc"]; ?></h3>
       
       <div><img width="500px" src="../<?php echo $khct["hinhanh"]; ?>"></div>
 
@@ -29,6 +29,8 @@ include("inc/top.php");
     	</form>  	  
   	  </div>
     </div>
+</div>
+  
 <?php
 include("inc/bottom.php");
 ?>
