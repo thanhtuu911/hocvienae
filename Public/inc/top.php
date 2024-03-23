@@ -85,7 +85,7 @@
                     </li>
 
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>
+                    <li class="nav-item custom-nav-item"><a href="index.php?action=lienhe" class="nav-link">Liên Hệ</a></li>
 
                     <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li> -->
                     <!-- <li class="nav-item custom-nav-item"><a href="index.php?action=dangnhap" class="nav-link">Login</a></li> -->
