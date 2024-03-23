@@ -11,8 +11,9 @@
         <h1 class="my-content">Welcome to American English</h1>
         <small class="my-content"> </small> <br>
         <!-- Button trigger modal -->
-        <a href="index.php?action=group" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Started</a>
+        <a href="index.php?action=batdau" class="btn btn-danger" >Get Started</a>
     </div>
 </div>
 <!-- end video -->
+
 

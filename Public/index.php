@@ -26,6 +26,11 @@ switch ($action) {
         $khoahoc = $kh->laykhoahoc();	
         include("home.php");
         break;
+    case "batdau":
+        $khoahoc = $kh->laykhoahoc();	
+        include("start.php");
+        break;
+        
     case"group":
         if(isset($_REQUEST["id"])){
             $madm = $_REQUEST["id"];
@@ -35,7 +40,7 @@ switch ($action) {
             include("group.php");
         }
         else{
-            include("home.php");
+            include("start.php");
         }
         break;
     case "detail": 
@@ -120,9 +125,9 @@ switch ($action) {
     case "uc":
         include("detailUc.php");
         break;
-    case "dangky":
-        include("dangky.php");
-        break;
+    // case "dangky":
+    //     include("dangky.php");
+    //     break;
        
 }
 ?>
