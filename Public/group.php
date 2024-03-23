@@ -7,7 +7,7 @@ include("inc/top.php");
             <?php foreach ($khoahoc as $mh): ?>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img src="<?php echo $mh['hinhanh']; ?>" class="card-img-top" alt="<?php echo $mh['tenkhoahoc']; ?>">
+                        <img src="../<?php echo $mh['hinhanh']; ?>" class="card-img-top" alt="<?php echo $mh['tenkhoahoc']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $mh['tenkhoahoc']; ?></h5>
                             <p class="card-text"><?php echo $mh['chitiet']; ?></p>

@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . "/../model/database.php");
 class HOCVIEN
 {
     private $id;
@@ -194,6 +195,22 @@ public  function layhocvientheoid($id)
         // Xử lý ngoại lệ nếu có
         echo "Lỗi: " . $e->getMessage();
         return false; // Trả về false nếu không thể lấy được học viên
+    }
+}
+
+public function timkiemhocvien($keyword)
+{
+    $dbcon = DATABASE::connect();
+    try {
+        $sql = "SELECT * FROM hocvien WHERE hoten LIKE :keyword";
+        $cmd = $dbcon->prepare($sql);
+        $cmd->bindValue(":keyword", "%{$keyword}%", PDO::PARAM_STR);
+        $cmd->execute();
+        $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    } catch (PDOException $e) {
+        // Handle the error if needed
+        return null;
     }
 }
 }

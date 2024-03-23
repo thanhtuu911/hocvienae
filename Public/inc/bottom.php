@@ -18,7 +18,7 @@
 		<div class="col">
 			<div class="elementor-icon-box-content">
 				<!-- <span><i class="bi bi-check2"></i></span> -->
-				<h1><a href=""><i class="fa-solid fa-certificate fa-beat" style="color: #de1b1b;"></i></a></h1>
+				<h1><i class="fa-solid fa-check fa-beat"style="color: #de1b1b;"></i></a></h1>
 				<h3 class="elementor-icon-box-title"> Được Chứng Nhận</h3>
 				<p class="elementor-icon-box-description">Được cấp phép bởi Sở Giáo dục và Đào tạo</p>
 			</div>
@@ -142,10 +142,10 @@
             
         </div>
         <div class="col-md-4 stripe text-dark text-center">
-            <h4>America English</h4>
+            <h4>American English</h4>
             <p>
-                Dinh truong sanh <br>
-                1234567 <br>
+			Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
+			trong công tác đào tạo thế hệ trẻ. <br>
             </p>
         </div>
         <!-- end 1 cot contact voi chung toi -->
@@ -165,7 +165,7 @@
 </section> 
 <!-- map -->
 <!-- Start Footer -->
-<footer class="container-fluid  text-center p-2 mt-5" style="background-color: #225470;">
+<footer class="container-fluid  text-center p-2 mt-5" style="background-color: #2C3D57;">
   <small class="text-white"> </small>
     Copyright &copy; 2024 || Designed<br>
     By Thanh Tu and Hoai Thanh 

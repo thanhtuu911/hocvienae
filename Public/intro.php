@@ -2,7 +2,7 @@
 include("inc/top.php");
 ?>
 <div>
-    <!-- <?php include("inc/carousel.php"); ?> -->
+    <?php include("inc/carousel.php"); ?>
 </div>
 
 

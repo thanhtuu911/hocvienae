@@ -33,8 +33,8 @@
                     <td><?php echo $l['tenkhoahoc']; ?></td>
                     <td>
                     <form action="index.php" >    
-                    <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-danger">Xóa</a>
-                    <a  class="btn btn-primary" data-toggle="modal" data-target="#suaLop<?php echo $l['lop_id']; ?>">Sửa</a>
+                    <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-warning"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a>
+                    <a  class="btn btn-outline-danger" data-toggle="modal" data-target="#suaLop<?php echo $l['lop_id']; ?>"><i class="fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a>
                     
                     </form>
                     </td>

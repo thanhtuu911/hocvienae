@@ -21,13 +21,16 @@ switch($action){
         $hocvien = $hv->layhocvien();
 		include("main.php");
         break;
+    case "timkiem":
+        include("timkiem.php");
+        break;    
 	case "them":
 		$hocvien = $hv->layhocvien();
 		include("addform.php");
         break;
 	case "xulythem":	
 		// xử lý file upload
-		$hinhanh = "image/courses/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+		$hinhanh = "image/student/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
 		$duongdan = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
 		move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
 		// xử lý thêm		
@@ -85,7 +88,7 @@ switch($action){
             $hocvienhh->setdiachi($_POST["diachi"]);
             // Kiểm tra xem có hình ảnh mới được tải lên không
             if(isset($_FILES["hinhanh"]) && $_FILES["hinhanh"]["error"] == 0) {
-                $hinhanh = "images/" . basename($_FILES["hinhanh"]["name"]);
+                $hinhanh = "image/student" . basename($_FILES["hinhanh"]["name"]);
                 $hocvienhh->sethinhanh($hinhanh);
                 $duongdan = "../../" . $hinhanh;
                 move_uploaded_file($_FILES["hinhanh"]["tmp_name"], $duongdan);

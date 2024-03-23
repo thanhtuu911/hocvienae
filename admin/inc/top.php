@@ -5,15 +5,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+	<link rel="stylesheet" type="text/css" href="css/search.css" />
+	<link rel="stylesheet" type="text/css" href="css/search.js" />
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script> -->
     <!-- AweSome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-	 	integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-	 	 crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<title>Trang quản trị - AE</title>
 	<link rel="shortcut icon" type="image/jpg" href="../../image/logo/LogoAE2.jpg" />
@@ -38,14 +36,15 @@
 
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"ktnguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../../ktnguoidung/index.php">
-						<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Bảng điều khiển</span>
+						<!-- <i class="fa-solid fa-chart-simple fa-fade fa-xl"style="color: #c51b2c;"></i> -->
+						<i class="fa-solid fa-chart-pie fa-fade fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Bảng điều khiển</span>
 						</a>
 					</li>
 
 				<?php if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){ ?>
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlnguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qlnguoidung/index.php">
-						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý tài khoản</span>
+						<i class="fa-solid fa-users fa-fade fa-xl"style="color: #c51b2c;"></i><span class="align-middle">Quản lý tài khoản</span>
 						</a>
 					</li>
 				<?php } ?>
@@ -56,25 +55,27 @@
 
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qldanhmuc") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qldanhmuc/index.php">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản Lý Danh Mục</span>
+						<i class="fa-solid fa-layer-group fa-xl fa-fade"style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Danh Mục</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlhocvien") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qlhocvien/index.php">
-						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Học Viên</span>
+						<i class="fa-solid fa-user-graduate fa-fade fa-xl"style="color: #c51b2c;"></i>
+						<span class="align-middle">Quản Lý Học Viên</span>
 						</a>
 					</li>
 					
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlkhoahoc") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qlkhoahoc/index.php">
-						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Khóa Học</span>
+						<i class="fa-solid fa-book-open fa-fade fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Khóa Học</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qllop") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qllop/index.php">
-						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản Lý Lớp</span>
+						<i class="fa-solid fa-house fa-fade fa-xl"style="color: #c51b2c;"></i>
+						 <span class="align-middle">Quản Lý Lớp</span>
 						</a>
 					</li>
 

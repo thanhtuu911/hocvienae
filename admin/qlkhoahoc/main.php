@@ -28,11 +28,11 @@
 		<td><?php echo $k["chitiet"]; ?></td>
 		<td><?php echo number_format($k["phi"]); ?></td>
 		<td>
-			<a href="index.php?action=chitiet&id=<?php echo $k["id"]; ?>">
+			
 			<img src="../../<?php echo $k["hinhanh"]; ?>" width="80" class="img-thumbnail"></a>
 		</td>
-		<td><a class="btn btn-warning" href="index.php?action=sua&id=<?php echo $k["id"]; ?>"><i class="align-middle" data-feather="edit"></a></td>
-		<td><a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $k["id"]; ?>"><i class="align-middle" data-feather="trash-2"></a></td>
+		<td><a class="btn btn-outline-warning" href="index.php?action=sua&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a></td>
+		<td><a class="btn btn-outline-danger" href="index.php?action=xoa&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a></td>
 	</tr>
 	<?php
 	endforeach;

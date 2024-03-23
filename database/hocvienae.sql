@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2024 at 11:00 AM
+-- Generation Time: Mar 23, 2024 at 07:02 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -125,10 +125,28 @@ CREATE TABLE `hocvien` (
 --
 
 INSERT INTO `hocvien` (`id`, `hoten`, `namsinh`, `gioitinh`, `email`, `sodienthoai`, `diachi`, `hinhanh`) VALUES
-(1, 'Ngô Hoàng Ân', '1/1/2003', 'Nam', 'nha@aea.com', '0123456789', 'An Giang', NULL),
-(2, 'Phạm Nhật Cường', '1/2/2004', 'Nam', 'pnc@ae.com', '0122345678', 'Châu Thành', NULL),
-(14, 'Tuuu', '', '', '', '', '', 'image/courses/'),
-(15, 'Thanhh', '', '', '', '', '', 'image/courses/');
+(1, 'Ngô Hoàng Ân', '1/1/2003', 'Nam', 'nha@aea.com', '0123456789', 'Long Xuyên', 'image/student/st01.jpg'),
+(2, 'Phạm Nhật Cường', '1/2/2004', 'Nam', 'pnc@ae.com', '0122345678', 'Châu Thành', 'image/student/st02.jpg'),
+(16, 'Tu', '2002', 'Nam', 'tu@ae.com', '123415', 'AG', NULL),
+(17, 'Thanhh', '', '', '', '', '', ''),
+(18, 'Nguyễn Sỹ Dân', '3/4/2002', 'Nam', NULL, '083799377', 'Châu Phú, An Giang', 'image/student/st03.jpg'),
+(19, 'Dương Nguyễn Quốc Dân', '2003', 'Nam', NULL, '0288227873', 'Châu Thành,An Giang', 'image/student/st04.jpg'),
+(20, 'Phan Tiến Đạt', '2001', 'Nam', NULL, '0276867832', 'Mỹ Hòa, Thoại Sơn, An Giang', 'image/student/st05.jpg'),
+(21, 'Nguyễn Lập Đông', '2004', 'Nam', NULL, '0987397673', 'Mỹ Thới, Long Xuyên, AG', 'image/student/st06.jpg'),
+(22, 'Huỳnh Đức Duy', '2005', 'Nam', NULL, '0536735762', 'Đông Xuyên, LX, AG', 'image/student/st07.jpg'),
+(23, 'Đặng Nhật Lê Huy', '2004', 'Nam', NULL, '0738636782', 'Mỹ Xuyên, LX, AG', 'image/student/st08.jpg'),
+(24, 'Nguyễn Trí Khanh', '2003', 'Nam', NULL, '0363682763', 'Long Xuyên, An Giang', 'image/student/st09.jpg'),
+(25, 'Đào Anh Khoa', '2001', 'Nam', NULL, '026628872676', 'Chợ Mới, An Giang', 'image/student/st10.jpg'),
+(26, 'Hàn Lâm Khởi', '2003', 'Nam', NULL, '05582636822', 'LX, AG', 'image/student/st11.jpg'),
+(27, 'Nguyễn Thị Phương Nghi', '2005', 'Nữ', NULL, '0251257112', 'Mỹ Long, LX, AG', 'image/student/st12.jpg'),
+(28, 'Nguyễn Như Ngọc', '2004', 'Nữ', NULL, '02892287287', 'LX, AG', 'image/student/st13.jpg'),
+(29, 'Nguyễn Thị Ngọc Nhi', '2006', 'Nữ', NULL, '0736863263', 'Chợ Mới, An Giang', 'image/student/st14.jpg'),
+(30, 'Nguyễn Thị Yến Nhi', '2007', 'Nữ', NULL, '0292287322', 'Mỹ Luông, Chợ Mới , AG', 'image/student/st15.jpg'),
+(31, 'Lê Nguyễn Quỳnh Như', '2004', 'Nữ', NULL, '02786827816', 'AG', 'image/student/st16.jpg'),
+(32, 'Trịnh Thị Ngọc Như', '1999', 'Nữ', NULL, '0290278736', 'TN,CT', 'image/student/st17.jpg'),
+(33, 'Lâm Thành Nhựt', '2002', 'Nam', NULL, '0298265534', 'Mỹ Phước, LX, AG', 'image/student/st18.jpg'),
+(34, 'Âu Lâm Thành', '2002', 'Nam', NULL, '0898287222', 'Mỹ Thới,LX AG', 'image/student/st19.jpg'),
+(35, 'Lê Quốc Toàn', '2002', 'Nữ', NULL, '02552415878', 'Cần Đăng, Châu Thành, AG', 'image/student/st20.jpg');
 
 -- --------------------------------------------------------
 
@@ -163,14 +181,14 @@ CREATE TABLE `khoahoc` (
 --
 
 INSERT INTO `khoahoc` (`id`, `danhmuc_id`, `tenkhoahoc`, `chitiet`, `phi`, `hinhanh`) VALUES
-(1, 1, 'Du Học Mỹ', '<p>Du Học Mỹ</p>', 249900000, 'usa.jpg'),
-(2, 1, 'Du Học Đức', '<p>Du Học Đức</p>', 240000000, 'duc.jpg'),
-(3, 1, 'Du Học Canada', '<p>Du Học Canada</p>', 280000000, NULL),
-(4, 1, 'Du Học Úc', '<p>Du Học Úc</p>', 286800000, 'uc.jpg'),
-(5, 2, 'B1', '<p>Chứng Chỉ B1</p>', 15000000, NULL),
-(6, 2, 'IELTS ', '<p>Chứng Chỉ IELTS</p>', 20000000, NULL),
-(7, 3, 'Nghe Nói Căn Bản', '<p>Nghe nói căn bản</p>', 8000000, NULL),
-(11, 2, 'C1', '<p>Căng như dây đàn</p>', 4600000, 'image/courses/');
+(1, 1, 'Du Học Mỹ', '<p>Du Học Mỹ</p>', 249900000, 'image/courses/usa.jpg'),
+(2, 1, 'Du Học Đức', '<p>Du Học Đức</p>', 240000000, 'image/courses/duc.jpg'),
+(3, 1, 'Du Học Canada', '<p>Du Học Canada</p>', 280000000, 'image/courses/canada.jpg'),
+(4, 1, 'Du Học Úc', '<p>Du Học Úc</p>', 286800000, 'image/courses/uc.jpg'),
+(5, 2, 'B1', '<p>Chứng Chỉ B1</p>', 15000000, 'image/courses/B1.jpg'),
+(6, 2, 'IELTS ', '<p>Chứng Chỉ IELTS</p>', 20000000, 'image/courses/ielts.jpg'),
+(7, 3, 'Nghe Nói Căn Bản', '<p>Nghe nói căn bản</p>', 8000000, 'image/courses/nghenoicanban.jpg\r\n'),
+(11, 2, 'C1', '<p>Căng như dây đàn</p>', 4600000, 'image/courses/C1.jpg');
 
 -- --------------------------------------------------------
 
@@ -192,9 +210,9 @@ CREATE TABLE `lophoc` (
 --
 
 INSERT INTO `lophoc` (`id`, `tenlop`, `ngaybatdau`, `ngayketthuc`, `giaovien_id`, `khoahoc_id`) VALUES
-(1, 'K1', '2024-01-01', '2024-04-01', 1, 6),
-(2, 'K2', '2024-01-01', '2024-03-01', 2, 7),
-(3, 'K3', '2024-03-18', '2024-03-23', 1, 2);
+(2, 'K1', '2024-03-18', '2024-03-23', 1, 2),
+(13, 'K2', '2024-03-22', '2024-10-25', 2, 4),
+(14, 'K3', '2024-03-22', '2024-10-25', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -219,8 +237,9 @@ CREATE TABLE `nguoidung` (
 
 INSERT INTO `nguoidung` (`id`, `email`, `sodienthoai`, `matkhau`, `hoten`, `loai`, `trangthai`, `hinhanh`) VALUES
 (1, 'admin@ae.com', NULL, '123', 'Admin', 1, 1, NULL),
-(2, 'tu@ae.com', '0398761711', '123', 'Thanh Tus', 2, 1, '2.jpg'),
-(3, 'e5@ae.com', '0379111556', '123', 'Hoài Thanh', 2, 1, '1.jpg');
+(2, 'tu@ae.com', '0398761711', '123', 'Thanh Tus', 1, 1, '2.jpg'),
+(3, 'e5@ae.com', '0379111556', '123', 'Hoài Thanh', 1, 1, '1.jpg'),
+(4, 'stu1@ae.com', '12345678', '123', 'Hoc Vien 1', 3, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -310,7 +329,7 @@ ALTER TABLE `dangky`
 -- AUTO_INCREMENT for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `giaovien`
@@ -334,7 +353,7 @@ ALTER TABLE `hoadonct`
 -- AUTO_INCREMENT for table `hocvien`
 --
 ALTER TABLE `hocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `ketqua`
@@ -352,13 +371,13 @@ ALTER TABLE `khoahoc`
 -- AUTO_INCREMENT for table `lophoc`
 --
 ALTER TABLE `lophoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

@@ -25,8 +25,8 @@
 		<tr>
 			<td><?php echo $d["id"]; ?></td>
 			<td><?php echo $d["tendanhmuc"]; ?></td>
-			<td><a href="index.php?action=sua&id=<?php echo $d["id"]; ?>" class="btn btn-warning">Sửa</a></td>
-			<td><a href="index.php?action=xoa&id=<?php echo $d["id"]; ?>" class="btn btn-danger">Xóa</a></td>
+			<td><a href="index.php?action=sua&id=<?php echo $d["id"]; ?>" class="btn btn-outline-warning"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a></td>
+			<td><a href="index.php?action=xoa&id=<?php echo $d["id"]; ?>" class="btn btn-outline-danger"><i class="fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a></td>
 		</tr>
 	<?php 
 		} // end else
