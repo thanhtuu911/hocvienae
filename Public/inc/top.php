@@ -79,7 +79,7 @@
                             <li><a class="dropdown-item" class="nav-link" href="index.php?action=duc">Du Học CHLB Đức
                                 </a></li>
                             <li><a class="dropdown-item" class="nav-link" href="index.php?action=uc">Du Học Úc </a></li>
-                            <li><a class="dropdown-item" class="nav-link" href="index.php?action=uc">Du Học Canada </a>
+                            <li><a class="dropdown-item" class="nav-link" href="index.php?action=canada ">Du Học Canada </a>
                             </li>
                         </ul>
                     </li>

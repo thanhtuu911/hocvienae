@@ -125,6 +125,9 @@ switch ($action) {
     case "uc":
         include("detailUc.php");
         break;
+    case "canada":
+        include("detailCanada.php");
+        break;
     // case "dangky":
     //     include("dangky.php");
     //     break;

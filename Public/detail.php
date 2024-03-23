@@ -6,13 +6,13 @@ include("inc/top.php");
 <div class="container mt-5 m-5 p-5">
     <div class="col-sm-9">      
 
-      <h3 class="text-info mt-5"><?php echo $khct["tenkhoahoc"]; ?></h3>
+      <h3 class="mt-5" style='color:#225473'><?php echo $khct["tenkhoahoc"]; ?></h3>
       
       <div><img width="500px" src="../<?php echo $khct["hinhanh"]; ?>"></div>
 
       
       <div>
-      <h4 class="text-primary">Phí học: 
+      <h4 class="text-primary mt-3">Phí học: 
         <span class="text-danger"><?php echo number_format($khct["phi"]); ?> đ</span>
       </h4>
   		<form method="post" class="form-inline">

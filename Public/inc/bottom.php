@@ -141,7 +141,7 @@
             </form>
             
         </div>
-        <div class="col-md-4 stripe text-dark text-center">
+        <div class="col-md-4 stripe text-light text-center">
             <h4>American English</h4>
             <p>
 			Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
@@ -154,12 +154,11 @@
 <!-- End Contact -->
 <!-- map -->
 <section>            
-            <div class="container-fluid mt-2" >
+            <div class="container  mt-5 " >
                 <div class="row">                    
                     <div class="col">
                     <!-- <h5><i class="fa-solid fa-store"></i> 18 Ung văn khiêm, Phường đông xuyên, Thành phố Long Xuyên, An Giang</h5> -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.627229143731!2d105.42976397524355!3d10.371661066528818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a731e7546fd7b%3A0x953539cd7673d9e5!2sAn%20Giang%20University!5e0!3m2!1sen!2s!4v1702791933071!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15698.317084112667!2d105.4312339!3d10.3754858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a73dada8a4e8f%3A0x15f984bf783b62f1!2zVHJ1bmcgVMOibSBOZ2_huqFpIE5n4buvIEFF!5e0!3m2!1sen!2s!4v1711199603195!5m2!1sen!2s" width="1500" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 </section> 

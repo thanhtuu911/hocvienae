@@ -1,27 +1,9 @@
 <?php 
 include("inc/top.php");
 ?>
-<style>
-    .h1{
-        color: #225470;
-    }
-    .flex-center {
-        display: flex;
-        justify-content: center;
-        /* Căn giữa theo chiều ngang */
-        align-items: center;
-        /* Căn giữa theo chiều dọc */
-
-        height: 100px;
-        /* Chiều cao của div (có thể thay đổi) */
-        color: red;
-        font-weight: bolder;
-        font-family:'Times New Roman', Times, serif, Helvetica, sans-serif;
-    }
-</style>
 
 <div class=" container align-items-center mt-5 p-5">
-    <h1 class=" text-md-center mt-3 p-3"> Du Học Đức </h1>
+    <h1 class=" text-md-center mt-3 p-3" style ="color:#225473" > Du Học Đức </h1>
     <h1 class="text-md-center">-------- <i class="fa-solid fa-map-location-dot"></i></i> -------- </h1></h3>
 </div>
 
@@ -67,8 +49,8 @@ include("inc/top.php");
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<h3 class="text-md-center mt-3"> Chương trình Du học nghề tại Đức </h3> 
-<h3 class="text-md-center">Xây Dựng Tương Lai Vững Chắc Với AE </h3>
+<h3 class="text-md-center mt-3" style ="color:#225473"> Chương trình Du học nghề tại Đức </h3> 
+<h3 class="text-md-center"style ="color:#225473">Xây Dựng Tương Lai Vững Chắc Với AE </h3>
 
 <div class="m-5">
 <p>Bạn đam mê nghề nghiệp và muốn có cơ hội học tập và làm việc ở nước ngoài? Trung Tâm tư vấn Du học &#8211; Ngoại Ngữ AE mang đến cho bạn chương trình Du học nghề tại Đức đầy hấp dẫn và đa dạng.</p>
