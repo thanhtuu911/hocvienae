@@ -1,5 +1,20 @@
 <?php include("inc/top.php") ?>
-<?php 
+
+<style>
+    /* Đặt padding-top để tránh bị trang top đè lên */
+    body {
+        padding-top: 100px; /* Điều chỉnh giá trị theo yêu cầu */
+    }
+    /* Đảm bảo trang top nằm phía trên trang cart */
+    .navbar {
+        z-index: 1000;
+    }
+</style>
+
+
+<section class=''>
+<div>
+<?php
 if(demhangtronggio()==0)
 {
     ?>
@@ -10,7 +25,7 @@ if(demhangtronggio()==0)
 else
 {
     ?>
-    <h3 class="text-info">Giỏ hàng của bạn:</h3>
+    <h3 class="text-info">Khóa học của bạn:</h3>
     <form action="index.php">
         <table class="table table-hover">
             <tr>
@@ -20,10 +35,10 @@ else
             ?> 
             <tr>
                 <td><img  width="50" src="../<?php echo $mh["hinhanh"]; ?>"></td>
-                <td><?php echo $mh["tenmathang"]; ?></td>
-                <td><?php echo number_format($mh["giaban"]) ; ?>đ</td>
+                <td><?php echo $mh["tenkhoahoc"]; ?></td>
+                <td><?php echo number_format($mh["phi"]) ; ?>VNĐ</td>
                 <td><input type="number" name="mh[<?php echo $id; ?>]" value="<?php echo $mh["soluong"]; ?>"></td>
-                <td> <?php echo number_format($mh["thanhtien"]); ?>đ</td>
+                <td> <?php echo number_format($mh["thanhtien"]); ?>VNĐ</td>
             </tr>
             <?php endforeach; ?>
             <tr>
@@ -46,8 +61,9 @@ else
     </form>
     <?php
 }
-
 ?>
+</div>
+</section> 
 <?php
 include("inc/bottom.php");
 ?>
