@@ -23,28 +23,27 @@ if (isset($_REQUEST["action"])) {
 
 switch ($action) {
     case "null":
-        $khoahoc = $kh->laykhoahoc();	
+        $khoahoc = $kh->laykhoahoc();
         include("home.php");
         break;
     case "batdau":
-        $khoahoc = $kh->laykhoahoc();	
+        $khoahoc = $kh->laykhoahoc();
         include("start.php");
         break;
-        
-    case"group":
-        if(isset($_REQUEST["id"])){
+
+    case "group":
+        if (isset($_REQUEST["id"])) {
             $madm = $_REQUEST["id"];
             $dmuc = $dm->laydanhmuctheoid($madm);
-            $tendm =  $dmuc["tendanhmuc"];   
+            $tendm =  $dmuc["tendanhmuc"];
             $khoahoc = $kh->laykhoahoctheodanhmuc($madm);
             include("group.php");
-        }
-        else{
+        } else {
             include("start.php");
         }
         break;
-    case "detail": 
-        if(isset($_GET["id"])){
+    case "detail":
+        if (isset($_GET["id"])) {
             $mahang = $_GET["id"];
             // tăng lượt xem lên 1
             // $kh->tangluotxem($mahang);
@@ -56,54 +55,63 @@ switch ($action) {
             include("detail.php");
         }
         break;
-        case "chovaogio":
-            if(isset($_GET["id"]))
-                $id = $_GET["id"];
-            if(isset($_GET["soluong"]))
-                $soluong = $_GET["soluong"];
-            else
-                $soluong = 1;
-            if(isset($_SESSION["giohang"][$id]))
-            {
-                $soluong = $soluong + $_SESSION["giohang"][$id];
-                $_SESSION["giohang"][$id] = $soluong;
+    case "chovaogio":
+        if (isset($_GET["id"]))
+            $id = $_GET["id"];
+        if (isset($_GET["soluong"]))
+            $soluong = $_GET["soluong"];
+        else
+            $soluong = 1;
+        if (isset($_SESSION["giohang"][$id])) {
+            $soluong = $soluong + $_SESSION["giohang"][$id];
+            $_SESSION["giohang"][$id] = $soluong;
+        } else {
+            themhangvaogio($id, $soluong);
+        }
+        $giohang = laygiohang();
+        include("cart.php");
+        break;
+    case "giohang":
+        $giohang = laygiohang();
+        include("cart.php");
+        break;
+    case "capnhatgio":
+        if (isset($_REQUEST["mh"])) {
+            $mh = $_REQUEST["mh"];
+            foreach ($mh as $id => $soluong) {
+                if ($soluong > 0)
+                    capnhatsoluong($id, $soluong);
+                else
+                    xoamotmathang($id);
             }
-            else
-            {
-                themhangvaogio($id,$soluong);
+        }
+        $giohang = laygiohang();
+        include("cart.php");
+        break;
+    case "xoagiohang":
+        xoagiohang();
+        $giohang = laygiohang();
+        include("cart.php");
+        break;
+        case "xldangnhap":
+            $email = $_POST["txtemail"];
+            $matkhau = $_POST["txtmatkhau"];
+            $kh = new KHACHHANG();
+            if($kh->kiemtrakhachhanghople($email,$matkhau)==TRUE){
+                $_SESSION["khachhang"] = $kh->laythongtinkhachhang($email);
+                // đọc thông tin (đơn hàng) của kh
+                include("info.php");
             }
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
-        case "giohang":
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
-        case "capnhatgio":
-            if(isset($_REQUEST["mh"]))
-            {
-                $mh = $_REQUEST["mh"];
-                foreach($mh as $id => $soluong)
-                {
-                    if($soluong >0)
-                        capnhatsoluong($id,$soluong);
-                    else
-                        xoamotmathang($id);
-                }
+            else{
+                //$tb = "Đăng nhập không thành công!";
+                include("loginform.php");
             }
-            $giohang = laygiohang();
-            include("cart.php");
             break;
-        case "xoagiohang":
-            xoagiohang();
-            $giohang = laygiohang();
-            include("cart.php");
-            break;    
 
     case "intro":
         include("intro.php");
         break;
-    
+
     case "home":
         include("home.php");
         break;
@@ -125,6 +133,7 @@ switch ($action) {
     case "uc":
         include("detailUc.php");
         break;
+<<<<<<< HEAD
     case "canada":
         include("detailCanada.php");
         break;
@@ -135,5 +144,9 @@ switch ($action) {
     //     include("dangky.php");
     //     break;
        
+=======
+    case "dangnhap":
+        include("loginform.php");
+        break;
+>>>>>>> 128e93d06c67f7264df2b9a6738be2fed8008c03
 }
-?>

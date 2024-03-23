@@ -56,7 +56,7 @@
 
                     <li class="nav-item custom-nav-item"><a href="index.php" class="nav-link">Trang Chủ</a></li>
 
-                    <li class="nav-item custom-nav-item"><a href="intro.php" class="nav-link">Giới Thiệu</a></li>
+                    <!-- <li class="nav-item custom-nav-item"><a href="intro.php" class="nav-link">Giới Thiệu</a></li> -->
 
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" id="navbarDropdown" href="#" role="button"
@@ -84,8 +84,13 @@
                         </ul>
                     </li>
 
+<<<<<<< HEAD
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
                     <li class="nav-item custom-nav-item"><a href="index.php?action=lienhe" class="nav-link">Liên Hệ</a></li>
+=======
+                    <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li> -->
+                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>
+>>>>>>> 128e93d06c67f7264df2b9a6738be2fed8008c03
 
                     <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li> -->
                     <!-- <li class="nav-item custom-nav-item"><a href="index.php?action=dangnhap" class="nav-link">Login</a></li> -->
@@ -116,7 +121,7 @@
 
                         <div class="col-md-4 "> -->
                             <ul>
-                                <a href="index.php?action=giohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Hóa đơn
+                                <a href="index.php?action=giohang" class="btn btn-outline-light"><i class="bi bi-cart3"></i> Hóa đơn 
                                     <span class="badge bg-danger text-white ms-1 rounded-pill"> <?php echo demhangtronggio() ?>                                       
                                     </span>
                                 </a>
