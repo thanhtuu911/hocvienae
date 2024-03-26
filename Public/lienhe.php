@@ -2,101 +2,73 @@
 
 
 
+<div class="container mt-4 p-5" id="Contact">
+    <!-- Start contact us container -->
+    <h2 class="text-md-center mb-4 mt-5"> LIÊN HỆ VỚI CHÚNG TÔI</h2>
+    <!-- Heading contact -->
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Form liên hệ -->
+            <form action="index.php" method="post">
+                <input type="hidden" name="action" value="tuvan">
+                <div class="mb-3">
+                    <input type="text" name="txthoten" class="form-control" placeholder="Họ & Tên" required>
+                </div>
+                <select type='text' name="txttuoi" class="form-control mb-3" required>
+                    <option>Chọn tuổi:</option>
+                    <?php
+                    for ($i = 10; $i <= 30; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                    ?>
+                </select>
+                <div class="mb-3">
+                    <input type="email" name="txtemail" class="form-control" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="txtsdt" class="form-control" placeholder="Số Điện Thoại" required>
+                </div>
+                <div class="mb-3">
+                    <select type='text' name="txttenkhoahoc" class="form-control mb-3">
+                        <option>Chọn Khóa Học: B1 or B2 or C1</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                    </select>
 
-<!-- <div class="container mt-5 p-4">
-    <h1 class="text-md-center text-white mt-5 p-3" style="background-color:#225473"> Liên Hệ</h1>
-    <h2 class="lead m-4">Cảm ơn bạn đã quan tâm đến chúng tôi. Vui lòng điền thông tin vào biểu mẫu dưới đây và chúng
-        tôi sẽ liên hệ lại với bạn sớm nhất có thể.</h2>
-    <?php 
-	if(isset($_SESSION["khachhang"])){
-	?>
-    <form action="process_contact.php" method="post">
-        <div class="mb-3">
-            <label for="name" class="form-label">Họ và Tên:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Số Điện Thoại:</label>
-            <input type="tel" class="form-control" id="phone" name="phone">
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Nội Dung:</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Gửi</button>
-    </form>
-    <?php
-	}
-	else
-	?>
-</div> -->
+                    <input type="text" name="txtdiachi" class="form-control" placeholder="Địa Chỉ">
+                </div>
+                <div class="mb-3">
+                    <textarea name="txtnoidung" class="form-control" placeholder="Tôi có thể giúp gì cho bạn?"
+                        style="height: 150px;"></textarea> <br>
+                </div>
 
-<!-- <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">Thành Công</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Biểu mẫu đã được gửi thành công. Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất.</p>
+                <input type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" value='Gửi yêu cầu' >
+                    
+            </form>
+            <div class="col-md-4 stripe text-light text-center">
+                <h4>American English</h4>
+                <p>
+                    Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
+                    trong công tác đào tạo thế hệ trẻ. <br>
+                </p>
             </div>
         </div>
     </div>
-</div> -->
-
-
-
-<div class="container mt-5 p-4">
-    <h1 class="text-md-center text-white mt-5 p-3" style="background-color:#225473"> Liên Hệ Tư Vấn </h1>
-    <p class="lead mb-4">Cảm ơn bạn đã quan tâm đến chúng tôi. Vui lòng điền thông tin vào biểu mẫu dưới đây và nhấn
-        "Gửi".</p>
-    <form id="contactForm" action="index.php" method="post">
-        <div class="mb-3">
-            <label for="name" class="form-label">Họ và Tên:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Số Điện Thoại:</label>
-            <input type="tel" class="form-control" id="phone" name="phone">
-        </div>
-        <div class="mb-3">
-            <label for="message" class="form-label">Nội Dung:</label>
-            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-        </div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Gửi</button>
-    </form>
-</div>
-
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">Thành Công</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi lại sớm nhất có thể.</p>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog mt-5 p-5">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Đã gửi thành công</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi lại sớm nhất có thể.</p>
+                </div>
+                <div class="modal-footer">
+                    <a type='submit' class="btn btn-secondary text-md-center" data-bs-dismiss="modal" href="index.php?action=tuvan"> Đóng</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Ngăn chặn form submit mặc định
-
-            // Thực hiện xử lý gửi dữ liệu, ở đây là ví dụ sử dụng setTimeout để giả lập việc gửi thành công
-            setTimeout(function() {
-                $('#successModal').modal('show'); // Hiển thị dialog thông báo thành công
-            }, 2000); // Thời gian giả lập 2 giây
-        });
-    </script> -->
-<?php include("inc/bottom.php"); ?>

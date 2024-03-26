@@ -6,7 +6,7 @@ require("../model/giohang.php");
 require("../model/khachhang.php");
 require("../model/donhang.php");
 require("../model/donhangct.php");
-// require("../model/diachi.php");
+require("../model/lienhe.php");
 
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
@@ -88,26 +88,53 @@ switch ($action) {
         $giohang = laygiohang();
         include("cart.php");
         break;
+
+
+
     case "xoagiohang":
         xoagiohang();
         $giohang = laygiohang();
         include("cart.php");
         break;
-        case "xldangnhap":
-            $email = $_POST["txtemail"];
-            $matkhau = $_POST["txtmatkhau"];
-            $kh = new KHACHHANG();
-            if($kh->kiemtrakhachhanghople($email,$matkhau)==TRUE){
-                $_SESSION["khachhang"] = $kh->laythongtinkhachhang($email);
-                // đọc thông tin (đơn hàng) của kh
-                include("info.php");
-            }
-            else{
-                //$tb = "Đăng nhập không thành công!";
-                include("loginform.php");
-            }
-            break;
 
+
+    case "xldangnhap":
+        $email = $_POST["txtemail"];
+        $matkhau = $_POST["txtmatkhau"];
+        $kh = new KHACHHANG();
+        if($kh->kiemtrakhachhanghople($email,$matkhau)==TRUE){
+            $_SESSION["khachhang"] = $kh->laythongtinkhachhang($email);
+            // đọc thông tin (đơn hàng) của kh
+            include("info.php");
+        }
+        else{
+            //$tb = "Đăng nhập không thành công!";
+            include("loginform.php");
+        }
+        break;
+
+
+    case "tuvan": 
+        $noidung = $_POST['txtnoidung']; 
+
+        if (!isset($_SESSION["lienhe"])) {
+            // Lấy dữ liệu từ form
+            $hoten = $_POST['txthoten'];
+            $tuoi = $_POST['txttuoi'];
+            $email = $_POST['txtemail'];
+            $diachi = $_POST['txtdiachi'];
+            $tenkhoahoc = $_POST['txttenkhoahoc']; 
+            $sdt = $_POST['txtsdt'];     
+            
+            
+            $lh = new LIENHE();
+            $id = $lh->themlienhe( $hoten, $tuoi, $email, $diachi, $tenkhoahoc, $sdt, $noidung);
+        } else {
+            $id = $_SESSION["lienhe"]["id"];
+            echo "đã xảy ra lõi";
+            // Nếu một trong các trường dữ liệu không tồn tại, bạn có thể thông báo cho người dùng hoặc xử lý lỗi theo cách khác
+        }
+        break;
     case "intro":
         include("intro.php");
         break;
@@ -133,7 +160,6 @@ switch ($action) {
     case "uc":
         include("detailUc.php");
         break;
-<<<<<<< HEAD
     case "canada":
         include("detailCanada.php");
         break;
@@ -144,9 +170,7 @@ switch ($action) {
     //     include("dangky.php");
     //     break;
        
-=======
     case "dangnhap":
         include("loginform.php");
         break;
->>>>>>> 128e93d06c67f7264df2b9a6738be2fed8008c03
 }

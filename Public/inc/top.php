@@ -83,14 +83,11 @@
                             </li>
                         </ul>
                     </li>
-
-<<<<<<< HEAD
                     <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li>
                     <li class="nav-item custom-nav-item"><a href="index.php?action=lienhe" class="nav-link">Liên Hệ</a></li>
-=======
-                    <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Thanh Toán</a></li> -->
-                    <li class="nav-item custom-nav-item"><a href="#" class="nav-link">Liên Hệ</a></li>
->>>>>>> 128e93d06c67f7264df2b9a6738be2fed8008c03
+
+                   
+
 
                     <!-- <li class="nav-item custom-nav-item"><a href="#" class="nav-link">My Profile</a></li> -->
                     <!-- <li class="nav-item custom-nav-item"><a href="index.php?action=dangnhap" class="nav-link">Login</a></li> -->
