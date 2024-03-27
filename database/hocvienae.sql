@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2024 at 07:02 AM
+-- Generation Time: Mar 27, 2024 at 08:55 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -84,10 +84,10 @@ INSERT INTO `giaovien` (`id`, `hoten`, `email`, `sodienthoai`, `hinhanh`) VALUES
 
 CREATE TABLE `hoadon` (
   `id` int(11) NOT NULL,
-  `hocvien_id` int(11) DEFAULT NULL,
-  `ngaythanhtoan` date DEFAULT NULL,
-  `tongcong` float DEFAULT NULL,
-  `nguoidung_id` int(11) DEFAULT NULL
+  `nguoidung_id` int(11) DEFAULT NULL,
+  `ngaythanhtoan` datetime DEFAULT current_timestamp(),
+  `tongtien` float DEFAULT NULL,
+  `ghichu` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -99,7 +99,9 @@ CREATE TABLE `hoadon` (
 CREATE TABLE `hoadonct` (
   `id` int(11) NOT NULL,
   `hoadon_id` int(11) DEFAULT NULL,
-  `lophoc_id` int(11) DEFAULT NULL,
+  `khoahoc_id` int(11) DEFAULT NULL,
+  `dongia` float DEFAULT NULL,
+  `soluong` int(11) DEFAULT NULL,
   `thanhtien` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -125,17 +127,15 @@ CREATE TABLE `hocvien` (
 --
 
 INSERT INTO `hocvien` (`id`, `hoten`, `namsinh`, `gioitinh`, `email`, `sodienthoai`, `diachi`, `hinhanh`) VALUES
-(1, 'Ngô Hoàng Ân', '1/1/2003', 'Nam', 'nha@aea.com', '0123456789', 'Long Xuyên', 'image/student/st01.jpg'),
-(2, 'Phạm Nhật Cường', '1/2/2004', 'Nam', 'pnc@ae.com', '0122345678', 'Châu Thành', 'image/student/st02.jpg'),
-(16, 'Tu', '2002', 'Nam', 'tu@ae.com', '123415', 'AG', NULL),
-(17, 'Thanhh', '', '', '', '', '', ''),
+(1, 'Ngô Hoàng Ân', '1/1/2003', 'Nam', 'nha@aea.com', '0123456789', 'An Giang', 'image/student/st01.jpg'),
+(2, 'Phạm Nhật Cường', '1/2/2004', 'Nam', 'pnc@ae.com', '0122345678', 'Châu Thành', 'image/student/st02.jpg\r\n'),
 (18, 'Nguyễn Sỹ Dân', '3/4/2002', 'Nam', NULL, '083799377', 'Châu Phú, An Giang', 'image/student/st03.jpg'),
 (19, 'Dương Nguyễn Quốc Dân', '2003', 'Nam', NULL, '0288227873', 'Châu Thành,An Giang', 'image/student/st04.jpg'),
 (20, 'Phan Tiến Đạt', '2001', 'Nam', NULL, '0276867832', 'Mỹ Hòa, Thoại Sơn, An Giang', 'image/student/st05.jpg'),
 (21, 'Nguyễn Lập Đông', '2004', 'Nam', NULL, '0987397673', 'Mỹ Thới, Long Xuyên, AG', 'image/student/st06.jpg'),
 (22, 'Huỳnh Đức Duy', '2005', 'Nam', NULL, '0536735762', 'Đông Xuyên, LX, AG', 'image/student/st07.jpg'),
 (23, 'Đặng Nhật Lê Huy', '2004', 'Nam', NULL, '0738636782', 'Mỹ Xuyên, LX, AG', 'image/student/st08.jpg'),
-(24, 'Nguyễn Trí Khanh', '2003', 'Nam', NULL, '0363682763', 'Long Xuyên, An Giang', 'image/student/st09.jpg'),
+(24, 'Nguyễn Trí Khanh', '2003', 'Nam', NULL, '0363682763', 'Long Xuyên, An Giang', 'image/student/st9.jpg'),
 (25, 'Đào Anh Khoa', '2001', 'Nam', NULL, '026628872676', 'Chợ Mới, An Giang', 'image/student/st10.jpg'),
 (26, 'Hàn Lâm Khởi', '2003', 'Nam', NULL, '05582636822', 'LX, AG', 'image/student/st11.jpg'),
 (27, 'Nguyễn Thị Phương Nghi', '2005', 'Nữ', NULL, '0251257112', 'Mỹ Long, LX, AG', 'image/student/st12.jpg'),
@@ -189,6 +189,32 @@ INSERT INTO `khoahoc` (`id`, `danhmuc_id`, `tenkhoahoc`, `chitiet`, `phi`, `hinh
 (6, 2, 'IELTS ', '<p>Chứng Chỉ IELTS</p>', 20000000, 'image/courses/ielts.jpg'),
 (7, 3, 'Nghe Nói Căn Bản', '<p>Nghe nói căn bản</p>', 8000000, 'image/courses/nghenoicanban.jpg\r\n'),
 (11, 2, 'C1', '<p>Căng như dây đàn</p>', 4600000, 'image/courses/C1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lienhe`
+--
+
+CREATE TABLE `lienhe` (
+  `id` int(11) NOT NULL,
+  `hoten` varchar(50) NOT NULL,
+  `tuoi` varchar(4) NOT NULL,
+  `sdt` varchar(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `diachi` varchar(255) NOT NULL,
+  `tenkhoahoc` varchar(20) NOT NULL,
+  `noidung` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `lienhe`
+--
+
+INSERT INTO `lienhe` (`id`, `hoten`, `tuoi`, `sdt`, `email`, `diachi`, `tenkhoahoc`, `noidung`) VALUES
+(1, 'then', '19', '02809282', 'ten@ae.com', 'TN', 'C1', 'Tui thèm đậu'),
+(2, 'then', '19', '02809282', 'ten@ae.com', 'TN', 'C1', 'Tui thèm đậu'),
+(3, 'then', '19', '02809282', 'ten@ae.com', 'TN', 'C1', 'Tui thèm đậu');
 
 -- --------------------------------------------------------
 
@@ -269,8 +295,7 @@ ALTER TABLE `giaovien`
 -- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `nguoidung_id` (`nguoidung_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hoadonct`
@@ -278,7 +303,7 @@ ALTER TABLE `hoadon`
 ALTER TABLE `hoadonct`
   ADD PRIMARY KEY (`id`),
   ADD KEY `hoadon_id` (`hoadon_id`),
-  ADD KEY `lophoc_id` (`lophoc_id`);
+  ADD KEY `khoahoc_id` (`khoahoc_id`);
 
 --
 -- Indexes for table `hocvien`
@@ -300,6 +325,12 @@ ALTER TABLE `ketqua`
 ALTER TABLE `khoahoc`
   ADD PRIMARY KEY (`id`),
   ADD KEY `danhmuc_id` (`danhmuc_id`);
+
+--
+-- Indexes for table `lienhe`
+--
+ALTER TABLE `lienhe`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lophoc`
@@ -341,13 +372,13 @@ ALTER TABLE `giaovien`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `hoadonct`
 --
 ALTER TABLE `hoadonct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `hocvien`
@@ -366,6 +397,12 @@ ALTER TABLE `ketqua`
 --
 ALTER TABLE `khoahoc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `lienhe`
+--
+ALTER TABLE `lienhe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lophoc`
@@ -391,17 +428,11 @@ ALTER TABLE `dangky`
   ADD CONSTRAINT `dangky_ibfk_2` FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
 
 --
--- Constraints for table `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`nguoidung_id`) REFERENCES `nguoidung` (`id`);
-
---
 -- Constraints for table `hoadonct`
 --
 ALTER TABLE `hoadonct`
   ADD CONSTRAINT `hoadonct_ibfk_1` FOREIGN KEY (`hoadon_id`) REFERENCES `hoadon` (`id`),
-  ADD CONSTRAINT `hoadonct_ibfk_2` FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
+  ADD CONSTRAINT `hoadonct_ibfk_2` FOREIGN KEY (`khoahoc_id`) REFERENCES `khoahoc` (`id`);
 
 --
 -- Constraints for table `ketqua`

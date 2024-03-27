@@ -36,11 +36,16 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <h2>Đăng ký khóa học</h2>
+        <h2>Đăng ký thông tin</h2>
         <label for="hoten">Họ và tên:</label>
         <input type="text" id="hoten" name="hoten" required>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+
+		<!-- <label for="pass">Pass:</label>
+        <input type="pass" id="pass" name="pass" required> -->
+
+
         <label for="ngaysinh">Ngày sinh:</label>
         <input type="date" id="namsinh" name="namsinh" required>
         <label for="sodienthoai">Số điện thoại:</label>
@@ -55,6 +60,10 @@
 		<div class="my-3">
 			<label>Email</label>
 			<input type="email" class="form-control" name="txtemail" required>
+		</div>
+		<div class="my-3">
+			<label>Passwork</label>
+			<input type="pass" class="form-control" name="txtpass" required>s
 		</div>
 		<div class="my-3">
 			<label>Họ tên</label>

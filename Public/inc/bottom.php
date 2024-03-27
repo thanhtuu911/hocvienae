@@ -121,62 +121,27 @@
 </div>
 <!-- end Follow -->
 <!-- Start Contact -->
-<div>
 
-</div>
-<div class="container mt-4 p-2" id="Contact">
-    <!-- Start contact us container -->
-    <h2 class="text-center mb-4"> LIÊN HỆ VỚI CHÚNG TÔI</h2>
-    <!-- Heading contact -->
-    <div class="row">
-        <div class="col-md-8">
-            <form action="index.php" method="post">
-                <input type="text" name="txthoten" class="form-control" placeholder="Họ & Tên">
-                <td><input type="text" name="txttuoi" class="form-control" placeholder="Ngày/Tháng/NămSinh">
-                    <input type="text" name="txtdiachi" class="form-control" placeholder="Địa Chỉ">
-                    <select name="txttenkhoahoc" class="form-control mb-3" required>
-                        <option>Chọn Khóa Học: B1 or B2 or C1</option>
-                        <option value="B1">B1</option>
-                        <option value="B2">B2</option>
-                        <option value="C1">C1</option>
-                    </select>
-                    <input type="email" name="txtemail" class="form-control" placeholder="E-mail">
-                    <textarea name="txtnoidung" class="form-control" placeholder="Tôi có thể giúp gì cho bạn?"
-                        style="height: 150px;"></textarea> <br>
-                    <input type="submit" class="btn btn-primary" value="Gửi" ><br>
-            </form>
-
-        </div>
-        <div class="col-md-4 stripe text-light text-center">
-            <h4>American English</h4>
-            <p>
-                Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
-                trong công tác đào tạo thế hệ trẻ. <br>
-            </p>
-        </div>
-        <!-- end 1 cot contact voi chung toi -->
-    </div>
-</div>
-<!-- End Contact -->
 <!-- map -->
 <section>
-    <div class="container mt-3 ">
+    <div class="container-center m-5">
         <div class="row">
             <div class="col">
-                <!-- <h5><i class="fa-solid fa-store"></i> 18 Ung văn khiêm, Phường đông xuyên, Thành phố Long Xuyên, An Giang</h5> -->
+        
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15698.317084112667!2d105.4312339!3d10.3754858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a73dada8a4e8f%3A0x15f984bf783b62f1!2zVHJ1bmcgVMOibSBOZ2_huqFpIE5n4buvIEFF!5e0!3m2!1sen!2s!4v1711199603195!5m2!1sen!2s"
-                    width="1300" height="800" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15698.317084112667!2d105.4312339!3d10.3754858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a73dada8a4e8f%3A0x15f984bf783b62f1!2zVHJ1bmcgVMOibSBOZ2_huqFpIE5n4buvIEFF!5e0!3m2!1sen!2s!4v1711524511210!5m2!1sen!2s"
+                    width="1600" height="800" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
 </section>
 <!-- map -->
 <!-- Start Footer -->
 <footer class="container-fluid  text-center p-2 mt-5" style="background-color: #2C3D57;">
-    <small class="text-white"> </small>
-    Copyright &copy; 2024 || Designed<br>
-    By Thanh Tu and Hoai Thanh
+    <small class="text-white " style="color:aqua;">
+        Copyright &copy; 2024 || Designed<br>
+        By Thanh Tu and Hoai Thanh
     </small>
     <small>
         <!-- <a class="btn btn-info" href="#login" data-toggle="modal" data-target="#adminLoginModalCenter">Admin Login</a> -->

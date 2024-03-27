@@ -5,7 +5,7 @@ include("inc/top.php");
 </style>
 
 <div class=" container align-items-center mt-5 p-5 " >
-    <h1 class="text-md-center mt-5 p-3" style ="color:#225473"> Du Học Canada </h1>
+    <h1 class="text-md-center mt-5 p-3" > Du Học Canada </h1>
     <h1 class="text-md-center">-------- <i class="fa-solid fa-map-location-dot"></i></i> -------- </h1>
     </h3>
 </div>

@@ -1,8 +1,9 @@
 <?php include("inc/top.php"); ?>
 
 <br><br>
-<div class="container">  
-<div class="row"> 
+<br><br>
+<div class="container mt-5  ">  
+<div class="row "> 
     <h3>Trang thông tin khách hàng</h3>      
    <?php 
    $kh = new KHACHHANG();
@@ -14,11 +15,9 @@
     <td><a >Số điện thoại: <?php echo $_SESSION["nguoidung"]["sodienthoai"]; ?></a></td>
     </tr>
   
-    
   
-	<h4>Danh sách đơn hàng </h4>
+	<h4>Danh sách khóa học </h4>
     
 </div>
 </div>
 
-<?php include("inc/bottom.php"); ?>

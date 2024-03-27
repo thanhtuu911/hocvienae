@@ -40,19 +40,22 @@
                 </div>
                 <div class="mb-3">
                     <textarea name="txtnoidung" class="form-control" placeholder="Tôi có thể giúp gì cho bạn?"
-                        style="height: 150px;"></textarea> <br>
+                        style="height: 100px;"></textarea> <br>
                 </div>
 
-                <input type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" value='Gửi yêu cầu' >
-                    
+                <input type="submit " class="btn btn-primary"  value='Gửi yêu cầu'>
+                   
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal"> Xác nhận yêu cầu</button>
+               
+
             </form>
-            <div class="col-md-4 stripe text-light text-center">
-                <h4>American English</h4>
-                <p>
-                    Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
-                    trong công tác đào tạo thế hệ trẻ. <br>
-                </p>
-            </div>
+        </div>
+        <div class="col-md-4 stripe text-light text-center">
+            <h4>American English</h4>
+            <p>
+                Đặc biệt với tinh thần lấy chữ “Tâm” đặt lên hàng đầu trong quá trình giảng dạy,<br>
+                trong công tác đào tạo thế hệ trẻ. <br>
+            </p>
         </div>
     </div>
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -66,7 +69,8 @@
                     <p>Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi lại sớm nhất có thể.</p>
                 </div>
                 <div class="modal-footer">
-                    <a type='submit' class="btn btn-secondary text-md-center" data-bs-dismiss="modal" href="index.php?action=tuvan"> Đóng</a>
+                    <button type='submit' class="btn btn-secondary text-md-center" data-bs-dismiss="modal"
+                        href="index.php?action=tuvan"> Đóng</button>
                 </div>
             </div>
         </div>

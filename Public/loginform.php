@@ -1,62 +1,62 @@
-   <head>
-   <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" type="image/jpg" href="../image/logo/LogoAE2.jpg" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Đăng Ký Tài Khoản</title>  
-  <link rel="shortcut icon" type="image/jpg" href="../image/logo/LogoAE2.jpg" />
+</head>
+<body>
 
-  </head>
-    <body>
-    <section class="vh-100" style="background-color: #9A616D;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+<div class="container mt-5" >
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Đăng nhập</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Ảnh trong form -->
+                    <div class="text-center mb-3">
+                        <img src="../image/logo/LogoAE1.jpg" alt="Logo" class="img-fluid" style="max-height: 100px;">
+                    </div>
+                    <!-- Form đăng nhập -->
+                    <form action="index.php?action=xldangnhap" method="POST">
+                        <div class="form-group">
+                            <label for="txtemail">Email:</label>
+                            <input type="email" class="form-control" id="txtemail" name="txtemail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtmatkhau">Mật khẩu:</label>
+                            <input type="password" class="form-control" id="txtmatkhau" name="txtmatkhau" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="chknhomatkhau">
+                            <label class="form-check-label" for="chknhomatkhau">Nhớ mật khẩu</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                    </form>
+                </div>
+                <div class="card-footer bg-white">
+                    <p class="text-center">Hoặc đăng nhập bằng:</p>
+                    <!-- Đăng nhập bằng Facebook và Google -->
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary mx-2"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="#" class="btn btn-danger mx-2"><i class="fab fa-google"></i> Google</a>
+                    </div>
+                    <!-- Link đến trang đăng ký -->
+                    <p class="text-center mt-3">Chưa có tài khoản? <a href="dangky.php">Đăng ký ngay</a></p>
+                </div>
             </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
-
-                <form>
-
-                  <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <span class="h1 fw-bold mb-0">Logo</span>
-                  </div>
-
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-
-                  <div class="form-outline mb-4">
-                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example17">Email address</label>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Password</label>
-                  </div>
-
-                  <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
-                  </div>
-
-                  <a class="small text-muted" href="#!">Forgot password?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
-                      style="color: #393f81;">Register here</a></p>
-                  <a href="#!" class="small text-muted">Terms of use.</a>
-                  <a href="#!" class="small text-muted">Privacy policy</a>
-                </form>
-
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
+</html>
