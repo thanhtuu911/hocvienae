@@ -4,8 +4,8 @@ require("../model/danhmuc.php");
 require("../model/khoahoc.php");
 require("../model/giohang.php");
 require("../model/khachhang.php");
-require("../model/hoadon.php");
-require("../model/hoadonct.php");
+require("../model/donhang.php");
+require("../model/donhangct.php");
 require("../model/lienhe.php");
 
 $dm = new DANHMUC();
@@ -157,12 +157,12 @@ switch ($action) {
 
 
         // lưu đơn hàng
-        $dh = new HOADON();
+        $dh = new DONHANG();
         $tongtien = tinhtiengiohang();
         $donhang_id = $dh->themdonhang($khachhang_id, $tongtien);
 
         // lưu chi tiết đơn hàng
-        $ct = new HOADONCT();
+        $ct = new DONHANGCT();
         $giohang = laygiohang();
         foreach ($giohang as $id => $mh) {
             $dongia = $mh["phi"];
@@ -200,6 +200,10 @@ switch ($action) {
         }
         include("message.php");
         break;
+    case "tailieu":
+        include("tailieu.php");
+        
+        break;            
     case "thanhtoan":
         include("pay.php");
         break;
