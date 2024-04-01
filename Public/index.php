@@ -6,8 +6,10 @@ require("../model/giohang.php");
 require("../model/khachhang.php");
 require("../model/hoadon.php");
 require("../model/hoadonct.php");
+require("../model/lienhe.php");
+require("../model/documents.php");
 
-
+$tl = new TAILIEU();
 $dm = new DANHMUC();
 $danhmuc = $dm->laydanhmuc();
 $kh = new KHOAHOC();
@@ -91,7 +93,7 @@ switch ($action) {
         $giohang = laygiohang();
         include("cart.php");
         break;
-    case 'xoa1khoahoc':
+    case "xoa1khoahoc":
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             xoa1khoahoc($id); // Gọi hàm xóa 1 khóa học với id tương ứng
@@ -234,5 +236,24 @@ switch ($action) {
         break;
     case "dangnhap":
         include("loginform.php");
+        break;
+    case "themtailieu":
+        if (!isset($_SESSION["tailieu"])) {
+            $tenkhoahoc = $_POST["tenkhoahoc"];
+            $duongdan = $_POST["duongdan"];
+            $tl = new TAILIEU();
+            $tl->themtailieu($tenkhoahoc, $duongdan);
+            $tailieu = $tl->laytailieu();
+        } else {
+            $id = $_SESSION["tailieu"]["id"];
+            echo "đã xảy ra lõi";
+            // Nếu một trong các trường dữ liệu không tồn tại, bạn có thể thông báo cho người dùng hoặc xử lý lỗi theo cách khác
+        }
+        include("addFile.php");
+        break;
+    case "tailieu":
+        $tl = new TAILIEU();
+        $tailieu = $tl->laytailieu();
+        include("tailieu.php");
         break;
 }

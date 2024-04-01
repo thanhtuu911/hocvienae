@@ -3,9 +3,7 @@ include("inc/top.php");
 ?>
 
 <style>
-.container h1 {
-    background-color: #225470;
-}
+
 .container h2{
     color:#225470;
 }

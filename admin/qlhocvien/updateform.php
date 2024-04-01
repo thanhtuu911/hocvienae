@@ -35,6 +35,7 @@
       </div>
       <div class="mb-3">
         <label for="txtHinhanh" class="form-label">Hình ảnh:</label>
+        <img src="../../<?php echo $h["hinhanh"]; ?>" width="100" class="img-thumbnail">	
         <input type="file" class="form-control" id="txtHinhanh" name="hinhanh" value="<?php echo $h["hinhanh"]; ?>">
       </div>
       <button type="submit" class="btn btn-primary">Lưu thay đổi</button>

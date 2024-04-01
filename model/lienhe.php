@@ -9,6 +9,7 @@ class LIENHE{
     private $tenkhoahoc;
     private $sdt;
     private $noidung;
+    private $create_at;
    
     public function getid(){ return $this->id; }
     public function setid($value){ $this->id = $value; }
@@ -33,8 +34,25 @@ class LIENHE{
 
     public function getnoidung(){ return $this->noidung; }
     public function setnoidung($value){ $this->noidung = $value; }
+
+    public function getcreatr_at(){ return $this->create_at; }
+    public function setcreatr_at($value){ $this->create_at = $value; }
 	
-   
+	public  function laylienhe()
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM lienhe ";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
     public function themlienhe($hoten,$tuoi,$email,$diachi,$tenkhoahoc, $sdt ,$noidung){
 		$db = DATABASE::connect();      
 
@@ -77,6 +95,21 @@ class LIENHE{
 	// 	}
 	// }
 
-
+	public function laylienheTheoNgay($date)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM lienhe WHERE DATE(created_at) = :created_at";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(':created_at', $date);
+            $cmd->execute();
+            $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return false; // Trả về false nếu không thể lấy được danh sách học viên
+        }
+    }
 
 }

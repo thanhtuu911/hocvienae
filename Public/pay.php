@@ -67,9 +67,13 @@ include("inc/top.php");
 						<input type="submit" value="Hoàn tất thanh toán" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#thankYouModal">
 					</div>
 				</form>
+				
 			<?php
 			}
 			?>
+			
+					<a  href="congthanhtoan.php" class="btn btn-success" name="redirect" id="redirect">Thanh toan MOMO</a>
+				
 		</div>
 
 		<div class="col-sm-6">

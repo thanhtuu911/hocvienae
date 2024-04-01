@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function fetchSuggestions(keyword) {
         // Gửi yêu cầu đến server để lấy gợi ý
-        fetch(`timkiem.php?keyword=${keyword}`)
+        fetch(`search.php?keyword=${keyword}`)
             .then(response => response.text())
             .then(data => {
                 // Hiển thị danh sách gợi ý trong #search-suggestions

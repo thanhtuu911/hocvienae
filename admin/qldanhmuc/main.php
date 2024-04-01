@@ -34,7 +34,7 @@
 	?>
 </table>
 
-<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo">Thêm mới</a><h4>
+<h4><a class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#demo"><i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i></a><h4>
 
 <div id="demo" class="collapse">
 	 
@@ -51,6 +51,4 @@
 	</div>
 	</form>
 </div>
-
-
 <?php include("../inc/bottom.php"); ?>

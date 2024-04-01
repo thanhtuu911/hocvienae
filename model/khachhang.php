@@ -28,7 +28,7 @@ class KHACHHANG{
 			$sql = "SELECT * FROM nguoidung WHERE email=:email AND matkhau=:matkhau AND trangthai=1 AND loai=3";
 			$cmd = $db->prepare($sql);
 			$cmd->bindValue(":email", $email);
-			$cmd->bindValue(":matkhau", ($matkhau));
+			$cmd->bindValue(":matkhau", md5($matkhau));
 			$cmd->execute();
 			$valid = ($cmd->rowCount () == 1);
 			$cmd->closeCursor ();

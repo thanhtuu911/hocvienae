@@ -22,7 +22,7 @@ switch($action){
 		include("main.php");
         break;
     case "timkiem":
-        include("timkiem.php");
+        include("search.php");
         break;    
 	case "them":
 		$hocvien = $hv->layhocvien();
@@ -55,16 +55,16 @@ switch($action){
 		$hocvien = $hv->layhocvien();
 		include("main.php");
 		break;	
-    // case "chitiet":
-    //     if(isset($_GET["id"])){ 
-    //         $m = $hv->layhocvientheoid($_GET["id"]);            
-    //         include("detail.php");
-    //     }
-    //     else{
-    //         $hvoahoc = $hv->layhocvien();        
-    //         include("main.php");            
-    //     }
-    //     break;
+    case "chitiet":
+        if(isset($_GET["id"])){ 
+            $m = $hv->layhocvientheoid($_GET["id"]);            
+            include("detail.php");
+        }
+        else{
+            $hocvien = $hv->layhocvien();        
+            include("main.php");            
+        }
+        break;
     case "sua":
         if(isset($_GET["id"])){ 
             $h = $hv->layhocvientheoid($_GET["id"]);

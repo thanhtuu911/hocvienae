@@ -5,13 +5,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="css/search.css" />
-	<link rel="stylesheet" type="text/css" href="css/search.js" />
+	<!-- bieudo -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+	<!-- <script src="js/search.js" defer></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/search.css" /> -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script> -->
-    <!-- AweSome -->
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- AweSome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<title>Trang quản trị - AE</title>
 	<link rel="shortcut icon" type="image/jpg" href="../../image/logo/LogoAE2.jpg" />
@@ -26,72 +29,79 @@
 		<nav id="sidebar" class="sidebar js-sidebar  ">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="">
-          <span class="align-middle"> American English</span>
-        </a>
+					<span class="align-middle"> American English</span>
+				</a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header text-info">
 						HỆ THỐNG
 					</li>
-
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"ktnguoidung") != false) echo "active"; ?>">
+					<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
+						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "bangdieukhien") != false) echo "active"; ?>">
+							<a class="sidebar-link" href="../bangdieukhien/index.php">
+								<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng thống kê</span>
+							</a>
+						</li>
+					<?php } ?>
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "ktnguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../../ktnguoidung/index.php">
-						<!-- <i class="fa-solid fa-chart-simple fa-fade fa-xl"style="color: #c51b2c;"></i> -->
-						<i class="fa-solid fa-chart-pie fa-fade fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Bảng điều khiển</span>
+							<!-- <i class="fa-solid fa-chart-simple  fa-xl"style="color: #c51b2c;"></i> -->
+							<!-- <i class="fa-solid fa-chart-pie  fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Bảng điều khiển</span> -->
 						</a>
 					</li>
 
-				<?php if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){ ?>
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlnguoidung") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../qlnguoidung/index.php">
-						<i class="fa-solid fa-users fa-fade fa-xl"style="color: #c51b2c;"></i><span class="align-middle">Quản lý tài khoản</span>
-						</a>
-					</li>
-				<?php } ?>
+					<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
+						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qlnguoidung") != false) echo "active"; ?>">
+							<a class="sidebar-link" href="../qlnguoidung/index.php">
+								<i class="fa-solid fa-users  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Quản lý tài khoản</span>
+							</a>
+						</li>
+					<?php } ?>
 
 					<li class="sidebar-header text-info">
 						DANH MỤC
 					</li>
 
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qldanhmuc") != false) echo "active"; ?>">
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qldanhmuc") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qldanhmuc/index.php">
-						<i class="fa-solid fa-layer-group fa-xl fa-fade"style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Danh Mục</span>
+							<i class="fa-solid fa-layer-group fa-xl " style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Danh Mục</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlhocvien") != false) echo "active"; ?>">
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qlhocvien") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qlhocvien/index.php">
-						<i class="fa-solid fa-user-graduate fa-fade fa-xl"style="color: #c51b2c;"></i>
-						<span class="align-middle">Quản Lý Học Viên</span>
-						</a>
-					</li>
-					
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlkhoahoc") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../qlkhoahoc/index.php">
-						<i class="fa-solid fa-book-open fa-fade fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Khóa Học</span>
+							<i class="fa-solid fa-user-graduate  fa-xl" style="color: #c51b2c;"></i>
+							<span class="align-middle">Quản Lý Học Viên</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qllop") != false) echo "active"; ?>">
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qlkhoahoc") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../qlkhoahoc/index.php">
+							<i class="fa-solid fa-book-open  fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Khóa Học</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qllop") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qllop/index.php">
-						<i class="fa-solid fa-house fa-fade fa-xl"style="color: #c51b2c;"></i>
-						 <span class="align-middle">Quản Lý Lớp</span>
+							<i class="fa-solid fa-house  fa-xl" style="color: #c51b2c;"></i>
+							<span class="align-middle">Quản Lý Lớp</span>
 						</a>
 					</li>
 
 					<li class="sidebar-header text-info">
 						KINH DOANH
 					</li>
-					
+
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="../qlkhachhang/index.php">
-						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý khách hàng</span>
+							<i class="fa-solid fa-user-group fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản lý khách hàng</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="../qldonhang/index.php">
-						<i class="align-middle" data-feather="truck"></i> <span class="align-middle">Quản lý đơn hàng</span>
+							<i class="fa-regular fa-money-bill-1 fa-xl" style="color: #c51b2c;"></i>
+							Quản lý đơn hàng
 						</a>
 					</li>
 
@@ -107,8 +117,8 @@
 						</a>
 					</li> -->
 
-					
-					
+
+
 					<!-- <li class="sidebar-header text-info">
 						CẤU HÌNH WEBSITE
 					</li>
@@ -131,8 +141,8 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -160,7 +170,7 @@
 											</div>
 										</div>
 									</a>
-									
+
 								</div>
 								<div class="dropdown-menu-footer">
 									<a href="#" class="text-muted">Tất cả thông báo</a>
@@ -181,10 +191,10 @@
 									</div>
 								</div>
 								<div class="list-group">
-									<a href="#" class="list-group-item">
+									<a href="../qllienhe/index.php" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="../../images/users/doraemon.jpg" class="avatar img-fluid rounded-circle" alt="Mèo máy Đô rê mon">
+												<img src="../../image/account/0.jpg" class="avatar img-fluid rounded-circle" alt="Mèo máy Đô rê mon">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Doraemon</div>
@@ -193,7 +203,6 @@
 											</div>
 										</div>
 									</a>
-									
 								</div>
 								<div class="dropdown-menu-footer">
 									<a href="#" class="text-muted">Tất cả tin nhắn</a>
@@ -202,23 +211,25 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="<?php if ($_SESSION["nguoidung"]["hinhanh"]==NULL) echo "../../image/account/2.jpg"; else echo "../../image/account/". $_SESSION["nguoidung"]["hinhanh"]; ?>" class="avatar img-fluid rounded me-1" /> 
-								<span class="text-dark">Chào <?php if(isset($_SESSION["nguoidung"])) echo $_SESSION["nguoidung"]["hoten"]; else echo "bạn"; ?></span>
+								<img src="<?php if ($_SESSION["nguoidung"]["hinhanh"] == NULL) echo "../../image/account/2.jpg";
+											else echo "../../image/account/" . $_SESSION["nguoidung"]["hinhanh"]; ?>" class="avatar img-fluid rounded me-1" />
+								<span class="text-dark">Chào <?php if (isset($_SESSION["nguoidung"])) echo $_SESSION["nguoidung"]["hoten"];
+																else echo "bạn"; ?></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
-							
+
 								<a class="dropdown-item" href="../ktnguoidung/index.php?action=hoso">
 									<i class="align-middle me-1" data-feather="user"></i> Hồ sơ cá nhân
-								</a>								
+								</a>
 								<a class="dropdown-item" href="../ktnguoidung/index.php?action=matkhau">
 									<i class="align-middle me-1" data-feather="key"></i> Đổi mật khẩu
 								</a>
-								
-								
+
+
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="../ktnguoidung/index.php?action=dangxuat"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
 							</div>

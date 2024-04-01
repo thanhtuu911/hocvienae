@@ -127,10 +127,9 @@
             <div class="container-fluid mt-2" >
                 <div class="row">                    
                     <div class="col">
-                    <!-- <h5><i class="fa-solid fa-store"></i> 18 Ung văn khiêm, Phường đông xuyên, Thành phố Long Xuyên, An Giang</h5> -->
-					<iframe
+						<iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15698.317084112667!2d105.4312339!3d10.3754858!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a73dada8a4e8f%3A0x15f984bf783b62f1!2zVHJ1bmcgVMOibSBOZ2_huqFpIE5n4buvIEFF!5e0!3m2!1sen!2s!4v1711524511210!5m2!1sen!2s"
-                    width="1650" height="800" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 </div>

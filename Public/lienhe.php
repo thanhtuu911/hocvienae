@@ -43,7 +43,7 @@
                         style="height: 100px;"></textarea> <br>
                 </div>
 
-                <input type="submit " class="btn btn-primary"  value='Gửi yêu cầu'>
+                <button type="submit" class="btn btn-primary"  >Gửi yêu cầu</button>
                    
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal"> Xác nhận yêu cầu</button>
                

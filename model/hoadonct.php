@@ -27,7 +27,12 @@ class HOADONCT{
 	public function laydonhangct(){
         $dbcon = DATABASE::connect();
         try{
-            $sql = "SELECT * FROM hoadonct";
+            $sql = "SELECT hoadonct.id, hoadonct.hoadon_id, 
+			khoahoc.tenkhoahoc AS khoahoc_id, 
+			hoadonct.dongia, hoadonct.soluong, hoadonct.thanhtien 
+			FROM hoadonct 
+			INNER JOIN khoahoc ON hoadonct.khoahoc_id = khoahoc.id;
+			";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
@@ -39,6 +44,8 @@ class HOADONCT{
             exit();
         }
     }
+	
+	
 
 	public function laydonhangcttheoid($id)
 	{
