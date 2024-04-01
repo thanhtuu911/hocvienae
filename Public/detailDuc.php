@@ -90,9 +90,6 @@ include("inc/top.php");
     <p>&#8211; Khối nghề: Xây dựng – Học viên sẽ học tại hệ thống đào tạo của Tập đoàn BIW – CHLB Đức.&nbsp;</p>
 </div>
 
-<div class="text-center mt-auto">
-  <a class="btn btn-info text-dark" href="index.php?action=dangky"><h4> Đăng ký Khóa Học</h4> </a>
-</div>
 
 <?php
 include("inc/bottom.php");

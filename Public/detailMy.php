@@ -146,9 +146,6 @@ include("inc/top.php");
 <p>Hãy nắm bắt cơ hội du học Mỹ với các điều kiện ưu đãi đặc biệt dành cho bạn. Không chỉ là một hành trình học tập, mà còn là một cơ hội để xây dựng tương lai tươi sáng và đáng mơ ước. Đừng bỏ lỡ cơ hội này, hãy đăng ký ngay và khám phá thế giới mở cửa trước mắt bạn. Du học Mỹ &#8211;nơi tương lai của bạn bắt đầu!</p>
 </div>
 
-<div class="text-center mt-auto">
-  <a type="button" class="btn btn-info text-dark " href="index.php?action=dangky"><h4> Đăng ký Khóa Học</h4> </a>
-</div>
 
 
 <?php

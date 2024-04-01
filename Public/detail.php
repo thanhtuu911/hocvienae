@@ -19,7 +19,7 @@ include("inc/top.php");
 
 
     <div>
-      <h4 class="text-primary">Phí học:
+      <h4 class="text-primary mt-3">Phí học:
         <span class="text-danger"><?php echo number_format($khct["phi"]); ?> đ</span>
       </h4>
       <form method="post" class="form-inline">
@@ -29,7 +29,7 @@ include("inc/top.php");
           <div class="col">
             <!-- <input type="number" class="form-control" name="soluong" value="1"> -->
           </div>
-          <div class="col">
+          <div class="col ">
             <input type="submit" class="btn btn-primary" value="Đăng Ký Ngay">
           </div>
           <!-- <div class="col">

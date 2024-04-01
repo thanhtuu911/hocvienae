@@ -57,6 +57,7 @@ switch ($action) {
             include("detail.php");
         }
         break;
+
     case "chovaogio":
         if (isset($_GET["id"]))
             $id = $_GET["id"];
