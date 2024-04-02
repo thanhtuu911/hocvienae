@@ -49,7 +49,7 @@
                         <a href="#" class="btn btn-danger mx-2"><i class="fab fa-google"></i> Google</a>
                     </div>
                     <!-- Link đến trang đăng ký -->
-                    <p class="text-center mt-3">Chưa có tài khoản? <a href="dangky.php">Đăng ký ngay</a></p>
+                    <p class="text-center mt-3">Chưa có tài khoản? <a href="index.php?action=dangky">Đăng ký ngay</a></p>
                 </div>
             </div>
         </div>

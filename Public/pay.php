@@ -54,13 +54,17 @@ include("inc/top.php");
 						<label>Email</label>
 						<input type="email" class="form-control" name="txtemail" required>
 					</div>
+					<!-- <div class="my-3">
+						<label>Mật khẩu</label>
+						<input type="text" class="form-control" name="txtpass" required>
+					</div> -->
 					<div class="my-3">
 						<label>Họ tên</label>
 						<input type="text" class="form-control" name="txthoten" required>
 					</div>
 					<div class="my-3">
 						<label>Số điện thoại</label>
-						<input type="number" class="form-control" name="txtsodienthoai" required>
+						<input type="text" class="form-control" name="txtsodienthoai" placeholder="This is password if you are login " required>
 					</div>
 					
 					<div class="my-3">

@@ -142,10 +142,9 @@ switch ($action) {
         include("home.php");
         break;
     case "luudonhang":
-
-
         if (!isset($_SESSION["khachhang"])) {
             $email = $_POST["txtemail"];
+            // $matkhau = $_POST["txtpass"];
             $hoten = $_POST["txthoten"];
             $sodienthoai = $_POST["txtsodienthoai"];
 
@@ -157,7 +156,6 @@ switch ($action) {
             $khachhang_id = $_SESSION["khachhang"]["id"];
         }
         // lưu địa chỉ giao hàng
-
 
         // lưu đơn hàng
         $dh = new HOADON();
@@ -211,9 +209,32 @@ switch ($action) {
     case "home":
         include("home.php");
         break;
+
     case "dangky":
-        include("register.php");
+        include("dangky.php");
         break;
+
+    case "themdangky":
+        if (!isset($_SESSION["khachhang"])) {
+            $email = $_POST["txtemail"];
+            $matkhau = $_POST["txtpass"];
+            $hoten = $_POST["txthoten"];
+            $sodienthoai = $_POST["txtsodienthoai"];
+
+            // lưu thông tin khách nếu chưa có trong db (kiểm tra email có tồn tại chưa)
+            // xử lý thêm...
+            $kh = new KHACHHANG();
+            $khachhang_id = $kh->themkhachhangdangky($email, $matkhau, $sodienthoai, $hoten);
+            
+        } else {
+            $khachhang_id = $_SESSION["khachhang"]["id"];
+        }
+        // lưu địa chỉ giao hàng
+        include("loginform.php");
+        break;
+
+
+
     case "hoatdong":
         include("hoatdong.php");
         break;
