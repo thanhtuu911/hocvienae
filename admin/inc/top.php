@@ -24,35 +24,52 @@
 	<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 </head>
 
+<style>
+	.sidebar-brand {
+    display: inline-block;
+	margin-left: 25px;
+    /* margin-bottom: 1px;  */
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 150px; /* Chiều rộng của logo */
+    height: auto; /* Chiều cao tự động điều chỉnh để giữ tỷ lệ */
+    display: block;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+/* Hiệu ứng khi di chuột qua */
+.logo-img:hover {
+    transform: scale(1.2); /* Phóng to 1.05 lần kích thước ban đầu */
+}
+
+</style>
 <body>
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar  ">
 			<div class="sidebar-content js-simplebar">
+				
 				<a class="sidebar-brand" href="">
-					<span class="align-middle"> American English</span>
+					
+					<img src="../../image/logo/LogoAE2.jpg" alt="American English" class="logo-img" >
 				</a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header text-info">
 						HỆ THỐNG
 					</li>
-					<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
-						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "bangdieukhien") != false) echo "active"; ?>">
-							<a class="sidebar-link" href="../bangdieukhien/index.php">
-								<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng thống kê</span>
-							</a>
-						</li>
-					<?php } ?>
+					
 					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "ktnguoidung") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../../ktnguoidung/index.php">
-							<!-- <i class="fa-solid fa-chart-simple  fa-xl"style="color: #c51b2c;"></i> -->
-							<!-- <i class="fa-solid fa-chart-pie  fa-xl"style="color: #c51b2c;"></i> <span class="align-middle">Bảng điều khiển</span> -->
+						<a class="sidebar-link" href="../ktnguoidung/index.php">
+						<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng thống kê</span>
+							
 						</a>
 					</li>
 
 					<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
-						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qlnguoidung") != false) echo "active"; ?>">
-							<a class="sidebar-link" href="../qlnguoidung/index.php">
+						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qltaikhoan") != false) echo "active"; ?>">
+							<a class="sidebar-link" href="../qltaikhoan/index.php">
 								<i class="fa-solid fa-users  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Quản lý tài khoản</span>
 							</a>
 						</li>
@@ -139,12 +156,16 @@
 		</nav>
 
 		<div class="main">
-			<nav class="navbar navbar-expand navbar-light navbar-bg">
+			<nav class="navbar navbar-expand navbar-light navbar-bg" >
 				<a class="sidebar-toggle js-sidebar-toggle">
 					<i class="hamburger align-self-center"></i>
 				</a>
 
-				<div class="navbar-collapse collapse">
+				<div class="navbar-collapse collapse" >
+					<ul class="navbar-nav navbar-align">
+						<h3 class="align-middle" style="font-weight:bold"> American English</h3>
+					</ul>
+
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">

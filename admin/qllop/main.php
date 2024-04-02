@@ -1,11 +1,10 @@
 <?php include("../inc/top.php"); ?>
-<a href="index.php?action=them" class="btn btn-info">
-    <i class="align-middle" data-feather="plus-circle"></i>
-    Thêm Lớp Học
+<a href="index.php?action=them" class="btn btn-outline-primary">
+<i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i>    Thêm Lớp Học
 </a>
 <div class="container mt-5">
     <h2>Danh sách lớp học</h2>
-    <table class="table">
+    <table class="table" style="background-color: #e6e6fa; padding: 20px;">
         <thead>
             <tr>
                 <!-- <th>ID</th> -->

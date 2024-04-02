@@ -4,7 +4,7 @@
 <br>
 
 <br>
-<table class="table table-hover">
+<table class="table table-hover" style="background-color: #e6e6fa; padding: 20px;">
 	<tr>
 		<th>ID đơn hàng</th>
 		<th>Tên khách hàng</th>

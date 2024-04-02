@@ -2,12 +2,12 @@
 
 <h3>Quản lý khóa học</h3> 
 <br>
-<a href="index.php?action=them" class="btn btn-info">
-	<i class="align-middle" data-feather="plus-circle"></i> 
+<a href="index.php?action=them" class="btn btn-outline-primary">
+<i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i>
 	Thêm Khóa Học
 </a>
 <br> <br> 
-<table class="table table-hover">
+<table class="table table-hover"style="background-color: #e6e6fa; padding: 20px;">
 	<tr>
 		<th>Tên Khóa Học</th>
 		<th>Chi Tiết</th>

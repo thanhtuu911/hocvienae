@@ -20,7 +20,7 @@
                 ?>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <div class="card-body ">
+                        <div class="card-body"style="background-color: #e6e6fa; padding: 20px;">
                             <h5 class="card-title"><?php echo $lienhe['hoten']; ?></h5>
                             <h5 class="card-text"><?php echo $lienhe['tuoi']; ?></h5>
                             <h5 class="card-text"><?php echo $lienhe['sdt']; ?></h5>
