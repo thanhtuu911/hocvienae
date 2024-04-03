@@ -34,7 +34,7 @@
 
 
     <!-- Start Navigation -->
-    <nav class="navbar navbar-expand-sm navbar-dark  pl-5 fixed-top " style="background-color: #2C3D57 ;">
+    <nav class="navbar navbar-expand-sm navbar-dark  pl-5 fixed-top " style="background-color: #2C3D57 ; ">
         <div class="container px-2 px-lg-3 pl-5">
             <div>
                 <a class="navbar-brand" href="index.php"><img src="../image/logo/LogoAE2.jpg" alt="logo" width="160" height="80"></a>

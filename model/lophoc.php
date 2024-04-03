@@ -110,28 +110,28 @@ class LOPHOC{
     }
 
     //Hàm xóa lớp học
-    // public function xoaLop($id) {
-    //     $dbcon = DATABASE::connect();
-    //     $sql = "DELETE FROM lophoc WHERE id = :id";
-    //     $stmt = $dbcon->prepare($sql);
-    //     $stmt->bindValue(':id', $id);
-    //     return $stmt->execute();
-    // }
-    public function xoaLopHoc( $lop) {
+    public function xoaLop($id) {
         $dbcon = DATABASE::connect();
-        try{
-            $sql = "DELETE FROM lophoc WHERE id=:id";
-            $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":id", $lop->id);
-            $result = $cmd->execute();            
-            return $result;
-        }
-        catch(PDOException $e){
-            $error_message = $e->getMessage();
-            echo "<p>Lỗi truy vấn: $error_message</p>";
-            exit();
-        }
+        $sql = "DELETE FROM lophoc WHERE id = :id";
+        $stmt = $dbcon->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        return $stmt->execute();
     }
+    // public function xoaLopHoc( $lop) {
+    //     $dbcon = DATABASE::connect();
+    //     try{
+    //         $sql = "DELETE FROM lophoc WHERE id=:id";
+    //         $cmd = $dbcon->prepare($sql);
+    //         $cmd->bindValue(":id", $lop->id);
+    //         $result = $cmd->execute();            
+    //         return $result;
+    //     }
+    //     catch(PDOException $e){
+    //         $error_message = $e->getMessage();
+    //         echo "<p>Lỗi truy vấn: $error_message</p>";
+    //         exit();
+    //     }
+    // }
     
 
     

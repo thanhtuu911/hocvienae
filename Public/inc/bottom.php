@@ -137,6 +137,52 @@
 			<!-- <div class="text-center mb-5"><a class="text-warning" href="#top"><i class="bi bi-arrow-bar-up" ></i></a></div> -->
 </section> 
 <!-- map -->
+
+<!-- Thêm một thẻ div để chứa nút icon -->
+<div id="backToTopBtnContainer">
+    <!-- Icon (ở đây tôi sử dụng Font Awesome) -->
+    <i id="backToTopBtn" class="fas fa-arrow-up"></i>
+</div>
+<style>
+	#backToTopBtnContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+#backToTopBtn {
+    display: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+</style>
+
+<script>
+	// Lắng nghe sự kiện scroll của trang
+window.addEventListener('scroll', function() {
+    // Nếu cuộn xuống cuối trang, hiển thị nút
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('backToTopBtn').style.display = 'block';
+    } else {
+        document.getElementById('backToTopBtn').style.display = 'none';
+    }
+});
+
+// Lắng nghe sự kiện click của nút
+document.getElementById('backToTopBtn').addEventListener('click', function() {
+    // Cuộn trang về đầu
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+</script>
 <!-- Start Footer -->
 <footer class="container-fluid  text-center p-2 mt-5" style="background-color: #2C3D57;">
   <small class="text-white " style="color:aqua;" > 

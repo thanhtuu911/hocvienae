@@ -62,7 +62,7 @@
 					
 					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "ktnguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../ktnguoidung/index.php">
-						<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng thống kê</span>
+						<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng Thống Kê</span>
 							
 						</a>
 					</li>
@@ -70,7 +70,7 @@
 					<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
 						<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qltaikhoan") != false) echo "active"; ?>">
 							<a class="sidebar-link" href="../qltaikhoan/index.php">
-								<i class="fa-solid fa-users  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Quản lý tài khoản</span>
+								<i class="fa-solid fa-users  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Quản Lý Tài Khoản</span>
 							</a>
 						</li>
 					<?php } ?>
@@ -111,7 +111,7 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="../qlkhachhang/index.php">
-							<i class="fa-solid fa-user-group fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản lý khách hàng</span>
+							<i class="fa-solid fa-user-group fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản lý Khách Hàng</span>
 						</a>
 					</li>
 

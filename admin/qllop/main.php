@@ -1,6 +1,6 @@
 <?php include("../inc/top.php"); ?>
 <a href="index.php?action=them" class="btn btn-outline-primary">
-<i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i>    Thêm Lớp Học
+    <i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i> Thêm Lớp Học
 </a>
 <div class="container mt-5">
     <h2>Danh sách lớp học</h2>
@@ -21,8 +21,9 @@
         <tbody>
             <?php foreach ($lophoc as $l) : ?>
                 <tr>
-
-                    <td><?php echo $l['tenlop']; ?></td>
+                    <td>
+                    <a href="index.php?action=chitiet&id=<?php echo $l['lop_id']; ?>"</a>    
+                    <?php echo $l['tenlop']; ?> </td>
                     <td><?php echo $l['ngaybatdau']; ?></td>
                     <td><?php echo $l['ngayketthuc']; ?></td>
 
@@ -31,8 +32,9 @@
                     <td><?php echo $l['tenkhoahoc']; ?></td>
                     <td>
                         <form action="index.php">
-                            <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-danger"><i class=" fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a>
+                            <!-- <a href="index.php?action=chitiet&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-info"><i class="fa-solid fa-info fa-beat-fade fa-xl" style="color: #3c77dd;"></i></a> -->
                             <a class="btn btn-outline-warning" data-toggle="modal" data-target="#suaLop<?php echo $l['lop_id']; ?>"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a>
+                            <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-danger"><i class=" fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a>
 
                         </form>
                     </td>

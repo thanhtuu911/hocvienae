@@ -13,13 +13,14 @@
         <th>Thành tiền</th>
     </tr>
 
-    <?php if (isset($dhct) && !empty($dhct)) : ?>
+    <?php if (isset($dhctt) && !empty($dhctt)) : ?>
         <tr>
-            <td><?php echo $dhct["id"]; ?></td>
-            <td><?php echo $dhct["hoadon_id"]; ?></td>
-            <td><?php echo $dhct["khoahoc_id"]; ?></td>
-            <td><?php echo number_format($dhct["dongia"]); ?> VNĐ</td>
-            <td ><?php echo number_format($dhct["thanhtien"]); ?> VNĐ</td>
+            <td><?php echo $dhctt["id"]; ?></td>
+            <td><?php echo $dhctt["hoadon_id"]; ?></td>
+            <td><?php echo $dhctt["khoahoc_ten"]; ?></td>
+            <td><?php echo number_format($dhctt["dongia"]); ?> VNĐ</td>
+            <td ><?php echo number_format($dhctt["thanhtien"]); ?> VNĐ</td>
+   
         </tr>
     <?php else : ?>
         <tr>

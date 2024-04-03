@@ -1,15 +1,19 @@
 <?php
 include("inc/top.php");
 ?>
+<style>
+    .row.text-center {
+    margin-top: 100px;
+}
 
+</style>
 
 <?php
 foreach ($danhmuc as $d) {
     $i = 0;
 ?>
-
-    <div class="row mt-5 text-center  ">
-        <h3><a class="text-decoration-none text-danger " href="index.php?action=group&id=<?php echo $d["id"]; ?>">
+    <div class="row text-center ">
+        <h3><a class="text-decoration-none text-danger" href="index.php?action=group&id=<?php echo $d["id"]; ?>">
                 <?php echo $d["tendanhmuc"]; ?></a></h3>
     </div>
 
