@@ -3,18 +3,26 @@ include("inc/top.php");
 ?>
 
 <style>
+    /* .container align-items-center {
+    margin-top: 200px;
+} */
+    .container h2 {
+        color: #225470;
+    }
 
-.container h2{
-    color:#225470;
-}
+    .container h1 {
+        margin-top: 100px;
+        color:black;
+    }
 </style>
 
-<div class="container align-items-center mt-5 p-5 ">
-    <h1 class="text-md-center text-white mt-3 p-3 "> Đội Ngũ Nhân Sự - Trung Tâm Ngoại Ngữ AE</h1>
+<div class="container align-items-center mt-5">
+
 </div>
 
 
 <div class="container align-items-center ">
+    <h1 class="text-center "> Đội Ngũ Nhân Sự - Trung Tâm Ngoại Ngữ AE</h1>
     <h2 class="text-center p-3 ">Ban Lãnh Đạo</h2>
     <div class="container">
         <div class="row row-cols-4 text-md-center">
@@ -36,7 +44,7 @@ include("inc/top.php");
             <div class="col"> <img src="../image/lanhdao/camau.jpg" class="card-img-top" alt="..."></div>
             <div class="col"><img src="../image/lanhdao/dongthap.jpg" class="card-img-top" alt="..."></div>
             <div class="col"><img src="../image/lanhdao/kiengiang.jpg" class="card-img-top" alt="..."></div>
-        </div>    
+        </div>
     </div>
     <div class="container mt-2">
         <div class="row row-cols-4 text-md-center">
@@ -44,7 +52,7 @@ include("inc/top.php");
             <div class="col"> <img src="../image/lanhdao/phuquoc.jpg" class="card-img-top" alt="..."></div>
             <div class="col"><img src="../image/lanhdao/travinh.jpg" class="card-img-top" alt="..."></div>
             <div class="col"><img src="../image/lanhdao/vinhlong.jpg" class="card-img-top" alt="..."></div>
-        </div>    
+        </div>
     </div>
 </div>
 
@@ -55,7 +63,7 @@ include("inc/top.php");
             <div class="col"><img src="../image/lanhdao/mrleon.jpg" class="card-img-top" alt="..."></div>
             <div class="col"> <img src="../image/lanhdao/mrSimon.jpg" class="card-img-top" alt="..."></div>
             <div class="col"><img src="../image/lanhdao/msEliane.jpg" class="card-img-top" alt="..."></div>
-            <div class="col"><img src="../image/lanhdao/msMary.jpg" class="card-img-top" alt="..."></div>    
+            <div class="col"><img src="../image/lanhdao/msMary.jpg" class="card-img-top" alt="..."></div>
         </div>
     </div>
 </div>

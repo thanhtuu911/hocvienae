@@ -1,14 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="shortcut icon" type="image/jpg" href="../image/logo/LogoAE2.jpg" />
-
+    <link rel="shortcut icon" type="image/jpg" href="../image/logo/LogoAE2.jpg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS để điều chỉnh kích thước */
+        .card {
+            max-width: 500px; /* Giảm kích thước tổng thể của thẻ */
+            margin: auto; /* Đưa thẻ về giữa */
+            margin-bottom: 5%;
+        }
+        .card-header h4 {
+            font-size: 1.5rem; /* Thu nhỏ kích thước font chữ tiêu đề */
+        }
+        .img-fluid {
+            
+            max-height: 100px; /* Thu nhỏ kích thước logo */
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +35,7 @@
                 <div class="card-body">
                     <!-- Ảnh trong form -->
                     <div class="text-center mb-3">
-                        <img src="../image/logo/LogoAE1.jpg" alt="Logo" class="img-fluid" style="max-height: 100px;">
+                        <img src="../image/logo/LogoAE1.jpg" alt="Logo" class="img-fluid">
                     </div>
                     <!-- Form đăng nhập -->
                     <form action="index.php?action=xldangnhap" method="POST">

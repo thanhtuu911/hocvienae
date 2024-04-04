@@ -30,10 +30,15 @@
                 </div>
                 <div class="mb-3">
                     <select type='text' name="txttenkhoahoc" class="form-control mb-3">
-                        <option>Chọn Khóa Học: B1 or B2 or C1</option>
+                        <option>Chọn Khóa Học</option>
                         <option value="B1">B1</option>
                         <option value="B2">B2</option>
                         <option value="C1">C1</option>
+                        <option value="Du học Mỹ">Du học Mỹ</option>
+                        <option value="Du học Đức">Du học Đức</option>
+                        <option value="Du học Úc">Du học Úc</option>
+                        <option value="Du học Canada">Du học Canada</option>
+                        
                     </select>
 
                     <input type="text" name="txtdiachi" class="form-control" placeholder="Địa Chỉ">

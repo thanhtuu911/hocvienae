@@ -29,7 +29,7 @@ foreach ($danhmuc as $d) {
                             <img src="../<?php echo $mh['hinhanh']; ?>" class="card-img-top" alt="<?php echo $mh['tenkhoahoc']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $mh['tenkhoahoc']; ?></h5>
-                                <p class="card-text"><?php echo $mh['chitiet']; ?></p>
+                                
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="index.php?action=detail&id=<?php echo $mh['id']; ?>" class="btn btn-sm btn-outline-danger">Xem chi tiết</a>
