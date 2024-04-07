@@ -15,12 +15,13 @@
 
 
 <section>
-    <div>
+    <div class="text-center mt-5" >
         <?php
         if (demhangtronggio() == 0) {
         ?>
+        <img src="../image/courses/empty-cart.webp" alt="" style="width: auto; height:200px;">
             <h3 class="tex-info"> Khóa học rỗng</h3>
-            <p>Vui lòng chọn sản phẩm</p>
+            <a href="index.php?action=batdau" class="btn btn-outline-info">Vui lòng chọn khóa học</a>
         <?php
         } else {
         ?>
@@ -52,8 +53,7 @@
                     <div class="col text-center">
                         <a href="index.php?action=xoakhoahoc" class="btn btn-warning"> Xóa tất cả</a>
                         <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
-                        
-                        <a href="index.php?action=thanhtoan" class="btn btn-success">VN Pay</a>
+                        <a href="vnpay_pay.php" class="btn btn-success" id="redirect" name="redirect">VN Pay</a>
                        
                     </div>
                 </div>
@@ -63,6 +63,8 @@
         ?>
     </div>
 </section>
+
+
 <?php
 include("inc/bottom.php");
 ?>

@@ -49,22 +49,23 @@ class HOADONCT
 
 
     public function laydonhangcttheoid($id)
-    {
-        $dbcon = DATABASE::connect();
-        try {
-            $sql = "SELECT hdc.id, hdc.hoadon_id, kh.tenkhoahoc AS khoahoc_ten, hdc.dongia, hdc.soluong, hdc.thanhtien 
+{
+    $dbcon = DATABASE::connect();
+    try {
+        $sql = "SELECT hdc.id, hdc.hoadon_id, kh.tenkhoahoc AS khoahoc_ten, hdc.dongia, hdc.soluong, hdc.thanhtien 
                 FROM hoadonct hdc 
                 LEFT JOIN khoahoc kh ON hdc.khoahoc_id = kh.id 
-                WHERE hdc.id=:id";
-            $cmd = $dbcon->prepare($sql);
-            $cmd->bindValue(":id", $id);
-            $cmd->execute();
-            $result = $cmd->fetch();
-            return $result;
-        } catch (PDOException $e) {
-            $error_message = $e->getMessage();
-            echo "<p>Lỗi truy vấn: $error_message</p>";
-            exit();
-        }
+                WHERE hdc.hoadon_id=:id"; // Thay đổi từ hdc.id thành hdc.hoadon_id
+        $cmd = $dbcon->prepare($sql);
+        $cmd->bindValue(":id", $id);
+        $cmd->execute();
+        $result = $cmd->fetchAll();
+        return $result;
+    } catch (PDOException $e) {
+        $error_message = $e->getMessage();
+        echo "<p>Lỗi truy vấn: $error_message</p>";
+        exit();
     }
+}
+
 }

@@ -107,6 +107,7 @@
                 <th>Email</th>
                 <th>Số Điện Thoại</th>
                 <th>Địa Chỉ</th>
+                <th>Lớp Học</th>
                 <th>Hình Ảnh</th>
                 <th>Thao Tác</th>
             </tr>
@@ -114,13 +115,22 @@
         <tbody>
             <?php foreach ($hocvien as $h) : ?>
                 <tr>
-
-                    <td><?php echo $h['hoten']; ?></td>
+                    <td>
+                        <a href="index.php?action=chitiet&id=<?php echo $h['id']; ?>"><?php echo $h['hoten']; ?></a>
+                    </td>
                     <td><?php echo $h['namsinh']; ?></td>
                     <td><?php echo $h['gioitinh']; ?></td>
                     <td><?php echo $h['email']; ?></td>
                     <td><?php echo $h['sodienthoai']; ?></td>
                     <td><?php echo $h['diachi']; ?></td>
+                    <td>
+                        <?php
+                        $danhSachLopHoc = $dkh->layDanhSachLopHocTheoHocVienId($h['id']);
+                        foreach ($danhSachLopHoc as $lopHoc) {
+                            echo $lopHoc['tenlop'] . "<br>" . "<br>";
+                        }
+                        ?>
+                    </td>
                     <td><img src="../../<?php echo $h['hinhanh']; ?>" width="250" class="img-thumbnail"></td>
                     <div class="col-sm">
                         <td class="text-center">

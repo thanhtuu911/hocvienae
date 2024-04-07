@@ -26,44 +26,66 @@
 
 <style>
 	.sidebar-brand {
-    display: inline-block;
-	margin-left: 25px;
-    /* margin-bottom: 1px;  */
-    text-decoration: none;
+		display: inline-block;
+		margin-left: 25px;
+		/* margin-bottom: 1px;  */
+		text-decoration: none;
+	}
+
+	.logo-img {
+		width: 150px;
+		/* Chiều rộng của logo */
+		height: auto;
+		/* Chiều cao tự động điều chỉnh để giữ tỷ lệ */
+		display: block;
+		transition: transform 0.3s ease;
+		/* Hiệu ứng chuyển động */
+	}
+
+	/* Hiệu ứng khi di chuột qua */
+	.logo-img:hover {
+		transform: scale(1.2);
+		/* Phóng to 1.05 lần kích thước ban đầu */
+	}
+	
+    
+/* Border mặc định cho mỗi mục */
+
+
+    /* Border khi di chuột vào */
+	.sidebar-nav .sidebar-item {
+    border-bottom: 1px solid #ccc; /* Màu border mặc định */
+    padding-bottom: 3px; /* Độ dài của border-bottom */
+    transition: padding-bottom 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+	padding: 8px 0;
 }
 
-.logo-img {
-    width: 150px; /* Chiều rộng của logo */
-    height: auto; /* Chiều cao tự động điều chỉnh để giữ tỷ lệ */
-    display: block;
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
-}
-
-/* Hiệu ứng khi di chuột qua */
-.logo-img:hover {
-    transform: scale(1.2); /* Phóng to 1.05 lần kích thước ban đầu */
+.sidebar-nav .sidebar-item:hover {
+    padding-bottom: 0px; /* Đặt padding-bottom về 0 khi hover */
+    border-bottom: 4px solid #c51b2c; /* Màu border khi hover */
 }
 
 </style>
+
 <body>
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar  ">
 			<div class="sidebar-content js-simplebar">
-				
+
 				<a class="sidebar-brand" href="">
-					
-					<img src="../../image/logo/LogoAE2.jpg" alt="American English" class="logo-img" >
+
+					<img src="../../image/logo/LogoAE2.jpg" alt="American English" class="logo-img">
 				</a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header text-info">
 						HỆ THỐNG
 					</li>
-					
+
 					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "ktnguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../ktnguoidung/index.php">
-						<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng Thống Kê</span>
-							
+							<i class="fa-solid fa-chart-bar  fa-xl" style="color: #c51b2c;"></i><span class="align-middle">Bảng Thống Kê</span>
+
 						</a>
 					</li>
 
@@ -104,6 +126,12 @@
 							<span class="align-middle">Quản Lý Lớp</span>
 						</a>
 					</li>
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qldangkyhoc") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../qldangkyhoc/index.php">
+						<i class="fa-solid fa-note-sticky fa-xl"style="color: #c51b2c;"></i>
+							<span class="align-middle">Quản Lý Đăng Ký Học</span>
+						</a>
+					</li>
 
 					<li class="sidebar-header text-info">
 						KINH DOANH
@@ -111,57 +139,28 @@
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="../qlkhachhang/index.php">
-							<i class="fa-solid fa-user-group fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản lý Khách Hàng</span>
+							<i class="fa-solid fa-user-group fa-xl" style="color: #c51b2c;"></i> <span class="align-middle">Quản Lý Khách Hàng</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="../qldonhang/index.php">
+						<a class="sidebar-link" href="../qlhoadon/index.php">
 							<i class="fa-regular fa-money-bill-1 fa-xl" style="color: #c51b2c;"></i>
-							Quản lý đơn hàng
+							Quản Lý Hóa Đơn
 						</a>
 					</li>
 
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Quản lý doanh thu</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="shopping-bag"></i> <span class="align-middle">Chương trình khuyến mãi</span>
-						</a>
-					</li> -->
-
-
-
-					<!-- <li class="sidebar-header text-info">
-						CẤU HÌNH WEBSITE
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="book"></i> <span class="align-middle">Thông tin</span>
-						</a>
-					</li> -->
-
-					<!-- <li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="image"></i> <span class="align-middle">Hình ảnh</span>
-						</a>
-					</li> -->
 				</ul>
 			</div>
 		</nav>
 
 		<div class="main">
-			<nav class="navbar navbar-expand navbar-light navbar-bg" >
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
 					<i class="hamburger align-self-center"></i>
 				</a>
 
-				<div class="navbar-collapse collapse" >
+				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
 						<h3 class="align-middle" style="font-weight:bold"> American English</h3>
 					</ul>
@@ -252,7 +251,21 @@
 
 
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../ktnguoidung/index.php?action=dangxuat"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
+								<!-- HTML code -->
+								<a class="dropdown-item" href="#" onclick="confirmLogout()"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
+
+								<!-- JavaScript code -->
+								<script>
+									function confirmLogout() {
+										if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+											// Nếu người dùng chọn "OK", chuyển hướng đến trang đăng xuất
+											window.location.href = '../ktnguoidung/index.php?action=dangxuat';
+										} else {
+											// Nếu người dùng chọn "Cancel", không làm gì cả
+											return false;
+										}
+									}
+								</script>
 							</div>
 						</li>
 					</ul>

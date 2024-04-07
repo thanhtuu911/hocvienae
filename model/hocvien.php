@@ -11,6 +11,7 @@ class HOCVIEN
     private $diachi;
     private $hinhanh;
     private $created_at;
+  
 
     public function getid()
     {
@@ -100,6 +101,7 @@ class HOCVIEN
     {
         $this->created_at = $value;
     }
+    
     // Hàm hiển thị danh sách học viên
     public  function layhocvien()
     {
@@ -243,43 +245,22 @@ class HOCVIEN
         }
     }
 
-    // public function layhocvienTheoTuan($start_date, $end_date)
-    // {
-    //     $dbcon = DATABASE::connect();
-    //     try {
-    //         $sql = "SELECT * FROM hocvien WHERE DATE(created_at) BETWEEN :start_date AND :end_date";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->bindValue(':start_date', $start_date);
-    //         $cmd->bindValue(':end_date', $end_date);
-    //         $cmd->execute();
-    //         $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
-    //         return $result;
-    //     } catch (PDOException $e) {
-    //         // Xử lý ngoại lệ nếu có
-    //         echo "Lỗi: " . $e->getMessage();
-    //         return false; // Trả về false nếu không thể lấy được danh sách học viên
-    //     }
-    // }
+    public function layhocvientheolophoc($lophoc_id)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM hocvien WHERE lophoc_id = :lophoc_id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(':lophoc_id', $lophoc_id);
+            $cmd->execute();
+            $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return false; // Trả về false nếu không thể lấy được danh sách học viên
+        }
+    }
+    
 
-    // public function layhocvienTheoThang($year, $month)
-    // {
-    //     $dbcon = DATABASE::connect();
-    //     try {
-    //         // Xác định ngày bắt đầu và ngày kết thúc của tháng
-    //         $start_date = "{$year}-{$month}-01";
-    //         $end_date = date("Y-m-t", strtotime($start_date));
-
-    //         $sql = "SELECT * FROM hocvien WHERE DATE(created_at) BETWEEN :start_date AND :end_date";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->bindValue(':start_date', $start_date);
-    //         $cmd->bindValue(':end_date', $end_date);
-    //         $cmd->execute();
-    //         $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
-    //         return $result;
-    //     } catch (PDOException $e) {
-    //         // Xử lý ngoại lệ nếu có
-    //         echo "Lỗi: " . $e->getMessage();
-    //         return false; // Trả về false nếu không thể lấy được danh sách học viên
-    //     }
-    // }
 }

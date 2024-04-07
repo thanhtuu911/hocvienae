@@ -71,4 +71,15 @@ class HOADON
             return false; // Trả về false nếu không thể lấy được danh sách học viên
         }
     }
+
+	function generateQRCode($data)
+{
+    $qrCode = new \BaconQrCode\Encoder\QrCode($data);
+    $renderer = new \BaconQrCode\Renderer\Image\Png();
+    $renderer->setHeight(200);
+    $renderer->setWidth(200);
+    $writer = new \BaconQrCode\Writer($renderer);
+    return $writer->writeString($qrCode);
+}
+
 }

@@ -198,7 +198,7 @@ switch ($action) {
             echo "đã xảy ra lõi";
             // Nếu một trong các trường dữ liệu không tồn tại, bạn có thể thông báo cho người dùng hoặc xử lý lỗi theo cách khác
         }
-        include("message.php");
+        include("thanks.php");
         break;
     case "thanhtoan":
         include("pay.php");
@@ -225,7 +225,6 @@ switch ($action) {
             // xử lý thêm...
             $kh = new KHACHHANG();
             $khachhang_id = $kh->themkhachhangdangky($email, $matkhau, $sodienthoai, $hoten);
-            
         } else {
             $khachhang_id = $_SESSION["khachhang"]["id"];
         }
@@ -277,5 +276,11 @@ switch ($action) {
         $tl = new TAILIEU();
         $tailieu = $tl->laytailieu();
         include("tailieu.php");
+        break;
+    case "qr":
+        include("qrpay.php");
+        break;
+    case "zalopay":
+        include("zalopay.php");
         break;
 }

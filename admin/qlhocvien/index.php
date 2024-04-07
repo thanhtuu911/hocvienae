@@ -4,6 +4,7 @@ if(!isset($_SESSION["nguoidung"]))
 
 require("../../model/database.php");
 require("../../model/hocvien.php");
+require("../../model/dangkyhoc.php");
 
 // Xét xem có thao tác nào được chọn
 if(isset($_REQUEST["action"])){
@@ -14,6 +15,7 @@ else{
 }
 
 $hv = new HOCVIEN();
+$dkh = new DANGKYHOC();
 
 
 switch($action){

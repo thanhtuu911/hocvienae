@@ -24,8 +24,10 @@
                             <p><strong>Email:</strong> <?php echo $hocvien['email']; ?></p>
                             <p><strong>Số Điện Thoại:</strong> <?php echo $hocvien['sodienthoai']; ?></p>
                             <p><strong>Địa Chỉ:</strong> <?php echo $hocvien['diachi']; ?></p>
+                            <p><strong>Diem:</strong> <?php echo $hocvien['diem']; ?></p>
+                            <p><strong>Ket qua:</strong> <?php echo $hocvien['ketqua']; ?></p>
                             <p><strong>Hình Ảnh:</strong></p>
-                            <img src="../../<?php echo $hocvien['hinhanh']; ?>" class="img-thumbnail" alt="Hình ảnh học viên">
+                            <img src="../../<?php echo $hocvien['hinhanh']; ?>" class="img-thumbnail"   alt="Hình ảnh học viên">
 
                     <?php
                 } else {

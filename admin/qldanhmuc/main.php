@@ -57,4 +57,4 @@
 				</div>
 			</form>
 		</div>
-		<?php include("../inc/bottom.php"); ?>
+<?php include("../inc/bottom.php"); ?>

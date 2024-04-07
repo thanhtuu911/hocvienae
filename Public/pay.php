@@ -3,17 +3,17 @@ include("inc/top.php");
 ?>
 
 <style>
-    /* Đặt padding-top để tránh bị trang top đè lên */
-    body {
-        padding-top: 100px;
-        /* Điều chỉnh giá trị theo yêu cầu */
-        margin-top: 40px;
-    }
+	/* Đặt padding-top để tránh bị trang top đè lên */
+	body {
+		padding-top: 100px;
+		/* Điều chỉnh giá trị theo yêu cầu */
+		margin-top: 40px;
+	}
 
-    /* Đảm bảo trang top nằm phía trên trang cart */
-    .row {
-        z-index: 1000;
-    }
+	/* Đảm bảo trang top nằm phía trên trang cart */
+	.row {
+		z-index: 1000;
+	}
 </style>
 
 <div class="container">
@@ -39,11 +39,15 @@ include("inc/top.php");
 						<label>Số điện thoại</label>
 						<input type="number" class="form-control" name="txtsodienthoai" value="<?php echo $_SESSION["khachhang"]["sodienthoai"] ?>" disabled>
 					</div>
-					
+
 					<div class="my-3">
 						<input type="submit" value="Hoàn tất thanh toán" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#thankYouModal">
 					</div>
-					
+					<div class="my-3">
+						<a class="btn btn-primary" href="index.php?action=qr">qr</a>
+						<a class="btn btn-primary" href="index.php?action=zalopay">zalo</a>
+					</div>
+
 				</form>
 			<?php
 			} else {
@@ -66,18 +70,22 @@ include("inc/top.php");
 						<label>Số điện thoại</label>
 						<input type="text" class="form-control" name="txtsodienthoai" placeholder="This is password if you are login " required>
 					</div>
-					
+
 					<div class="my-3">
-						<input type="submit" value="Hoàn tất thanh toán" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#thankYouModal">
+						<input type="submit" value="Hoàn tất thanh toán" class="btn btn-info">
+					</div>
+
+					<div class="my-3">
+						<a class="btn btn-primary" href="qrpay.php">qr</a>
 					</div>
 				</form>
-				
+
 			<?php
 			}
 			?>
-			
-					<a  href="congthanhtoan.php" class="btn btn-success" name="redirect" id="redirect">Thanh toan MOMO</a>
-				
+
+
+
 		</div>
 
 		<div class="col-sm-6">
@@ -90,21 +98,21 @@ include("inc/top.php");
 					<th>Học phí</th>
 					<th>Thành tiền</th>
 				</tr>
-                
-                <?php 
-                   $stt = 1;
-                $giohang = laygiohang();
-                foreach ($giohang as $id => $mh) : ?>
+
+				<?php
+				$stt = 1;
+				$giohang = laygiohang();
+				foreach ($giohang as $id => $mh) : ?>
 					<tr>
-                        <td ><?php echo $stt; ?></td>
+						<td><?php echo $stt; ?></td>
 						<td><img width="50" height="50" src="../<?php echo $mh["hinhanh"]; ?>"></td>
-                        <td><?php echo $mh["tenkhoahoc"]; ?></td>
-						<td><?php echo number_format($mh["phi"]) ."(VNĐ)"; ?></td>
+						<td><?php echo $mh["tenkhoahoc"]; ?></td>
+						<td><?php echo number_format($mh["phi"]) . "(VNĐ)"; ?></td>
 						<td><?php echo number_format($mh["thanhtien"]) . "(VNĐ)"; ?></td>
 					</tr>
 				<?php
-                $stt++;
-            endforeach; ?>
+					$stt++;
+				endforeach; ?>
 				<tr class="table-info">
 					<td colspan="4" class="text-end"><b>Tổng tiền</b></td>
 					<td><b><?php echo number_format(tinhtiengiohang()); ?> VNĐ</b></td>

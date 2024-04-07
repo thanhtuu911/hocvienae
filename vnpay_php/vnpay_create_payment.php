@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
-date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 /**
  * 
@@ -27,7 +25,7 @@ $inputData = array(
     "vnp_Locale" => $vnp_Locale,
     "vnp_OrderInfo" => "Thanh toan GD:" + $vnp_TxnRef,
     "vnp_OrderType" => "other",
-    "vnp_ReturnUrl" => $vnp_Returnurl,
+    "vnp_ReturnUrl" => ''.$vnp_Returnurl,
     "vnp_TxnRef" => $vnp_TxnRef,
     "vnp_ExpireDate"=>$expire
 );

@@ -18,12 +18,25 @@ if(isset($_POST['export_excel'])) {
     // Tạo một trang tính mới
     $sheet = $spreadsheet->getActiveSheet();
 
-    // Thiết lập tiêu đề
-    $sheet->setCellValue('A1', 'Thống kê');
-    $sheet->mergeCells('A1:B1');
+    // Thiết lập thông tin công ty
+    $sheet->setCellValue('A1', 'Tên Công ty: Trung Tâm Tư Vấn Du Học AE - Công ty TNHH Dịch Vụ và Thương Mại HPC');
+    $sheet->mergeCells('A1:I1');
+    $sheet->setCellValue('A2', 'Ngày bắt đầu thành lập: 22/11/2022');
+    $sheet->setCellValue('A3', 'Người đại diện pháp luật: TRẦN NGUYÊN VŨ');
+    $sheet->setCellValue('A4', 'Chi cục thuế quản lý: Chi cục thuế TP Long Xuyên.');
+    $sheet->setCellValue('A5', 'Địa chỉ: 309/15, Ấp Vĩnh Trung, Xã Vĩnh Trạch, Huyện Thoại Sơn, Tỉnh An Giang.');
+    $sheet->setCellValue('A6', 'Địa chỉ VPĐD tại Long Xuyên: 26-27D2 Đinh Trường Sanh, Phường Đông Xuyên, Thành phố Long Xuyên, Tỉnh An Giang.');
+    $sheet->setCellValue('A7', 'Điện thoại: 02966.26566');
+    $sheet->setCellValue('A8', 'Email: ttnn@americanenglish.edu.vn');
+    $sheet->setCellValue('A9', 'Website: dhnnae.americanenglish.edu.vn');
+    $sheet->setCellValue('A10', 'Trung tâm ngoại ngữ AE, hoạt động trong lĩnh vực Tư vấn du học-Giáo dục-Thiết bị điện tử.');
 
-    // Xuất dữ liệu
-    $row = 2;
+    // Thiết lập tiêu đề cho dữ liệu thống kê
+    $sheet->setCellValue('A12', 'Thống kê');
+    $sheet->mergeCells('A12:B12');
+
+    // Xuất dữ liệu thống kê
+    $row = 13;
     foreach($data as $key => $value) {
         $sheet->setCellValue('A'.$row, $key);
         $sheet->setCellValue('B'.$row, $value);

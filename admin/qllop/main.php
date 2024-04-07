@@ -2,6 +2,7 @@
 <a href="index.php?action=them" class="btn btn-outline-primary">
     <i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i> Thêm Lớp Học
 </a>
+
 <div class="container mt-5">
     <h2>Danh sách lớp học</h2>
     <table class="table" style="background-color: #e6e6fa; padding: 20px;">
@@ -26,9 +27,7 @@
                     <?php echo $l['tenlop']; ?> </td>
                     <td><?php echo $l['ngaybatdau']; ?></td>
                     <td><?php echo $l['ngayketthuc']; ?></td>
-
                     <td><?php echo $l['giaovien_hoten']; ?></td>
-
                     <td><?php echo $l['tenkhoahoc']; ?></td>
                     <td>
                         <form action="index.php">
