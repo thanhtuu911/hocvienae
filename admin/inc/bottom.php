@@ -31,9 +31,9 @@
 		<h2>Admin</h2>
         <p>Hãy liên hệ với chúng tôi qua số điện thoại: 0123456789</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>
-      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"  >Đóng</button>
+      </div> -->
     </div>
   </div>
 </div>

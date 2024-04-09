@@ -11,6 +11,7 @@
 
                 // Tạo một đối tượng HOCVIEN để lấy thông tin chi tiết
                 $s = new HOCVIEN();
+               
                 $hocvien = $s->layhocvientheoid($id);
 
                 // Kiểm tra xem có thông tin học viên hay không
@@ -24,9 +25,7 @@
                             <p><strong>Email:</strong> <?php echo $hocvien['email']; ?></p>
                             <p><strong>Số Điện Thoại:</strong> <?php echo $hocvien['sodienthoai']; ?></p>
                             <p><strong>Địa Chỉ:</strong> <?php echo $hocvien['diachi']; ?></p>
-                            <p><strong>Diem:</strong> <?php echo $hocvien['diem']; ?></p>
-                            <p><strong>Ket qua:</strong> <?php echo $hocvien['ketqua']; ?></p>
-                            <p><strong>Hình Ảnh:</strong></p>
+                            <!-- <p><strong>Hình Ảnh:</strong></p> -->
                             <img src="../../<?php echo $hocvien['hinhanh']; ?>" class="img-thumbnail"   alt="Hình ảnh học viên">
 
                     <?php
@@ -52,6 +51,59 @@
         </div>
     </div>
 </div>
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">Thông tin đăng ký học</h5>
+        <?php
+            // Kiểm tra xem có ID học viên được truyền từ trang tìm kiếm không
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+
+                // Tạo một đối tượng DANGKYHOC để lấy thông tin đăng ký học
+                $s = new DANGKYHOC();
+              
+                // Kiểm tra xem có thông tin học viên hay không
+                if ($hocvien) {
+                    // Lấy thông tin đăng ký học của học viên
+                    $dangkyhoc = $s->layDangKyHocTheoIdHocVien($id);
+
+                    if ($dangkyhoc) {
+                        // Hiển thị thông tin đăng ký học dưới dạng bảng
+                        echo '<div class="table-responsive">';
+                        echo '<table class="table table-striped">';
+                        echo '<thead>';
+                        echo '<tr>';
+                        echo '<th scope="col">Tên lớp</th>';
+                        echo '<th scope="col">Điểm</th>';
+                        echo '<th scope="col">Kết quả</th>';
+                        echo '</tr>';
+                        echo '</thead>';
+                        echo '<tbody>';
+                        foreach ($dangkyhoc as $dkhoc) {
+                            echo '<tr>';
+                            echo '<td>' . $dkhoc['tenlop'] . '</td>';
+                            echo '<td>' . $dkhoc['diem'] . '</td>';
+                            echo '<td>' . $dkhoc['ketqua'] . '</td>';
+                            echo '</tr>';
+                        }
+                        echo '</tbody>';
+                        echo '</table>';
+                        echo '</div>';
+                    } else {
+                        echo "<p>Học viên này chưa đăng ký học.</p>";
+                    }
+                } else {
+                    // Hiển thị thông báo nếu không tìm thấy thông tin học viên
+                    echo "<div class='alert alert-danger' role='alert'>Không tìm thấy thông tin học viên!</div>";
+                }
+            } else {
+                // Hiển thị thông báo nếu không có ID học viên được truyền
+                echo "<div class='alert alert-danger' role='alert'>Không có ID học viên được truyền!</div>";
+            }
+        ?>
+    </div>
+</div>
+
 
 
 <?php include("../inc/bottom.php"); ?>

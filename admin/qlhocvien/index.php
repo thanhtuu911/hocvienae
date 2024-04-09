@@ -59,7 +59,8 @@ switch($action){
 		break;	
     case "chitiet":
         if(isset($_GET["id"])){ 
-            $m = $hv->layhocvientheoid($_GET["id"]);            
+            // $m = $hv->layhocvientheoid($_GET["id"]);
+            // $d = $dkh -> layDangKyHocTheoIdHocVien($hocvien_id);            
             include("detail.php");
         }
         else{
@@ -104,4 +105,4 @@ switch($action){
     default:
         break;
 }
-?>
+

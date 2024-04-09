@@ -22,7 +22,7 @@
 			<td><?php echo $dh["nguoidung_id"]; ?></td>
 			<td><?php echo $dh["ngaythanhtoan"]; ?></td>
 			<td><?php echo number_format($dh["tongtien"]) ?> VNĐ</td>
-			<td><a href="index.php?action=chitiet&id=<?php echo $dh["hoadon_id"]; ?>" class="btn btn-outline-primary"><i class="fa-solid fa-info fa-beat-fade fa-xl" style="color: #3c77dd;"></i></a></td>		
+			<td><a href="index.php?action=chitiet&id=<?php echo $dh["hoadon_id"]; ?>" class="btn btn-outline-primary"><i class="fa-solid fa-info fa-beat-fade fa-lg" style="color: #3c77dd;"></i></a></td>		
 		</tr>
 	<?php
 	endforeach;

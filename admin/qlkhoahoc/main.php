@@ -3,7 +3,7 @@
 <h3>Quản lý khóa học</h3> 
 <br>
 <a href="index.php?action=them" class="btn btn-outline-primary">
-<i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i>
+<i class="fa-solid fa-plus fa-lg" style="color: #3be8c5;"></i>
 	Thêm Khóa Học
 </a>
 <br> <br> 
@@ -29,10 +29,10 @@
 		<td><?php echo number_format($k["phi"]); ?></td>
 		<td>
 			
-			<img src="../../<?php echo $k["hinhanh"]; ?>" width="80" class="img-thumbnail"></a>
+			<img src="../../<?php echo $k["hinhanh"]; ?>" width="250" class="img-thumbnail"></a>
 		</td>
-		<td><a class="btn btn-outline-warning" href="index.php?action=sua&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a></td>
-		<td><a class="btn btn-outline-danger" href="index.php?action=xoa&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a></td>
+		<td><a class="btn btn-outline-warning" href="index.php?action=sua&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-edit fa-bounce fa-lg" style="color: #f1d93b;"></i></a></td>
+		<td><a class="btn btn-outline-danger" href="index.php?action=xoa&id=<?php echo $k["id"]; ?>"><i class="fa-solid fa-trash fa-bounce fa-lg" style="color: #de1735;"></i></a></td>
 	</tr>
 	<?php
 	endforeach;

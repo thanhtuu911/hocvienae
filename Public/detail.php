@@ -13,7 +13,7 @@ include("inc/top.php");
     <div class="row justify-content-center ">
         <div class="col-md-9">
             <div class="card">
-                <img class="card-img-top" style="margin-top: 50px;" src="../<?php echo $khct["hinhanh"]; ?>" alt="<?php echo $khct["tenkhoahoc"]; ?>">
+                <img class="card-img-top" width="auto" height="400px" style="margin-top: 50px;" src="../<?php echo $khct["hinhanh"]; ?>" alt="<?php echo $khct["tenkhoahoc"]; ?>">
                 <div class="card-body">
                     <h3 class="card-title text-info"><?php echo $khct["tenkhoahoc"]; ?></h3>
                     <p class="card-text"><?php echo $khct['chitiet']; ?></p>

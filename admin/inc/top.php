@@ -126,6 +126,14 @@
 							<span class="align-middle">Quản Lý Lớp</span>
 						</a>
 					</li>
+
+					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qlgiaovien") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../qlgiaovien/index.php">
+							<i class="fa-solid fa-house  fa-xl" style="color: #c51b2c;"></i>
+							<span class="align-middle">Quản Lý Giáo Viên</span>
+						</a>
+					</li>
+
 					<li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "qldangkyhoc") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../qldangkyhoc/index.php">
 						<i class="fa-solid fa-note-sticky fa-xl"style="color: #c51b2c;"></i>

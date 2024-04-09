@@ -134,7 +134,7 @@
                     <td><img src="../../<?php echo $h['hinhanh']; ?>" width="250" class="img-thumbnail"></td>
                     <div class="col-sm">
                         <td class="text-center">
-                            <a href="index.php?action=sua&id=<?php echo $h['id']; ?>" class="btn btn-outline-warning"> <i class="fa-solid fa-wrench fa-bounce fa-lg" style="color: #f1d93b;"></i> </a>
+                            <a href="index.php?action=sua&id=<?php echo $h['id']; ?>" class="btn btn-outline-warning"> <i class="fa-solid fa-edit fa-bounce fa-lg" style="color: #f1d93b;"></i> </a>
                         </td>
                         <td class="text-center">
                             <a href="index.php?action=xoa&id=<?php echo $h['id']; ?>" class="btn btn-outline-danger"> <i class="fa-solid fa-trash fa-bounce fa-lg" style="color: #de1735;"></i></a>

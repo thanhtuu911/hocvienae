@@ -17,6 +17,8 @@
                         <th scope="col">Số điện thoại</th>
                         <th scope="col">Địa chỉ</th>
                         <th scope="col">Hình ảnh</th>
+                        <th scope="col">Điểm </th>
+                        <th scope="col">Kết quả</th>
                         <th scope="col">Thao tác</th> <!-- Thêm cột này để chứa các nút thêm và xóa -->
                     </tr>
                 </thead>
@@ -30,6 +32,9 @@
                             <td><?php echo $hoc_vien['sodienthoai']; ?></td>
                             <td><?php echo $hoc_vien['diachi']; ?></td>
                             <td><img src="../../<?php echo $hoc_vien['hinhanh']; ?>" width="100" class="img-thumbnail"></td>
+                            <td><?php echo $hoc_vien['diem']; ?></td>
+                            <td><?php echo $hoc_vien['ketqua']; ?></td>
+
                             <td>
                                 <a  href="index.php?action=xoahocvien&hocvien_id=<?php echo $hoc_vien['id']; ?>&lophoc_id=<?php echo $lop_hoc['id']; ?>" class="btn btn-outline-danger btn-sm">Xóa</a>
                             </td>

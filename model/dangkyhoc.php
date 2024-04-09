@@ -4,6 +4,20 @@ class DANGKYHOC
     private $id;
     private $hocvien_id;
     private $lophoc_id;
+    private $diem;
+    private $ketqua;
+
+    // Getter cho trường dữ liệu $ketqua
+    public function getKetqua()
+    {
+        return $this->ketqua;
+    }
+
+    // Setter cho trường dữ liệu $ketqua
+    public function setKetqua($ketqua)
+    {
+        $this->ketqua = $ketqua;
+    }
 
     // Getter cho thuộc tính $id
     public function getId()
@@ -40,12 +54,24 @@ class DANGKYHOC
     {
         $this->lophoc_id = $lophoc_id;
     }
+
+    public function getdiem()
+    {
+        return $this->diem;
+    }
+
+    // Setter cho thuộc tính $lophoc_id
+    public function setdiem($diem)
+    {
+        $this->diem = $diem;
+    }
+
     public function layDangKyHoc()
     {
         $dbcon = DATABASE::connect(); // Thay DATABASE::connect() bằng cách kết nối cơ sở dữ liệu của bạn
 
         try {
-            $sql = "SELECT dangkyhoc.id, lophoc.tenlop, hocvien.hoten
+            $sql = "SELECT dangkyhoc.id, lophoc.tenlop, hocvien.hoten, dangkyhoc.diem
             FROM dangkyhoc
             INNER JOIN lophoc ON dangkyhoc.lophoc_id = lophoc.id
             INNER JOIN hocvien ON dangkyhoc.hocvien_id = hocvien.id";
@@ -53,6 +79,9 @@ class DANGKYHOC
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
+            foreach ($result as &$row) {
+                $row['trang_thai'] = ($row['diem'] >= 5) ? "Đạt" : "Chưa đạt";
+            }
             return $result;
         } catch (PDOException $e) {
             // Xử lý ngoại lệ nếu có
@@ -64,7 +93,7 @@ class DANGKYHOC
 
     public function layDanhSachHocvienIdTheoLophocId($lophoc_id)
     {
-        $dbcon = DATABASE::connect(); // Thay DATABASE::connect() bằng cách kết nối cơ sở dữ liệu của bạn
+        $dbcon = DATABASE::connect();
 
         try {
             $sql = "SELECT hocvien_id FROM dangkyhoc WHERE lophoc_id = :lophoc_id";
@@ -123,6 +152,7 @@ class DANGKYHOC
             return false; // Trả về false nếu có lỗi xảy ra
         }
     }
+    
     public function kiemTraTonTai($hocvien_id, $lophoc_id)
     {
         $dbcon = DATABASE::connect(); // Thay DATABASE::connect() bằng cách kết nối cơ sở dữ liệu của bạn
@@ -144,6 +174,7 @@ class DANGKYHOC
         }
     }
 
+// hien thi danh sach hoc vien trong trang detail cua qlhocvien
     public function layDanhSachLopHocTheoHocVienId($hocvien_id)
     {
         $dbcon = DATABASE::connect(); // Thay DATABASE::connect() bằng cách kết nối cơ sở dữ liệu của bạn
@@ -162,6 +193,106 @@ class DANGKYHOC
             // Xử lý ngoại lệ nếu có
             echo "Lỗi: " . $e->getMessage();
             return []; // Trả về một mảng trống trong trường hợp xảy ra lỗi
+        }
+    }
+
+    public function suaDiem($dangky_id, $diem)
+    {
+        $dbcon = DATABASE::connect(); // Kết nối đến cơ sở dữ liệu
+
+        try {
+            // Xử lý kiểm tra điểm và gán trạng thái tương ứng
+            if ($diem >= 5) {
+                $ketqua = "Đạt";
+            } else {
+                $ketqua = "Không đạt";
+            }
+
+            // Chuẩn bị câu lệnh SQL để cập nhật điểm và trạng thái
+            $sql = "UPDATE dangkyhoc SET diem = :diem, ketqua = :ketqua WHERE id = :dangky_id";
+
+            // Chuẩn bị và thực thi câu lệnh SQL
+            $stmt = $dbcon->prepare($sql);
+            $stmt->bindValue(':diem', $diem);
+            $stmt->bindValue(':ketqua', $ketqua);
+            $stmt->bindValue(':dangky_id', $dangky_id);
+            $stmt->execute();
+
+            // Trả về true nếu cập nhật thành công
+            return true;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return false; // Trả về false nếu có lỗi xảy ra
+        }
+    }
+
+// su dung o trang detail cua lop hoc
+    public function layDiemHocVienTrongLop($hocvien_id, $lophoc_id)
+    {
+        $dbcon = DATABASE::connect();
+
+        try {
+            $sql = "SELECT diem FROM dangkyhoc WHERE hocvien_id = :hocvien_id AND lophoc_id = :lophoc_id";
+            $stmt = $dbcon->prepare($sql);
+            $stmt->bindValue(':hocvien_id', $hocvien_id, PDO::PARAM_INT);
+            $stmt->bindValue(':lophoc_id', $lophoc_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetchColumn();
+
+            // Trả về điểm của học viên trong lớp học cụ thể
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return null; // Trả về null nếu có lỗi xảy ra
+        }
+    }
+    //su dung trong trang info cua hocvien
+    public function layDangKyHocTheoIdHocVien($hocvien_id)
+    {
+        $dbcon = DATABASE::connect();
+
+        try {
+            $sql = "SELECT dangkyhoc.*, lophoc.tenlop
+        FROM dangkyhoc
+        INNER JOIN lophoc ON dangkyhoc.lophoc_id = lophoc.id
+        WHERE dangkyhoc.hocvien_id = :hocvien_id";
+            $stmt = $dbcon->prepare($sql);
+            $stmt->bindValue(':hocvien_id', $hocvien_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+
+            // Trả về danh sách đăng ký học của học viên có ID tương ứng
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return null; // Trả về null nếu có lỗi xảy ra
+        }
+    }
+    //lay dang  ky de sua diem hoc vien
+    public function layDangKyHocTheoId($dangky_id)
+    {
+        $dbcon = DATABASE::connect(); // Kết nối đến cơ sở dữ liệu
+
+        try {
+            $sql = "SELECT dangkyhoc.*, lophoc.tenlop, hocvien.hoten
+            FROM dangkyhoc
+            INNER JOIN lophoc ON dangkyhoc.lophoc_id = lophoc.id
+            INNER JOIN hocvien ON dangkyhoc.hocvien_id = hocvien.id
+            WHERE dangkyhoc.id = :dangky_id";
+            $stmt = $dbcon->prepare($sql);
+            $stmt->bindValue(':dangky_id', $dangky_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // Trả về thông tin đăng ký học nếu có
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return null; // Trả về null nếu có lỗi xảy ra
         }
     }
 }

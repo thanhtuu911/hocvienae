@@ -118,38 +118,7 @@ class KHOAHOC
             exit();
         }
     }
-    // // Cập nhật lượt xem
-    // public function tangluotxem($id){
-    //     $dbcon = DATABASE::connect();
-    //     try{
-    //         $sql = "UPDATE khoahoc SET luotxem=luotxem+1 WHERE id=:id";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->bindValue(":id", $id);
-    //         $result = $cmd->execute();            
-    //         return $result;
-    //     }
-    //     catch(PDOException $e){
-    //         $error_message = $e->getMessage();
-    //         echo "<p>Lỗi truy vấn: $error_message</p>";
-    //         exit();
-    //     }
-    // }
-    // Lấy mặt hàng xem nhiều
-    // public function laykhoahocxemnhieu(){
-    //     $dbcon = DATABASE::connect();
-    //     try{
-    //         $sql = "SELECT * FROM khoahoc ORDER BY luotxem DESC LIMIT 3";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->execute();
-    //         $result = $cmd->fetchAll();
-    //         return $result;
-    //     }
-    //     catch(PDOException $e){
-    //         $error_message = $e->getMessage();
-    //         echo "<p>Lỗi truy vấn: $error_message</p>";
-    //         exit();
-    //     }
-    // }
+    
 
     // Thêm mới
     public function themkhoahoc($khoahoc){
@@ -215,45 +184,8 @@ class KHOAHOC
             echo "<p>Lỗi truy vấn: $error_message</p>";
             exit();
         }
-        // Tim kiem
     }
-    // public function timkiem($keyword){
-    //     $dbcon = DATABASE::connect();
-    //     try{
-    //         $sql = "SELECT FROM khoahoc WHERE tenkhoahoc LIKE '%keyword%' ";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->bindValue("tenkhoahoc", $keyword->tenkhoahoc);
-    //         $cmd -> execute();
-    //         $result = $cmd->fetchAll();            
-    //         return $result;
-    //     }
-    //     catch(PDOException $e){
-    //         $error_message = $e->getMessage();
-    //         echo "<p>Lỗi truy vấn: $error_message</p>";
-    //         exit();
-    //     }
-    // }
-    // public function timkiemkhoahoc($keyword)
-    // {
-    //     $dbcon = DATABASE::connect();
-    //     try {
-    //         $sql = "SELECT * FROM khoahoc WHERE tenkhoahoc LIKE :keyword";
-    //         $cmd = $dbcon->prepare($sql);
-    //         $cmd->bindValue(":keyword", "{$keyword}%", PDO::PARAM_STR);
-    //         $cmd->execute();
-    //         $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
-
-    //         // Lọc kết quả trên PHP để chỉ giữ các sách có tên bắt đầu bằng chữ cái đầu của từ khóa
-    //         $filteredResult = array_filter($result, function ($item) use ($keyword) {
-    //             return stripos($item['tenkhoahoc'], $keyword) === 0;
-    //         });
-
-    //         return $filteredResult;
-    //     } catch (PDOException $e) {
-    //         // Xử lý lỗi nếu cần
-    //         return null;
-    //     }
-    // }
+    
     public function timkiemkhoahoc($keyword)
 {
     $dbcon = DATABASE::connect();

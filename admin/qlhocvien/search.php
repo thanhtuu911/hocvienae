@@ -13,7 +13,7 @@ if (isset($_GET["keyword"])) {
         // Hiển thị các gợi ý
         foreach ($result as $item) {
             echo "<div class='search-suggestion'>";
-            echo "<a href='detail.php?id={$item['id']}'>{$item['hoten']}</a>";
+            echo "<a href='index.php?action=chitiet&id={$item['id']}'>{$item['hoten']}</a>";
             echo "</div>";
         }
     } else {

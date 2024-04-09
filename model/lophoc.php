@@ -170,5 +170,21 @@ class LOPHOC
             return null; // Trả về null nếu xảy ra lỗi
         }
     }
+    public function laylophoctheongay($date)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM lophoc WHERE DATE(created_at) = :created_at";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(':created_at', $date);
+            $cmd->execute();
+            $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return false; // Trả về false nếu không thể lấy được danh sách học viên
+        }
+    }
 
 }

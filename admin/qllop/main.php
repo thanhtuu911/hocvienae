@@ -1,6 +1,6 @@
 <?php include("../inc/top.php"); ?>
 <a href="index.php?action=them" class="btn btn-outline-primary">
-    <i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i> Thêm Lớp Học
+    <i class="fa-solid fa-plus fa-lg" style="color: #3be8c5;"></i> Thêm Lớp Học
 </a>
 
 <div class="container mt-5">
@@ -30,12 +30,10 @@
                     <td><?php echo $l['giaovien_hoten']; ?></td>
                     <td><?php echo $l['tenkhoahoc']; ?></td>
                     <td>
-                        <form action="index.php">
-                            <!-- <a href="index.php?action=chitiet&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-info"><i class="fa-solid fa-info fa-beat-fade fa-xl" style="color: #3c77dd;"></i></a> -->
-                            <a class="btn btn-outline-warning" data-toggle="modal" data-target="#suaLop<?php echo $l['lop_id']; ?>"><i class="fa-solid fa-wrench fa-bounce fa-xl" style="color: #f1d93b;"></i></a>
-                            <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-danger"><i class=" fa-solid fa-trash fa-bounce fa-xl" style="color: #de1735;"></i></a>
-
-                        </form>
+                            <a class="btn btn-outline-warning" data-toggle="modal" data-target="#suaLop<?php echo $l['lop_id']; ?>"><i class="fa-solid fa-edit fa-bounce fa-lg" style="color: #f1d93b;"></i></a>
+                    </td>
+                    <td>
+                            <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>" class="btn btn-outline-danger"><i class=" fa-solid fa-trash fa-bounce fa-lg" style="color: #de1735;"></i></a>
                     </td>
                 </tr>
                 <!-- Modal Sửa Lớp -->
@@ -72,7 +70,7 @@
                                         <label for="khoahoc_id">Khóa học ID:</label>
                                         <input type="text" class="form-control" id="khoahoc_id" name="khoahoc_id" value="<?php echo $l['khoahoc_id']; ?>">
                                     </div>
-                                    <a href="index.php?action=xoa&id=<?php echo $l['lop_id']; ?>"> <button type="submit" class="btn btn-primary" name="capnhat">Cập nhật</button> </a>
+                                    <a href="index.php?action=sua&id=<?php echo $l['lop_id']; ?>"> <button type="submit" class="btn btn-primary" name="capnhat">Cập nhật</button> </a>
                                 </form>
                             </div>
                         </div>

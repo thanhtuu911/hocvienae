@@ -12,7 +12,7 @@
   <?php
   }
   ?>
-  <!-- Nút mở hộp modal chứa form thêm mới -->
+
   <div><a class="btn btn-outline-primary" href="index.php?action=them">
       <span class="glyphicon glyphicon-plus"></span> <i class="fa-solid fa-plus fa-xl" style="color: #3be8c5;"></i>Thêm người dùng</a>
   </div>

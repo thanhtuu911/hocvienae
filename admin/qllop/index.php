@@ -15,7 +15,7 @@
     }
     $hocvien_model = new HOCVIEN();
     $lh = new LOPHOC();
-    // $lhhv = new LOPHOC_HOCVIEN();
+  
     $dkh = new DANGKYHOC();
 
     switch ($action) {
@@ -72,6 +72,14 @@
                     $hoc_vien = $hocvien_model->layhocvientheoid($hoc_vien_id);
                     // Kiểm tra xem học viên có tồn tại không trước khi thêm vào mảng chi tiết
                     if ($hoc_vien) {
+                        // Lấy điểm của học viên trong lớp học hiện tại
+                        $diem = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"]);
+                        // Kiểm tra và tính toán kết quả dựa trên điểm
+                        $ket_qua = ($diem >= 5) ? "Đạt" : "Không đạt";
+                        // Thêm điểm và kết quả vào thông tin chi tiết của học viên
+                        $hoc_vien['diem'] = $diem;
+                        $hoc_vien['ketqua'] = $ket_qua;
+                        // Thêm học viên vào mảng chi tiết học viên
                         $chi_tiet_hoc_viens[] = $hoc_vien;
                     }
                 }
