@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container text-md-center">
         <div class="jumbotron">
             <h1 class="display-4">Cảm ơn bạn!</h1>
             <p class="lead">Chúng tôi đã nhận được thông tin của bạn và sẽ liên hệ lại trong thời gian sớm nhất.</p>
