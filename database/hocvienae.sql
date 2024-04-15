@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 07, 2024 lúc 05:09 AM
+-- Thời gian đã tạo: Th4 15, 2024 lúc 08:23 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -18,20 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `hocvienae`
+-- Cơ sở dữ liệu: `hocvienae1`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `bangdiem`
---
-
-CREATE TABLE `bangdiem` (
-  `id` int(11) NOT NULL,
-  `dangkyhoc_id` int(11) DEFAULT NULL,
-  `diem` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -42,18 +30,34 @@ CREATE TABLE `bangdiem` (
 CREATE TABLE `dangkyhoc` (
   `id` int(11) NOT NULL,
   `hocvien_id` int(11) DEFAULT NULL,
-  `lophoc_id` int(11) DEFAULT NULL
+  `lophoc_id` int(11) DEFAULT NULL,
+  `diem` float DEFAULT NULL,
+  `ketqua` enum('Đạt','Không đạt') DEFAULT 'Không đạt'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `dangkyhoc`
 --
 
-INSERT INTO `dangkyhoc` (`id`, `hocvien_id`, `lophoc_id`) VALUES
-(1, 2, 1),
-(2, 17, 1),
-(3, 2, 2),
-(4, 25, 5);
+INSERT INTO `dangkyhoc` (`id`, `hocvien_id`, `lophoc_id`, `diem`, `ketqua`) VALUES
+(1, 2, 1, 6.5, 'Đạt'),
+(2, 17, 1, 5, 'Đạt'),
+(3, 2, 2, 4, 'Không đạt'),
+(4, 25, 5, 8, 'Đạt'),
+(8, 17, 4, 5, 'Đạt'),
+(9, 34, 4, 4, 'Không đạt'),
+(10, 36, 4, 7, 'Đạt'),
+(11, 37, 4, NULL, 'Không đạt'),
+(12, 38, 1, NULL, 'Không đạt'),
+(13, 38, 7, 5, 'Đạt'),
+(14, 21, 11, 7, 'Đạt'),
+(15, 21, 8, NULL, 'Không đạt'),
+(16, 25, 7, NULL, 'Không đạt'),
+(17, 24, 3, NULL, 'Không đạt'),
+(18, 16, 5, 8, 'Đạt'),
+(19, 16, 6, 9, 'Đạt'),
+(21, 20, 9, 8, 'Đạt'),
+(22, 1, 1, NULL, 'Không đạt');
 
 -- --------------------------------------------------------
 
@@ -94,12 +98,12 @@ CREATE TABLE `giaovien` (
 --
 
 INSERT INTO `giaovien` (`id`, `hoten`, `email`, `sodienthoai`, `hinhanh`) VALUES
-(1, 'Cao Hồng Hoa', NULL, NULL, NULL),
-(2, 'Võ Hoàng Anh Đào', NULL, NULL, NULL),
-(3, 'MR. LEON NGUYEN', NULL, NULL, NULL),
-(4, 'MS. ELIANE', NULL, NULL, NULL),
-(5, 'MR. SIMON', NULL, NULL, NULL),
-(6, 'MS. KARLIE NGUYEN', NULL, NULL, NULL);
+(1, 'Cao Hồng Hoa', 'caohonghoa@ae.com', '0325669884', 'image/lanhdao/coHoa.jpg'),
+(2, 'Võ Hoàng Anh Đào', NULL, NULL, 'image/lanhdao/msDao.jpg'),
+(3, 'MR. LEON NGUYEN', NULL, NULL, 'image/lanhdao/mrleon.jpg'),
+(4, 'MS. ELIANE', NULL, NULL, 'image/lanhdao/msEliane.jpg'),
+(5, 'MR. SIMON', NULL, NULL, 'image/lanhdao/mrSimon.jpg\r\n'),
+(6, 'MS. KARLIE NGUYEN', NULL, NULL, 'image/lanhdao/msKarlie.jpg');
 
 -- --------------------------------------------------------
 
@@ -124,7 +128,13 @@ INSERT INTO `hoadon` (`id`, `nguoidung_id`, `ngaythanhtoan`, `tongtien`, `ghichu
 (2, 6, '2024-03-30 16:27:24', 264900000, NULL),
 (3, 7, '2024-04-03 16:12:10', 488000000, NULL),
 (4, 7, '2024-04-03 16:22:27', 23000000, NULL),
-(5, 26, '2024-04-05 10:17:55', 259000000, NULL);
+(5, 26, '2024-04-05 10:17:55', 259000000, NULL),
+(6, 28, '2024-04-08 16:17:28', 25000000, NULL),
+(7, 29, '2024-04-08 16:55:52', 300000000, NULL),
+(8, 29, '2024-04-08 16:56:21', 17000000, NULL),
+(9, 30, '2024-04-10 15:58:49', 24600000, NULL),
+(10, 34, '2024-04-10 16:32:30', 8000000, NULL),
+(11, 33, '2024-04-12 21:45:59', 249900000, NULL);
 
 -- --------------------------------------------------------
 
@@ -155,7 +165,17 @@ INSERT INTO `hoadonct` (`id`, `hoadon_id`, `khoahoc_id`, `dongia`, `soluong`, `t
 (7, 4, 7, 8000000, 1, 8000000),
 (8, 5, 2, 240000000, 1, 240000000),
 (9, 5, 12, 10000000, 1, 10000000),
-(10, 5, 13, 9000000, 1, 9000000);
+(10, 5, 13, 9000000, 1, 9000000),
+(11, 6, 5, 15000000, 1, 15000000),
+(12, 6, 12, 10000000, 1, 10000000),
+(13, 7, 3, 280000000, 1, 280000000),
+(14, 7, 6, 20000000, 1, 20000000),
+(15, 8, 13, 9000000, 1, 9000000),
+(16, 8, 7, 8000000, 1, 8000000),
+(17, 9, 8, 4600000, 1, 4600000),
+(18, 9, 6, 20000000, 1, 20000000),
+(19, 10, 7, 8000000, 1, 8000000),
+(20, 11, 1, 249900000, 1, 249900000);
 
 -- --------------------------------------------------------
 
@@ -200,21 +220,13 @@ INSERT INTO `hocvien` (`id`, `hoten`, `namsinh`, `gioitinh`, `email`, `sodientho
 (31, 'Lê Nguyễn Quỳnh Như', '2004', 'Nữ', NULL, '02786827816', 'AG', 'image/student/st16.jpg', '2024-03-29 10:29:43'),
 (32, 'Trịnh Thị Ngọc Như', '1999', 'Nữ', NULL, '0290278736', 'TN,CT', 'image/student/st17.jpg', '2024-03-29 10:29:43'),
 (33, 'Lâm Thành Nhựt', '2002', 'Nam', NULL, '0298265534', 'Mỹ Phước, LX, AG', 'image/student/st18.jpg', '2024-03-29 10:29:43'),
-(34, 'Âu Lâm Thành', '2002', 'Nam', NULL, '0898287222', 'Mỹ Thới,LX AG', 'image/student/st19.jpg', '2024-03-29 10:29:43'),
-(35, 'Lê Quốc Toàn', '2002', 'Nữ', NULL, '02552415878', 'Cần Đăng, Châu Thành, AG', 'image/student/st20.jpg', '2024-03-29 10:29:43');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `ketqua`
---
-
-CREATE TABLE `ketqua` (
-  `id` int(11) NOT NULL,
-  `hocvien_id` int(11) DEFAULT NULL,
-  `lophoc_id` int(11) DEFAULT NULL,
-  `ketqua` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(34, 'Âu Lâm Thành', '2002', 'Nam', 'alt@ae.com', '0898287222', 'Mỹ Thới,LX AG', 'image/studentcau.jpg', '2024-03-29 10:29:43'),
+(35, 'Lê Quốc Toàn', '2002', 'Nữ', NULL, '02552415878', 'Cần Đăng, Châu Thành, AG', 'image/student/st20.jpg', '2024-03-29 10:29:43'),
+(36, 'Huỳnh Thanh Toàn', '2002', 'Nữ', 'htt@ae.com', '0987666777', 'Thoại Sơn, An Giang', 'image/student/4ta.jpg', '2024-04-08 08:57:15'),
+(37, 'Nguyễn Đức Thịnh', '2002', 'Nam', 'ndt@ae.com', '03333987654', 'Cầu Cần Xây, Bình Đức, Long Xuyên', 'image/student/axui.jpg', '2024-04-08 09:07:15'),
+(38, 'Lê Minh Thông', '2002', 'Nam', 'lmt@ae.com', '0398556223', 'Cần Đăng, Châu Thành, An Giang', 'image/student/thong.jpg', '2024-04-09 13:13:19'),
+(39, 'Thăng', '2001', 'nam', 'thang@ae.com', '0646546', 'lx', 'image/student/', '2024-04-13 08:12:43'),
+(53, 'nguyễn văn a', '2024-04-13', 'Nam', 'tu@ae.com', '03256987', 'LX', 'image/student/bong.jpg', '2024-04-13 16:36:35');
 
 -- --------------------------------------------------------
 
@@ -228,24 +240,25 @@ CREATE TABLE `khoahoc` (
   `tenkhoahoc` varchar(255) NOT NULL,
   `chitiet` varchar(5000) NOT NULL,
   `phi` float DEFAULT NULL,
-  `hinhanh` varchar(255) DEFAULT NULL
+  `hinhanh` varchar(255) DEFAULT NULL,
+  `luotthich` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `khoahoc`
 --
 
-INSERT INTO `khoahoc` (`id`, `danhmuc_id`, `tenkhoahoc`, `chitiet`, `phi`, `hinhanh`) VALUES
-(1, 1, 'Du Học Mỹ', '<p>Du học Mỹ là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Hoa Kỳ. Mỹ được biết đến với hệ thống giáo dục đa dạng và uy tín, với nhiều trường đại học hàng đầu thế giới. Du học sinh tại Mỹ có cơ hội tiếp cận các chương trình học đa dạng và các ngành nghề phong phú, cũng như tham gia vào nghiên cứu và phát triển công nghệ tiên tiến. Ngoài ra, Mỹ cũng cung cấp một môi trường học tập và sinh sống đa văn hóa, đồng thời mở ra cơ hội nghề nghiệp và sự phát triển cá nhân cho du học sinh.</p>', 249900000, 'image/courses/usa.jpg'),
-(2, 1, 'Du Học Đức', '<p>Du học Đức là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Đức. Đức nổi tiếng với hệ thống giáo dục đa dạng và chất lượng cao, với nhiều trường đại học hàng đầu thế giới. Du học sinh tại Đức có cơ hội tiếp cận các chương trình học phong phú và các lĩnh vực chuyên ngành đa dạng, cũng như tham gia vào nghiên cứu và phát triển công nghệ tiên tiến. Ngoài ra, Đức cũng cung cấp môi trường học tập và sinh sống đa văn hóa, đồng thời mở ra cơ hội nghề nghiệp và sự phát triển cá nhân cho du học sinh.</p>', 240000000, 'image/courses/duc.jpg'),
-(3, 1, 'Du Học Canada', '<p>Du học Canada là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Canada. Canada nổi tiếng với hệ thống giáo dục chất lượng cao, môi trường học tập an toàn và thân thiện, cùng với sự đa dạng văn hóa và ngôn ngữ. Du học sinh tại Canada có cơ hội tiếp cận các chương trình học phong phú và các ngành nghề đa dạng, cũng như tham gia vào các hoạt động ngoại khóa và văn hóa. Ngoài ra, Canada cũng cung cấp cơ hội làm việc sau khi tốt nghiệp và định cư lâu dài cho những người muốn ở lại.</p>', 280000000, 'image/courses/canada.jpg'),
-(4, 1, 'Du Học Úc', '<p>Du học Úc là quá trình học tập ở các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Úc. Úc được biết đến với hệ thống giáo dục chất lượng cao, với nhiều trường đại học và cao đẳng nằm trong danh sách các trường hàng đầu trên thế giới. Du học sinh tại Úc có cơ hội trải nghiệm một môi trường học tập đa dạng, tiếp cận các chương trình và ngành học đa dạng, cùng với một cộng đồng sinh viên quốc tế đầy màu sắc. Ngoài ra, du học sinh cũng có cơ hội tham gia vào các hoạt động văn hóa, thể thao và xã hội, tạo điều kiện cho trải nghiệm đa chiều và phát triển cá nhân toàn diện.</p>', 286800000, 'image/courses/uc.jpg'),
-(5, 2, 'B1', '<p>Chứng chỉ B1 là một trong những cấp độ của Khung Tham chiếu Châu Âu về Ngôn ngữ (CEFR), viết tắt của Common European Framework of Reference for Languages. Đối với tiếng Anh, B1 đại diện cho một trình độ trung bình, cung cấp khả năng giao tiếp cơ bản trong nhiều tình huống hàng ngày. Người học ở cấp độ này có khả năng hiểu và sử dụng các cụm từ cơ bản, diễn đạt ý kiến ​​và đặt câu hỏi đơn giản, cũng như hiểu và phản ứng trong các tình huống thông thường như mua sắm, du lịch, hoặc trò chuyện cơ bản với người bản xứ. Chứng chỉ B1 thường được yêu cầu cho việc xin visa, du học hoặc làm việc tại một số quốc gia.</p>', 15000000, 'image/courses/B1.jpg'),
-(6, 2, 'IELTS ', '<p>Chứng chỉ ELITS (English Language International Testing System) là một hệ thống kiểm tra tiếng Anh quốc tế được thiết kế để đánh giá và đánh giá kỹ năng sử dụng tiếng Anh của người học ở mọi cấp độ, từ cơ bản đến nâng cao. ELITS đánh giá các kỹ năng ngôn ngữ cần thiết trong các tình huống thực tế, bao gồm nghe, nói, đọc và viết. Chứng chỉ này thường được sử dụng cho mục đích du học, làm việc và sinh sống ở các quốc gia nói tiếng Anh. ELITS thường được coi là một phần tử quan trọng trong quá trình chứng minh khả năng sử dụng tiếng Anh của cá nhân trong môi trường quốc tế.</p>', 20000000, 'image/courses/ielts.jpg'),
-(7, 3, 'Nghe Nói Căn Bản', '<p>Khóa học mang lại cho người học kỹ năng, kinh nghiệm giao tiếp và những chủ đề giao tiếp căn bản.</p>', 8000000, 'image/courses/nghenoicanban.jpg\r\n'),
-(8, 2, 'C1', '<p>Căng như dây đàn</p>', 4600000, 'image/courses/C1.jpg'),
-(12, 3, 'Tiếng anh cơ bản', 'Khóa học này giúp người học nâng cao kỹ năng giao tiếp trong cuộc sống. ', 10000000, 'image/courses/tienganhcoban.jpg'),
-(13, 3, 'Tiếng Anh Giao Tiếp 2023', 'Với khóa học này giúp cải thiện khả năng giao tiếp bằng tiếng anh với những chủ đề quen thuộc trong cuộc sống hằng ngày.', 9000000, 'image/courses/chudegiaotiep2.jpg');
+INSERT INTO `khoahoc` (`id`, `danhmuc_id`, `tenkhoahoc`, `chitiet`, `phi`, `hinhanh`, `luotthich`) VALUES
+(1, 1, 'Du Học Mỹ', '<p>Du học Mỹ là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Hoa Kỳ. Mỹ được biết đến với hệ thống giáo dục đa dạng và uy tín, với nhiều trường đại học hàng đầu thế giới. Du học sinh tại Mỹ có cơ hội tiếp cận các chương trình học đa dạng và các ngành nghề phong phú, cũng như tham gia vào nghiên cứu và phát triển công nghệ tiên tiến. Ngoài ra, Mỹ cũng cung cấp một môi trường học tập và sinh sống đa văn hóa, đồng thời mở ra cơ hội nghề nghiệp và sự phát triển cá nhân cho du học sinh.</p>', 249900000, 'image/courses/usa.jpg', 2),
+(2, 1, 'Du Học Đức', '<p>Du học Đức là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Đức. Đức nổi tiếng với hệ thống giáo dục đa dạng và chất lượng cao, với nhiều trường đại học hàng đầu thế giới. Du học sinh tại Đức có cơ hội tiếp cận các chương trình học phong phú và các lĩnh vực chuyên ngành đa dạng, cũng như tham gia vào nghiên cứu và phát triển công nghệ tiên tiến. Ngoài ra, Đức cũng cung cấp môi trường học tập và sinh sống đa văn hóa, đồng thời mở ra cơ hội nghề nghiệp và sự phát triển cá nhân cho du học sinh.</p>', 240000000, 'image/courses/duc.jpg', 8),
+(3, 1, 'Du Học Canada', '<p>Du học Canada là quá trình học tập tại các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Canada. Canada nổi tiếng với hệ thống giáo dục chất lượng cao, môi trường học tập an toàn và thân thiện, cùng với sự đa dạng văn hóa và ngôn ngữ. Du học sinh tại Canada có cơ hội tiếp cận các chương trình học phong phú và các ngành nghề đa dạng, cũng như tham gia vào các hoạt động ngoại khóa và văn hóa. Ngoài ra, Canada cũng cung cấp cơ hội làm việc sau khi tốt nghiệp và định cư lâu dài cho những người muốn ở lại.</p>', 280000000, 'image/courses/canada.jpg', 10),
+(4, 1, 'Du Học Úc', '<p>Du học Úc là quá trình học tập ở các trường đại học, cao đẳng hoặc trung học chuyên nghiệp tại Úc. Úc được biết đến với hệ thống giáo dục chất lượng cao, với nhiều trường đại học và cao đẳng nằm trong danh sách các trường hàng đầu trên thế giới. Du học sinh tại Úc có cơ hội trải nghiệm một môi trường học tập đa dạng, tiếp cận các chương trình và ngành học đa dạng, cùng với một cộng đồng sinh viên quốc tế đầy màu sắc. Ngoài ra, du học sinh cũng có cơ hội tham gia vào các hoạt động văn hóa, thể thao và xã hội, tạo điều kiện cho trải nghiệm đa chiều và phát triển cá nhân toàn diện.</p>', 286800000, 'image/courses/uc.jpg', 0),
+(5, 2, 'B1', '<p>Chứng chỉ B1 là một trong những cấp độ của Khung Tham chiếu Châu Âu về Ngôn ngữ (CEFR), viết tắt của Common European Framework of Reference for Languages. Đối với tiếng Anh, B1 đại diện cho một trình độ trung bình, cung cấp khả năng giao tiếp cơ bản trong nhiều tình huống hàng ngày. Người học ở cấp độ này có khả năng hiểu và sử dụng các cụm từ cơ bản, diễn đạt ý kiến ​​và đặt câu hỏi đơn giản, cũng như hiểu và phản ứng trong các tình huống thông thường như mua sắm, du lịch, hoặc trò chuyện cơ bản với người bản xứ. Chứng chỉ B1 thường được yêu cầu cho việc xin visa, du học hoặc làm việc tại một số quốc gia.</p>', 15000000, 'image/courses/B1.jpg', 0),
+(6, 2, 'IELTS ', '<p>Chứng chỉ ELITS (English Language International Testing System) là một hệ thống kiểm tra tiếng Anh quốc tế được thiết kế để đánh giá và đánh giá kỹ năng sử dụng tiếng Anh của người học ở mọi cấp độ, từ cơ bản đến nâng cao. ELITS đánh giá các kỹ năng ngôn ngữ cần thiết trong các tình huống thực tế, bao gồm nghe, nói, đọc và viết. Chứng chỉ này thường được sử dụng cho mục đích du học, làm việc và sinh sống ở các quốc gia nói tiếng Anh. ELITS thường được coi là một phần tử quan trọng trong quá trình chứng minh khả năng sử dụng tiếng Anh của cá nhân trong môi trường quốc tế.</p>', 20000000, 'image/courses/ielts.jpg', 0),
+(7, 3, 'Nghe Nói Căn Bản', '<p>Khóa học mang lại cho người học kỹ năng, kinh nghiệm giao tiếp và những chủ đề giao tiếp căn bản.</p>', 8000000, 'image/courses/nghenoicanban.jpg\r\n', 0),
+(8, 2, 'C1', '<p>Căng như dây đàn</p>', 4600000, 'image/courses/C1.jpg', 1),
+(12, 3, 'Tiếng anh cơ bản', 'Khóa học này giúp người học nâng cao kỹ năng giao tiếp trong cuộc sống. ', 10000000, 'image/courses/tienganhcoban.jpg', 0),
+(13, 3, 'Tiếng Anh Giao Tiếp 2023', 'Với khóa học này giúp cải thiện khả năng giao tiếp bằng tiếng anh với những chủ đề quen thuộc trong cuộc sống hằng ngày.', 9000000, 'image/courses/chudegiaotiep2.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -293,22 +306,26 @@ CREATE TABLE `lophoc` (
   `ngaybatdau` date DEFAULT NULL,
   `ngayketthuc` date DEFAULT NULL,
   `giaovien_id` int(11) DEFAULT NULL,
-  `khoahoc_id` int(11) DEFAULT NULL
+  `khoahoc_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `lophoc`
 --
 
-INSERT INTO `lophoc` (`id`, `tenlop`, `ngaybatdau`, `ngayketthuc`, `giaovien_id`, `khoahoc_id`) VALUES
-(1, 'Lớp Du Học Đức', '2024-03-18', '2024-06-18', 1, 2),
-(2, 'Lớp Du Học Úc', '2024-03-22', '2024-10-25', 2, 4),
-(3, 'Lớp du học Mỹ', '2024-03-22', '2024-10-25', 2, 1),
-(4, 'Lớp chứng chỉ B1', '2024-03-27', '2024-07-27', 1, 5),
-(5, 'Du học Canada', '2024-04-03', '2024-10-03', 3, 3),
-(6, 'Du học Úc', '2024-04-15', '2024-10-15', 3, 4),
-(7, 'Nghe nói căn bản', '2024-02-11', '2024-06-03', 4, 7),
-(8, 'Lớp chứng chỉ IELTS', '2024-05-05', '2024-10-05', 5, 6);
+INSERT INTO `lophoc` (`id`, `tenlop`, `ngaybatdau`, `ngayketthuc`, `giaovien_id`, `khoahoc_id`, `created_at`) VALUES
+(1, 'Lớp Du Học Đức', '2024-03-18', '2024-06-18', 1, 2, '2024-04-08 10:12:17'),
+(2, 'Lớp Du Học Úc', '2024-03-22', '2024-10-25', 2, 4, '2024-04-08 10:12:17'),
+(3, 'Lớp du học Mỹ', '2024-03-22', '2024-10-25', 2, 1, '2024-04-08 10:12:17'),
+(4, 'Lớp chứng chỉ B1', '2024-03-27', '2024-07-27', 1, 5, '2024-04-08 10:12:17'),
+(5, 'Du học Canada', '2024-04-03', '2024-10-03', 3, 3, '2024-04-08 10:12:17'),
+(6, 'Du học Úc', '2024-04-15', '2024-10-15', 3, 4, '2024-04-08 10:12:17'),
+(7, 'Nghe nói căn bản', '2024-02-11', '2024-06-03', 4, 7, '2024-04-08 10:12:17'),
+(8, 'Lớp chứng chỉ IELTS', '2024-05-05', '2024-10-05', 5, 6, '2024-04-08 10:12:17'),
+(9, 'Tiếng Anh Cơ Bản', '2024-04-09', '2024-09-09', 3, 12, '2024-04-09 13:19:45'),
+(10, 'Tiếng anh giao tiếp 2023', '2024-04-09', '2024-09-09', 6, 13, '2024-04-09 13:21:09'),
+(11, 'Lớp C1', '2024-04-10', '2024-10-10', 6, 8, '2024-04-10 09:04:30');
 
 -- --------------------------------------------------------
 
@@ -325,23 +342,38 @@ CREATE TABLE `nguoidung` (
   `loai` tinyint(4) NOT NULL DEFAULT 3,
   `trangthai` tinyint(4) NOT NULL DEFAULT 1,
   `hinhanh` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `hocvien_id` int(11) DEFAULT NULL,
+  `namsinh` varchar(255) DEFAULT NULL,
+  `gioitinh` varchar(255) DEFAULT NULL,
+  `diachi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`id`, `email`, `sodienthoai`, `matkhau`, `hoten`, `loai`, `trangthai`, `hinhanh`, `created_at`) VALUES
-(1, 'admin@ae.com', NULL, '202cb962ac59075b964b07152d234b70', 'Admin', 1, 1, NULL, '2024-04-02 07:13:32'),
-(2, 'tu@ae.com', '0398761711', '202cb962ac59075b964b07152d234b70', 'Thanh Tus', 1, 1, '2.jpg', '2024-04-02 07:13:32'),
-(3, 'e5@ae.com', '0379111556', '202cb962ac59075b964b07152d234b70', 'Hoài Thanh', 1, 1, '1.jpg', '2024-04-02 07:13:32'),
-(4, 'stu1@ae.com', '12345678', '202cb962ac59075b964b07152d234b70', 'Ngô Hoàng Ân', 3, 1, NULL, '2024-04-02 07:13:32'),
-(5, 'pnc@ae.com', '0365885992', '202cb962ac59075b964b07152d234b70', 'Phạm Nhật Cường', 3, 1, NULL, '2024-04-02 07:13:32'),
-(6, 'alt@ae.com', '0345221558', '202cb962ac59075b964b07152d234b70', 'Âu Lâm Thành', 3, 1, NULL, '2024-04-02 07:13:32'),
-(7, 'lqt@ae.com', '0399658412', '202cb962ac59075b964b07152d234b70', 'Lê Quốc Toàn', 3, 1, NULL, '2024-04-02 07:13:32'),
-(25, 'nsd@ae.com', '0336998445', '202cb962ac59075b964b07152d234b70', 'Nguyễn Sỹ Dân', 3, 1, NULL, '2024-04-02 07:13:32'),
-(26, 'lmt@ae.com', '0998776554', '202cb962ac59075b964b07152d234b70', 'Lê Minh Thông', 3, 1, NULL, '2024-04-05 03:15:54');
+INSERT INTO `nguoidung` (`id`, `email`, `sodienthoai`, `matkhau`, `hoten`, `loai`, `trangthai`, `hinhanh`, `created_at`, `hocvien_id`, `namsinh`, `gioitinh`, `diachi`) VALUES
+(1, 'admin@ae.com', NULL, '202cb962ac59075b964b07152d234b70', 'Admin', 1, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(2, 'tu@ae.com', '0398761711', '202cb962ac59075b964b07152d234b70', 'Thanh Tus', 1, 1, '2.jpg', '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(3, 'e5@ae.com', '0379111556', '202cb962ac59075b964b07152d234b70', 'Hoài Thanh', 1, 1, '1.jpg', '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(4, 'stu1@ae.com', '12345678', '202cb962ac59075b964b07152d234b70', 'Ngô Hoàng Ân', 3, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(5, 'pnc@ae.com', '0365885992', '202cb962ac59075b964b07152d234b70', 'Phạm Nhật Cường', 3, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(6, 'alt@ae.com', '0345221558', '202cb962ac59075b964b07152d234b70', 'Âu Lâm Thành', 3, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(7, 'lqt@ae.com', '0399658412', '202cb962ac59075b964b07152d234b70', 'Lê Quốc Toàn', 3, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(25, 'nsd@ae.com', '0336998445', '202cb962ac59075b964b07152d234b70', 'Nguyễn Sỹ Dân', 3, 1, NULL, '2024-04-02 07:13:32', NULL, NULL, NULL, NULL),
+(26, 'lmt@ae.com', '0998776554', '202cb962ac59075b964b07152d234b70', 'Lê Minh Thông', 3, 1, NULL, '2024-04-05 03:15:54', NULL, NULL, NULL, NULL),
+(27, 'htt@ae.com', '0338666777', '202cb962ac59075b964b07152d234b70', 'Huỳnh Thanh Toàn', 2, 0, NULL, '2024-04-08 09:01:10', NULL, NULL, NULL, NULL),
+(28, 'ndt@ae.com', '0333987654', '202cb962ac59075b964b07152d234b70', 'Nguyễn Đức Thịnh', 3, 1, NULL, '2024-04-08 09:03:17', NULL, NULL, NULL, NULL),
+(29, 'ptd@ae.com', '0346678887', '202cb962ac59075b964b07152d234b70', 'Phan Tiến Đạt', 3, 1, NULL, '2024-04-08 09:54:56', 20, NULL, NULL, NULL),
+(30, 'nld@ae.com', '0356998226', '202cb962ac59075b964b07152d234b70', 'Nguyễn Lập Đông', 3, 1, NULL, '2024-04-10 08:57:40', NULL, NULL, NULL, NULL),
+(31, 'hdd@ae.com', '0522036995', '202cb962ac59075b964b07152d234b70', 'Huỳnh Đức Duy', 3, 1, NULL, '2024-04-10 08:59:49', NULL, NULL, NULL, NULL),
+(32, 'dlnh@ae.com', '0236558889', '202cb962ac59075b964b07152d234b70', 'Đặng Nhật Lê Huy', 3, 1, NULL, '2024-04-10 09:01:49', NULL, NULL, NULL, NULL),
+(33, 'ntk@ae.com', '0369885412', '202cb962ac59075b964b07152d234b70', 'Nguyễn Trí Khanh', 3, 1, NULL, '2024-04-10 09:02:11', NULL, NULL, NULL, NULL),
+(34, 'dak@ae.com', '036998554', '202cb962ac59075b964b07152d234b70', 'Đào Anh Khoa', 3, 0, NULL, '2024-04-10 09:02:35', NULL, NULL, NULL, NULL),
+(35, 'thang@ae.com', '0333387765744', '202cb962ac59075b964b07152d234b70', 'Thăng', 3, 1, NULL, '2024-04-13 08:03:11', NULL, NULL, NULL, NULL),
+(44, 'nva@ae.com', '036598745', '202cb962ac59075b964b07152d234b70', 'nva', 3, 1, NULL, '2024-04-13 15:54:23', NULL, NULL, NULL, NULL),
+(57, 'a@ae.com', '03256987', '202cb962ac59075b964b07152d234b70', 'nguyễn văn a', 3, 1, 'image/student/bong.jpg', '2024-04-13 16:36:35', 53, '2024-04-13', 'Nam', 'LX');
 
 -- --------------------------------------------------------
 
@@ -371,13 +403,6 @@ INSERT INTO `tailieu` (`id`, `tenkhoahoc`, `duongdan`) VALUES
 --
 
 --
--- Chỉ mục cho bảng `bangdiem`
---
-ALTER TABLE `bangdiem`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `dangkyhoc_id` (`dangkyhoc_id`);
-
---
 -- Chỉ mục cho bảng `dangkyhoc`
 --
 ALTER TABLE `dangkyhoc`
@@ -401,7 +426,8 @@ ALTER TABLE `giaovien`
 -- Chỉ mục cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nguoidung_id` (`nguoidung_id`);
 
 --
 -- Chỉ mục cho bảng `hoadonct`
@@ -416,14 +442,6 @@ ALTER TABLE `hoadonct`
 --
 ALTER TABLE `hocvien`
   ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `ketqua`
---
-ALTER TABLE `ketqua`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `hocvien_id` (`hocvien_id`),
-  ADD KEY `lophoc_id` (`lophoc_id`);
 
 --
 -- Chỉ mục cho bảng `khoahoc`
@@ -450,7 +468,8 @@ ALTER TABLE `lophoc`
 -- Chỉ mục cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_nguoidung_hocvien` (`hocvien_id`);
 
 --
 -- Chỉ mục cho bảng `tailieu`
@@ -463,22 +482,16 @@ ALTER TABLE `tailieu`
 --
 
 --
--- AUTO_INCREMENT cho bảng `bangdiem`
---
-ALTER TABLE `bangdiem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `dangkyhoc`
 --
 ALTER TABLE `dangkyhoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `giaovien`
@@ -490,25 +503,19 @@ ALTER TABLE `giaovien`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadonct`
 --
 ALTER TABLE `hoadonct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `hocvien`
 --
 ALTER TABLE `hocvien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- AUTO_INCREMENT cho bảng `ketqua`
---
-ALTER TABLE `ketqua`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT cho bảng `khoahoc`
@@ -526,13 +533,13 @@ ALTER TABLE `lienhe`
 -- AUTO_INCREMENT cho bảng `lophoc`
 --
 ALTER TABLE `lophoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT cho bảng `tailieu`
@@ -545,12 +552,6 @@ ALTER TABLE `tailieu`
 --
 
 --
--- Các ràng buộc cho bảng `bangdiem`
---
-ALTER TABLE `bangdiem`
-  ADD CONSTRAINT `bangdiem_ibfk_1` FOREIGN KEY (`dangkyhoc_id`) REFERENCES `dangkyhoc` (`id`);
-
---
 -- Các ràng buộc cho bảng `dangkyhoc`
 --
 ALTER TABLE `dangkyhoc`
@@ -558,18 +559,17 @@ ALTER TABLE `dangkyhoc`
   ADD CONSTRAINT `dangkyhoc_ibfk_2` FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
 
 --
+-- Các ràng buộc cho bảng `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD CONSTRAINT `nguoidung_id` FOREIGN KEY (`nguoidung_id`) REFERENCES `nguoidung` (`id`);
+
+--
 -- Các ràng buộc cho bảng `hoadonct`
 --
 ALTER TABLE `hoadonct`
-  ADD CONSTRAINT `hoadonct_ibfk_1` FOREIGN KEY (`hoadon_id`) REFERENCES `hoadon` (`id`),
+  ADD CONSTRAINT `hoadonct_ibfk_1` FOREIGN KEY (`hoadon_id`) REFERENCES `hoadon` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `hoadonct_ibfk_2` FOREIGN KEY (`khoahoc_id`) REFERENCES `khoahoc` (`id`);
-
---
--- Các ràng buộc cho bảng `ketqua`
---
-ALTER TABLE `ketqua`
-  ADD CONSTRAINT `ketqua_ibfk_1` FOREIGN KEY (`hocvien_id`) REFERENCES `hocvien` (`id`),
-  ADD CONSTRAINT `ketqua_ibfk_2` FOREIGN KEY (`lophoc_id`) REFERENCES `lophoc` (`id`);
 
 --
 -- Các ràng buộc cho bảng `khoahoc`
@@ -583,6 +583,12 @@ ALTER TABLE `khoahoc`
 ALTER TABLE `lophoc`
   ADD CONSTRAINT `lophoc_ibfk_1` FOREIGN KEY (`khoahoc_id`) REFERENCES `khoahoc` (`id`),
   ADD CONSTRAINT `lophoc_ibfk_2` FOREIGN KEY (`giaovien_id`) REFERENCES `giaovien` (`id`);
+
+--
+-- Các ràng buộc cho bảng `nguoidung`
+--
+ALTER TABLE `nguoidung`
+  ADD CONSTRAINT `fk_nguoidung_hocvien` FOREIGN KEY (`hocvien_id`) REFERENCES `hocvien` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
