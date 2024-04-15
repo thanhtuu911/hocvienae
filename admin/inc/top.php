@@ -40,12 +40,14 @@
 		display: block;
 		transition: transform 0.3s ease;
 		/* Hiệu ứng chuyển động */
+		border-radius: 40px;
 	}
 
 	/* Hiệu ứng khi di chuột qua */
 	.logo-img:hover {
 		transform: scale(1.2);
 		/* Phóng to 1.05 lần kích thước ban đầu */
+
 	}
 	
     

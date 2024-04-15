@@ -52,9 +52,7 @@
                 <div class="row">
                     <div class="col text-center">
                         <a href="index.php?action=xoakhoahoc" class="btn btn-warning"> Xóa tất cả</a>
-                        <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
-                        <a href="../vnpay_php/index.php" class="btn btn-success" >VN Pay</a>
-                       
+                        <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>                       
                     </div>
                 </div>
             </form>

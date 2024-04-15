@@ -1,19 +1,21 @@
 <?php include("../inc/top.php"); ?>
 
 <!-- Phần input và nút tìm kiếm -->
-<div class="container mt-3">
-    <form method="GET" action="index.php">
+<div class="input-group justify-content-center" >
+<form method="GET" action="index.php">
         <div class="input-group mb-2">
             <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm..." name="keyword">
             <div class="input-group-append">
-                <button class="btn btn-outline-info" type="submit"><i class="fa-brands fa-searchengin fa-shake fa-xl" style="color: #28b4f0;"></i>Tìm kiếm</button>
+                <button class="btn btn-outline-info" type="submit" ><i class="fa-brands fa-searchengin fa-shake fa-xl" style="color: #28b4f0;"></i>Tìm kiếm</button>
             </div>
         </div>
     </form>
 </div>
+    
+
 
 <!-- Danh sách lớp học -->
-<div class="container mt-5">
+<div class="container mt-2">
     <h2>Danh sách lớp học</h2>
     <table class="table" style="background-color: #e6e6fa; padding: 20px;">
         <!-- Các tiêu đề của bảng -->

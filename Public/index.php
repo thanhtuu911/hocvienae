@@ -214,7 +214,24 @@ switch ($action) {
 
             // Di chuyển tệp tải lên vào thư mục lưu trữ
             if (move_uploaded_file($_FILES["txthinhanh"]["tmp_name"], $duongdan)) {
-                echo "File đã được tải lên thành công.";
+                echo "<div id='gifDiv' style='position: fixed;
+                                 top: 50%;
+                                 left: 50%;
+                                 transform: translate(-50%, -50%);
+                                 max-width: auto;'>
+            <img src='../image/check.gif' alt='Loading...' />
+          </div>";
+
+                // Thiết lập hàm đếm ngược
+                echo "<script>
+            // Hiển thị phần tử
+            document.getElementById('gifDiv').style.display = 'block';
+            // Thiết lập hàm đếm ngược
+            setTimeout(function() {
+                // Chuyển hướng sau khi đếm ngược
+                window.location.href = 'loginform.php';
+            }, 3000); // 3 giây
+          </script>";
             } else {
                 echo "Có lỗi xảy ra khi tải lên file.";
             }
@@ -230,11 +247,9 @@ switch ($action) {
         } else {
             $khachhang_id = $_SESSION["khachhang"]["id"];
         }
-        // lưu địa chỉ giao hàng
-        include("loginform.php");
+
+        // include("loginform.php");
         break;
-
-
 
 
     case "hoatdong":
