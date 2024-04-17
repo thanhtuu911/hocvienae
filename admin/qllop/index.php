@@ -78,11 +78,16 @@
                     // Kiểm tra xem học viên có tồn tại không trước khi thêm vào mảng chi tiết
                     if ($hoc_vien) {
                         // Lấy điểm của học viên trong lớp học hiện tại
-                        $diem = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"]);
-                        // Kiểm tra và tính toán kết quả dựa trên điểm
-                        $ket_qua = ($diem >= 5) ? "Đạt" : "Không đạt";
+                        $thilan1 = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"], 'thilan1');
+                        $thilan2 = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"], 'thilan2');
+                        // Tính điểm trung bình của hai lần thi
+                        $diem_trung_binh = ($thilan1 + $thilan2) / 2;
+                        // Kiểm tra và tính toán kết quả dựa trên điểm trung bình
+                        $ket_qua = ($diem_trung_binh >= 5) ? "Đạt" : "Chưa đạt";
                         // Thêm điểm và kết quả vào thông tin chi tiết của học viên
-                        $hoc_vien['diem'] = $diem;
+                        $hoc_vien['thilan1'] = $thilan1;
+                        $hoc_vien['thilan2'] = $thilan2;
+                        $hoc_vien['diem'] = $diem_trung_binh;
                         $hoc_vien['ketqua'] = $ket_qua;
                         // Thêm học viên vào mảng chi tiết học viên
                         $chi_tiet_hoc_viens[] = $hoc_vien;
@@ -101,13 +106,15 @@
         case "sua":
             if (isset($_GET["id"])) {
                 $m = $lh->layLopTheoID($_GET["id"]);
-                $danhmuc = $dm->laydanhmuc();
-                // include("updateform.php");
+                $giaovien = $gv->layGiaoVien($_GET["id"]);
+                $khoahoc = $kh->laykhoahoc($_GET["id"]);
+                include("updateform.php");
             } else {
                 $lophoc = $lh->laydanhsachLop();
                 include("main.php");
             }
             break;
+
         case "xulysua":
             $lophochh = new LOPHOC;
             $lophochh->setid($_POST["id"]);
@@ -116,14 +123,8 @@
             $lophochh->setngayketthuc($_POST["ngayketthuc"]);
             $lophochh->setGiaoVienId($_POST["giaovien_id"]);
             $lophochh->setKhoaHocId($_POST["khoahoc_id"]);
-
-            // upload file mới (nếu có)
-
-
-            // sửa mặt hàng
             $lh->CapnhatLop($lophochh);
 
-            // hiển thị ds mặt hàng
             $lophoc = $lh->laydanhsachLop();
             include("main.php");
             break;
@@ -149,37 +150,37 @@
             break;
 
 
-            case "themhv":
-                $hocvien = $hv->layhocvien();
-                $lophoc = $lh->laylophoc();
-                include("addform.php");
-                break;
-            case "xulythemhv":
-                // Kiểm tra xem các biến $_POST có tồn tại không
-                if (isset($_POST["lophoc_id"]) && isset($_POST["hocvien_id"])) {
-                    $lophoc_id = $_POST["lophoc_id"];
-                    $hocvien_id = $_POST["hocvien_id"];
-        
-                    // Kiểm tra xem học viên đã tồn tại trong lớp học chưa
-                    if ($dkh->kiemTraTonTai($hocvien_id, $lophoc_id)) {
-                        // Học viên đã tồn tại trong lớp, hiển thị thông báo lỗi
-                        echo "<script>alert('Học viên đã tồn tại trong lớp học này.'); window.history.back();</script>";
-                    } else {
-                        // Học viên chưa tồn tại trong lớp, thực hiện thêm đăng ký học
-                        if ($dkh->themDangKyHoc($lophoc_id, $hocvien_id)) {
-                            // Nếu thêm thành công, hiển thị lại danh sách
-                            $dangkyhocs = $dkh->layDangKyHoc();
-                            include("main.php");
-                        } else {
-                            // Nếu có lỗi, xử lý tùy ý (ví dụ: thông báo lỗi)
-                            echo "Đã xảy ra lỗi khi thêm đăng ký học.";
-                        }
-                    }
+        case "themhv":
+            $hocvien = $hv->layhocvien();
+            $lophoc = $lh->laylophoc();
+            include("addform.php");
+            break;
+        case "xulythemhv":
+            // Kiểm tra xem các biến $_POST có tồn tại không
+            if (isset($_POST["lophoc_id"]) && isset($_POST["hocvien_id"])) {
+                $lophoc_id = $_POST["lophoc_id"];
+                $hocvien_id = $_POST["hocvien_id"];
+
+                // Kiểm tra xem học viên đã tồn tại trong lớp học chưa
+                if ($dkh->kiemTraTonTai($hocvien_id, $lophoc_id)) {
+                    // Học viên đã tồn tại trong lớp, hiển thị thông báo lỗi
+                    echo "<script>alert('Học viên đã tồn tại trong lớp học này.'); window.history.back();</script>";
                 } else {
-                    // Xử lý trường hợp nếu thiếu thông tin từ form
-                    echo "Thiếu thông tin cần thiết.";
+                    // Học viên chưa tồn tại trong lớp, thực hiện thêm đăng ký học
+                    if ($dkh->themDangKyHoc($lophoc_id, $hocvien_id)) {
+                        // Nếu thêm thành công, hiển thị lại danh sách
+                        $dangkyhocs = $dkh->layDangKyHoc();
+                        include("main.php");
+                    } else {
+                        // Nếu có lỗi, xử lý tùy ý (ví dụ: thông báo lỗi)
+                        echo "Đã xảy ra lỗi khi thêm đăng ký học.";
+                    }
                 }
-                break;
+            } else {
+                // Xử lý trường hợp nếu thiếu thông tin từ form
+                echo "Thiếu thông tin cần thiết.";
+            }
+            break;
 
         default:
             break;

@@ -11,9 +11,9 @@ include("inc/top.php");
                     <p class="card-text"><?php echo $khct['chitiet']; ?></p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="" onclick="likeCourse(<?php echo $khct['id']; ?>)">
-                            <i class="fas fa-heart fa-beat" style="color: red;"></i>
+                            <i class="fas fa-heart fa-beat fa-lg" style="color: red;"></i>
                         </a>
-                        <span style="margin-right: 625px;" id="likeCount_<?php echo $khct['id']; ?>"><?php echo $khct['luotthich']; ?></span>
+                        <a class="btn" style="margin-right: auto;" id="likeCount_<?php echo $khct['id']; ?>"><?php echo $khct['luotthich']; ?></a>
 
                     </div>
                     <a type="submit" id="hienthiphiButton" class="btn btn-primary">Đăng Ký Ngay</a>

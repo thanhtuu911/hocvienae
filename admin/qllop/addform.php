@@ -1,5 +1,5 @@
 <?php include("../inc/top.php"); ?>
-
+    <!-- <a href='index.php' class='btn btn-outline-primary'><i class="fa-solid fa-rotate-left fa-bounce fa-xl" style="color: #d01b48;"></i></a> -->
 <!-- Form thêm lớp học -->
 <h2>Thêm lớp học</h2>
 <form method="post" action="index.php">
@@ -24,7 +24,7 @@
             <?php endforeach; ?>
         </select>
     </div>
-    <div class="form-group">
+    <div class="form-group mb-2">
         <label for="khoahoc_id">Khóa học :</label>
         <select class="form-select" name="optkhoahoc">
             <?php foreach ($khoahoc as $kh) : ?>
@@ -34,4 +34,5 @@
     </div>
     <button type="submit" class="btn btn-primary" name="them">Thêm</button>
 </form>
+
 <?php include("../inc/bottom.php"); ?>

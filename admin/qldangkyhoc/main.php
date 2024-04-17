@@ -15,8 +15,11 @@
         </div>
     </form>
 </div>
-<h1>Danh sách đăng ký học</h1>
+<div class="mb-2">
+<a href="index.php?action=them" class="btn btn-warning" style="margin-top: 10px;">Thêm học viên vào lớp</a>
 
+</div>
+<h1>Danh sách đăng ký học</h1>
 <!-- Form tìm kiếm -->
 
 
@@ -56,6 +59,8 @@ if (isset($_GET['search'])) {
                                 <tr>
                                     <th scope="col">Tên lớp học</th>
                                     <th scope="col">Học viên</th>
+                                    <th scope="col">Thi lần 1</th>
+                                    <th scope="col">Thi lần 2</th>
                                     <th scope="col">Điểm</th>
                                     <th scope="col">Kết quả</th>
                                     <th scope="col">Thao tác</th>
@@ -66,6 +71,8 @@ if (isset($_GET['search'])) {
                                     <tr>
                                         <td><?php echo $dangkyhoc['tenlop']; ?></td>
                                         <td><?php echo $dangkyhoc['hoten']; ?></td>
+                                        <td><?php echo $dangkyhoc['thilan1']; ?></td>
+                                        <td><?php echo $dangkyhoc['thilan2']; ?></td>
                                         <td><?php echo $dangkyhoc['diem']; ?></td>
                                         <td><?php echo $dangkyhoc['ketqua']; ?></td>
                                         <td><a href="index.php?action=sua&id=<?php echo $dangkyhoc['id']; ?>" class="btn btn-outline-warning "><i class="fa-solid fa-edit fa-fade fa-lg" style="color: #f1d93b;"></i></a></td>
@@ -106,6 +113,8 @@ if (isset($_GET['search'])) {
                                     <thead>
                                         <tr>
                                             <th scope="col">Học viên</th>
+                                            <th scope="col">Thi lần 1</th>
+                                            <th scope="col">Thi lần 2</th>
                                             <th scope="col">Điểm</th>
                                             <th scope="col">Kết quả</th>
                                             <th scope="col">Thao tác</th>
@@ -115,8 +124,10 @@ if (isset($_GET['search'])) {
                                         <?php foreach ($classGroup as $dangkyhoc) : ?>
                                             <tr>
                                                 <td><?php echo $dangkyhoc['hoten']; ?></td>
+                                                <td><?php echo $dangkyhoc['thilan1']; ?></td>
+                                                <td><?php echo $dangkyhoc['thilan2']; ?></td>
                                                 <td><?php echo $dangkyhoc['diem']; ?></td>
-                                                <td><?php echo $dangkyhoc['trang_thai']; ?></td>
+                                                <td><?php echo $dangkyhoc['ketqua']; ?></td>
                                                 <td><a href="index.php?action=sua&id=<?php echo $dangkyhoc['id']; ?>" class="btn btn-outline-warning "><i class="fa-solid fa-edit fa-fade fa-lg" style="color: #f1d93b;"></i></a></td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -136,5 +147,4 @@ if (isset($_GET['search'])) {
 }
 ?>
 
-<a href="index.php?action=them" class="btn btn-warning" style="margin-top: 10px;">Thêm học viên vào lớp</a>
 <?php include("../inc/bottom.php") ?>

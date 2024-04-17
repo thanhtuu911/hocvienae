@@ -54,6 +54,8 @@ if ($thongTinNguoiDung && $thongTinDangKyHoc) {
     echo "<tr class='table-info'>";
     echo "<th>STT</th>";
     echo "<th>Tên lớp</th>";
+    echo "<th>Thi lần 1</th>";
+    echo "<th>Thi lần 2</th>";
     echo "<th>Điểm</th>";
     echo "<th>Kết Quả</th>";
     echo "</tr>";
@@ -61,6 +63,8 @@ if ($thongTinNguoiDung && $thongTinDangKyHoc) {
         echo "<tr>";
         echo "<td>" . ($stt + 1) . "</td>";
         echo "<td>" . $dangkyhoc['tenlop'] . "</td>";
+        echo "<td>" . $dangkyhoc['thilan1'] . "</td>";
+        echo "<td>" . $dangkyhoc['thilan2'] . "</td>";
         echo "<td>" . $dangkyhoc['diem'] . "</td>";
         echo "<td>" . $dangkyhoc['ketqua'] . "</td>";
         echo "</tr>";

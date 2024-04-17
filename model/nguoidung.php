@@ -1,7 +1,7 @@
 <?php
 class NGUOIDUNG
 {
-	// khai báo các thuộc tính (SV tự viết)
+	// ktnguoidung
 
 	public function kiemtranguoidunghople($email, $matkhau)
 	{
@@ -59,7 +59,6 @@ class NGUOIDUNG
 	}
 
 	// Thêm ng dùng mới, trả về khóa của dòng mới thêm
-	// (SV nên truyền tham số là 1 đối tượng kiểu người dùng, không nên truyền nhiều tham số rời rạc như thế này)
 	public function themnguoidung($email, $matkhau, $sodt, $hoten, $loai)
 	{
 		$db = DATABASE::connect();
@@ -82,7 +81,6 @@ class NGUOIDUNG
 	}
 
 	// Cập nhật thông tin ng dùng: họ tên, số đt, email, ảnh đại diện 
-	// (SV nên truyền tham số là 1 đối tượng kiểu người dùng, không nên truyền nhiều tham số rời rạc như thế này)
 	public function capnhatnguoidung($id, $email, $sodt, $hoten, $hinhanh)
 	{
 		$db = DATABASE::connect();

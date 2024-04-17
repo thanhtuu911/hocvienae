@@ -25,13 +25,14 @@
 		.text-center img {
             border-radius: 50%;
             overflow: hidden;
-            width: 100px; /* Kích thước của ảnh */
-            height: 100px; /* Kích thước của ảnh */
+            width: 100px; 
+            height: 100px; 
             margin-right: 20px; /* Khoảng cách giữa ảnh và các ô input */
             /* display: flex; */
             justify-content: center;
             align-items: center;
         }
+       
 
         
     </style>
@@ -40,7 +41,7 @@
 </head>
 
 <body>
-    <main class="d-flex w-100">
+    <main class="d-flex w-100 mb-5">
         <div class="container">
             <div class="row vh-100 justify-content-center align-items-center">
                 <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">

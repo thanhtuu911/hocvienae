@@ -65,13 +65,15 @@ switch ($action) {
         break;
     case "xulysua":
         // Kiểm tra xem các biến $_POST có tồn tại không
-        if (isset($_POST["id"]) && isset($_POST["diem"])) {
+        if (isset($_POST["id"]) && isset($_POST["diem"]) && isset($_POST["thilan1"]) && isset($_POST["thilan2"])) {
             // Lấy ID và điểm từ form
             $dangky_id = $_POST["id"];
+            $thilan1 = $_POST["thilan1"];
+            $thilan2 = $_POST["thilan2"];
             $diem = $_POST["diem"];
 
             // Gọi phương thức suaDiem từ đối tượng $dkh
-            if ($dkh->suaDiem($dangky_id, $diem)) {
+            if ($dkh->suaDiem($dangky_id, $thilan1, $thilan2, $diem)) {
                 // Nếu cập nhật thành công, hiển thị lại danh sách
                 $dangkyhocs = $dkh->layDangKyHoc();
                 include("main.php");

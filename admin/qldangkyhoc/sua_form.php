@@ -2,6 +2,7 @@
 <?php include("../inc/top.php") ?>
 
 <?php
+
 // Kiểm tra xem có tham số ID được truyền qua không
 if (isset($_GET['id'])) {
     // Lấy ID từ tham số trên URL
@@ -13,12 +14,14 @@ if (isset($_GET['id'])) {
     // Kiểm tra xem có dữ liệu được trả về không
     if ($dangkyhoc) {
         // Hiển thị biểu mẫu sửa điểm với thông tin chi tiết của bản ghi
+        
 ?>
         <div class="container mt-4">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h2 class="text-center mb-4">Sửa Điểm</h2>
-                    <form method="post" action="index.php?action=xulysua">
+                    <form method="post" action="index.php">
+                    <input type="hidden" name="action" value="xulysua">
                         <input type="hidden" name="id" value="<?php echo $dangkyhoc['id']; ?>">
                         <div class="mb-3">
                             <label for="hocvien" class="form-label">Học Viên:</label>
@@ -27,6 +30,14 @@ if (isset($_GET['id'])) {
                         <div class="mb-3">
                             <label for="lop" class="form-label">Lớp Học:</label>
                             <input type="text" class="form-control" id="lop" value="<?php echo $dangkyhoc['tenlop']; ?>" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="thilan1" class="form-label">Thi lần 1:</label>
+                            <input type="text" class="form-control" id="thilan1" name="thilan1" value="<?php echo $dangkyhoc['thilan1']; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="thilan2" class="form-label">Thi lần 2:</label>
+                            <input type="text" class="form-control" id="thilan2" name="thilan2" value="<?php echo $dangkyhoc['thilan2']; ?>">
                         </div>
                         <div class="mb-3">
                             <label for="diem" class="form-label">Điểm:</label>

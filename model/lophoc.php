@@ -201,21 +201,19 @@ class LOPHOC
         }
     }
     public function timKiemLop($tenlop)
-{
-    $dbcon = DATABASE::connect();
-    try {
-        $sql = "SELECT * FROM lophoc WHERE tenlop LIKE :tenlop";
-        $cmd = $dbcon->prepare($sql);
-        $cmd->bindValue(':tenlop', '%' . $tenlop . '%');
-        $cmd->execute();
-        $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    } catch (PDOException $e) {
-        // Xử lý ngoại lệ nếu có
-        echo "Lỗi: " . $e->getMessage();
-        return false; // Trả về false nếu không thể thực hiện tìm kiếm
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM lophoc WHERE tenlop LIKE :tenlop";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(':tenlop', '%' . $tenlop . '%');
+            $cmd->execute();
+            $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ nếu có
+            echo "Lỗi: " . $e->getMessage();
+            return false; // Trả về false nếu không thể thực hiện tìm kiếm
+        }
     }
-}
-
-    
 }

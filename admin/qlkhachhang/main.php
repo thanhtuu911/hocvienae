@@ -14,7 +14,7 @@
   ?>
 
   <div><a class="btn btn-outline-primary" href="index.php?action=them">
-      <span class="glyphicon glyphicon-plus"></span> <i class="fa-solid fa-plus fa-xl fa-fade" style="color: #3be8c5;"></i>Thêm người dùng</a>
+      <span class="glyphicon glyphicon-plus"></span> <i class="fa-solid fa-plus fa-xl fa-fade" style="color: #3be8c5;"></i>Thêm khách hàng</a>
   </div>
 
   <br>

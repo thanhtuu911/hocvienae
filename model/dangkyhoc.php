@@ -4,6 +4,8 @@ class DANGKYHOC
     private $id;
     private $hocvien_id;
     private $lophoc_id;
+    private $thilan1;
+    private $thilan2;
     private $diem;
     private $ketqua;
 
@@ -55,6 +57,23 @@ class DANGKYHOC
         $this->lophoc_id = $lophoc_id;
     }
 
+    public function getthilan1()
+    {
+        return $this->thilan1;
+    }
+    public function setthilan1($thilan1)
+    {
+        $this->thilan1 = $thilan1;
+    }
+    public function getthilan2()
+    {
+        return $this->thilan2;
+    }
+    public function setthilan2($thilan2)
+    {
+        $this->thilan2 = $thilan2;
+    }
+
     public function getdiem()
     {
         return $this->diem;
@@ -68,10 +87,10 @@ class DANGKYHOC
 
     public function layDangKyHoc()
     {
-        $dbcon = DATABASE::connect(); // Thay DATABASE::connect() bằng cách kết nối cơ sở dữ liệu của bạn
-
+        $dbcon = DATABASE::connect();
         try {
-            $sql = "SELECT dangkyhoc.id, lophoc.tenlop, hocvien.hoten, dangkyhoc.diem
+            $sql = "SELECT dangkyhoc.id, lophoc.tenlop, hocvien.hoten,dangkyhoc.thilan1, 
+            dangkyhoc.thilan2,dangkyhoc.diem
             FROM dangkyhoc
             INNER JOIN lophoc ON dangkyhoc.lophoc_id = lophoc.id
             INNER JOIN hocvien ON dangkyhoc.hocvien_id = hocvien.id
@@ -81,7 +100,7 @@ class DANGKYHOC
             $cmd->execute();
             $result = $cmd->fetchAll();
             foreach ($result as &$row) {
-                $row['trang_thai'] = ($row['diem'] >= 5) ? "Đạt" : "Chưa đạt";
+                $row['ketqua'] = ($row['diem'] >= 5) ? "Đạt" : "Chưa đạt";
             }
             return $result;
         } catch (PDOException $e) {
@@ -197,23 +216,26 @@ class DANGKYHOC
         }
     }
 
-    public function suaDiem($dangky_id, $diem)
+    public function suaDiem($dangky_id, $thilan1, $thilan2, $diem)
     {
         $dbcon = DATABASE::connect(); // Kết nối đến cơ sở dữ liệu
 
         try {
+            $diem = ($thilan1 + $thilan2) / 2;
             // Xử lý kiểm tra điểm và gán trạng thái tương ứng
             if ($diem >= 5) {
                 $ketqua = "Đạt";
             } else {
-                $ketqua = "Không đạt";
+                $ketqua = "Chưa đạt";
             }
 
             // Chuẩn bị câu lệnh SQL để cập nhật điểm và trạng thái
-            $sql = "UPDATE dangkyhoc SET diem = :diem, ketqua = :ketqua WHERE id = :dangky_id";
+            $sql = "UPDATE dangkyhoc SET thilan1 =:thilan1, thilan2 =:thilan2, diem = :diem, ketqua = :ketqua WHERE id = :dangky_id";
 
             // Chuẩn bị và thực thi câu lệnh SQL
             $stmt = $dbcon->prepare($sql);
+            $stmt->bindValue(':thilan1', $thilan1);
+            $stmt->bindValue(':thilan2', $thilan2);
             $stmt->bindValue(':diem', $diem);
             $stmt->bindValue(':ketqua', $ketqua);
             $stmt->bindValue(':dangky_id', $dangky_id);
@@ -234,13 +256,13 @@ class DANGKYHOC
         $dbcon = DATABASE::connect();
 
         try {
-            $sql = "SELECT diem FROM dangkyhoc WHERE hocvien_id = :hocvien_id AND lophoc_id = :lophoc_id";
+            $sql = "SELECT thilan1, thilan2, diem , ketqua FROM dangkyhoc 
+            WHERE hocvien_id = :hocvien_id AND lophoc_id = :lophoc_id";
             $stmt = $dbcon->prepare($sql);
             $stmt->bindValue(':hocvien_id', $hocvien_id, PDO::PARAM_INT);
             $stmt->bindValue(':lophoc_id', $lophoc_id, PDO::PARAM_INT);
             $stmt->execute();
             $result = $stmt->fetchColumn();
-
             // Trả về điểm của học viên trong lớp học cụ thể
             return $result;
         } catch (PDOException $e) {
