@@ -5,7 +5,12 @@
         <h2><?php echo $lop_hoc['tenlop']; ?></h2>
         <p>Ngày bắt đầu: <?php echo $lop_hoc['ngaybatdau']; ?></p>
         <p>Ngày kết thúc: <?php echo $lop_hoc['ngayketthuc']; ?></p>
-        <h3 class="mt-2">Danh sách học viên:</h3>
+        <?php
+        // Tính số lượng học viên
+        $soLuongHocVien = count($chi_tiet_hoc_viens);
+        ?>
+
+        <h3 class="mt-2">Danh sách học viên: <?php echo $soLuongHocVien; ?> học viên</h3>
         <div class="table-responsive" style="background-color: #e6e6fa;">
             <table class="table table-bordered">
                 <thead>
@@ -50,6 +55,8 @@
         </div>
         <a style="margin-top: 10px;" href="index.php?action=xem" class="btn btn-secondary">Quay lại</a>
     </div>
+
+    
     <script>
         function confirmDelete(hocvien_id, lophoc_id) {
             if (confirm("Bạn có chắc chắn muốn xóa học viên ra khỏi lớp không?")) {

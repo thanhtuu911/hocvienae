@@ -77,23 +77,21 @@ class LIENHE{
 		}
 	}
 
-    // public function laythonglienhe($id){
-	// 	$db = DATABASE::connect();
-	// 	try{
-	// 		$sql = "SELECT * FROM lienhe WHERE id=:id";
-	// 		$cmd = $db->prepare($sql);
-	// 		$cmd->bindValue(":id", $id);
-	// 		$cmd->execute();
-	// 		$ketqua = $cmd->fetch();
-	// 		$cmd->closeCursor();
-	// 		return $ketqua;
-	// 	}
-	// 	catch(PDOException $e){
-	// 		$error_message=$e->getMessage();
-	// 		echo "<p>Lỗi truy vấn: $error_message</p>";
-	// 		exit();
-	// 	}
-	// }
+    public function xoalienhe($id){
+        $db = DATABASE::connect();
+        try{
+            $sql = "DELETE FROM lienhe WHERE id = :id";
+            $cmd = $db->prepare($sql);
+            $cmd->bindValue(':id', $id);
+            $cmd->execute();
+            return true; // Trả về true nếu xóa thành công
+        }
+        catch(PDOException $e){
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
+    }
 
 	public function laylienheTheoNgay($date)
     {

@@ -161,7 +161,6 @@ switch ($action) {
         include("message.php");
         break;
 
-
     case "tuvan":
         $noidung = $_POST['txtnoidung'];
 

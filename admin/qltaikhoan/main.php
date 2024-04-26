@@ -12,7 +12,6 @@
   <?php
   }
   ?>
-  <!-- Nút mở hộp modal chứa form thêm mới -->
   <div><a class="btn btn-outline-primary" href="index.php?action=them"><span class="glyphicon glyphicon-plus"></span><i class="fa-solid fa-plus fa-xl fa-fade" style="color: #3be8c5;"></i> Thêm tài khoản</a></div>
 
   <br>
@@ -26,6 +25,7 @@
       <th><a href="index.php?sort=loai">Loại quyền</a></th>
       <th>Trạng thái</th>
       <th>Khóa</th>
+      <th>Đổi loại quyền</th>
     </tr>
     <?php foreach ($nguoidung as $nd) : ?>
       <tr>
@@ -45,6 +45,13 @@
             if ($nd["trangthai"] == 1) { ?>
               <a class="btn btn-outline-danger" href="?action=khoa&trangthai=0&mand=<?php echo $nd["id"]; ?>">Khóa</a>
         </td>
+        <td>
+ 
+        <a href="updateform.php?action=doiloai&id=<?php echo $nd["id"]; ?>" class="btn btn-outline-primary">Đổi loại</a>
+      
+  </a>
+
+</td>
       </tr>
     <?php
             } else { ?>
@@ -79,5 +86,4 @@
     background-color: #f5f5f5;
   }
 </style>
-
 <?php include("../inc/bottom.php"); ?>

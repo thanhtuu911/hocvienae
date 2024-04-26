@@ -74,6 +74,8 @@
                         echo '<thead>';
                         echo '<tr>';
                         echo '<th scope="col">Tên lớp</th>';
+                        echo '<th scope="col">Thi Lần 1</th>';
+                        echo '<th scope="col">Thi Lần 2</th>';
                         echo '<th scope="col">Điểm</th>';
                         echo '<th scope="col">Kết quả</th>';
                         echo '</tr>';
@@ -82,6 +84,8 @@
                         foreach ($dangkyhoc as $dkhoc) {
                             echo '<tr>';
                             echo '<td>' . $dkhoc['tenlop'] . '</td>';
+                            echo '<td>' . $dkhoc['thilan1'] . '</td>';
+                            echo '<td>' . $dkhoc['thilan2'] . '</td>';
                             echo '<td>' . $dkhoc['diem'] . '</td>';
                             echo '<td>' . $dkhoc['ketqua'] . '</td>';
                             echo '</tr>';

@@ -22,11 +22,9 @@
 <h1>Danh sách đăng ký học</h1>
 <!-- Form tìm kiếm -->
 
-
 <?php
 require_once('../../model/dangkyhoc.php');
 $classGroups = array();
-
 // Nếu không có dữ liệu từ form tìm kiếm, hiển thị danh sách đăng ký học bình thường
 $dangkyhoc = new DANGKYHOC();
 $dangkyhocList = $dangkyhoc->layDangKyHoc();

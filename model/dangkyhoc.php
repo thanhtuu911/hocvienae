@@ -216,10 +216,9 @@ class DANGKYHOC
         }
     }
 
-    public function suaDiem($dangky_id, $thilan1, $thilan2, $diem)
+    public function suaDiem($id, $thilan1, $thilan2, $diem)
     {
-        $dbcon = DATABASE::connect(); // Kết nối đến cơ sở dữ liệu
-
+        $dbcon = DATABASE::connect(); 
         try {
             $diem = ($thilan1 + $thilan2) / 2;
             // Xử lý kiểm tra điểm và gán trạng thái tương ứng
@@ -230,7 +229,7 @@ class DANGKYHOC
             }
 
             // Chuẩn bị câu lệnh SQL để cập nhật điểm và trạng thái
-            $sql = "UPDATE dangkyhoc SET thilan1 =:thilan1, thilan2 =:thilan2, diem = :diem, ketqua = :ketqua WHERE id = :dangky_id";
+            $sql = "UPDATE dangkyhoc SET thilan1 =:thilan1, thilan2 =:thilan2, diem = :diem, ketqua = :ketqua WHERE id = :id";
 
             // Chuẩn bị và thực thi câu lệnh SQL
             $stmt = $dbcon->prepare($sql);
@@ -238,7 +237,7 @@ class DANGKYHOC
             $stmt->bindValue(':thilan2', $thilan2);
             $stmt->bindValue(':diem', $diem);
             $stmt->bindValue(':ketqua', $ketqua);
-            $stmt->bindValue(':dangky_id', $dangky_id);
+            $stmt->bindValue(':id', $id);
             $stmt->execute();
 
             // Trả về true nếu cập nhật thành công
@@ -262,7 +261,7 @@ class DANGKYHOC
             $stmt->bindValue(':hocvien_id', $hocvien_id, PDO::PARAM_INT);
             $stmt->bindValue(':lophoc_id', $lophoc_id, PDO::PARAM_INT);
             $stmt->execute();
-            $result = $stmt->fetchColumn();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
             // Trả về điểm của học viên trong lớp học cụ thể
             return $result;
         } catch (PDOException $e) {

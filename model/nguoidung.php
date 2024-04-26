@@ -100,6 +100,24 @@ class NGUOIDUNG
 			exit();
 		}
 	}
+	public function capnhatnguoidungKhongAnh($id, $email, $sodt, $hoten)
+	{
+		$db = DATABASE::connect();
+		try {
+			$sql = "UPDATE nguoidung set hoten=:hoten, email=:email, sodienthoai=:sodt where id=:id";
+			$cmd = $db->prepare($sql);
+			$cmd->bindValue(':id', $id);
+			$cmd->bindValue(':email', $email);
+			$cmd->bindValue(':sodt', $sodt);
+			$cmd->bindValue(':hoten', $hoten);
+			$ketqua = $cmd->execute();
+			return $ketqua;
+		} catch (PDOException $e) {
+			$error_message = $e->getMessage();
+			echo "<p>Lỗi truy vấn: $error_message</p>";
+			exit();
+		}
+	}
 
 	// Đổi mật khẩu
 	public function doimatkhau($email, $matkhau)
@@ -169,6 +187,22 @@ class NGUOIDUNG
             // Xử lý ngoại lệ nếu có
             echo "Lỗi: " . $e->getMessage();
             return false; // Trả về false nếu không thể lấy được danh sách học viên
+        }
+    }
+
+	public function laythongtinnguoidungByID($id) {
+		$dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT * FROM nguoidung WHERE id = :id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(':id', $id);
+            $cmd->execute();
+            $user_info = $cmd->fetch(PDO::FETCH_ASSOC);
+            return $user_info; // Trả về thông tin người dùng
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
         }
     }
 }

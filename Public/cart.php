@@ -13,14 +13,13 @@
     }
 </style>
 
-
 <section>
     <div class="text-center mt-5" >
         <?php
         if (demhangtronggio() == 0) {
         ?>
         <img src="../image/courses/empty-cart.webp" alt="" style="width: auto; height:200px;">
-            <h3 class="tex-info"> Khóa học rỗng</h3>
+            <h3 class="tex-info"> Nhấn vào nút bên dưới để chọn khóa học</h3>
             <a href="index.php?action=batdau" class="btn btn-outline-info">Vui lòng chọn khóa học</a>
         <?php
         } else {

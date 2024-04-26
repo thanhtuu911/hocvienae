@@ -2,7 +2,7 @@
 <div class="container-fluid remove-vid-marg">
     <div class="vid-parent">
         <video id="video1" class="video" playsinline autoplay muted loop>
-            <source src="../video/ae2.mp4">
+            <source src="../video/ae.mp4">
         </video>
         
         <div class="vid-overlay">

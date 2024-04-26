@@ -70,9 +70,9 @@ if (isset($_GET['date']) && !empty($_GET['date'])) {
 }
 
 // Hiển thị biểu đồ
-echo "<canvas id='myChart' width='160' height='80'></canvas>";
+echo "<canvas id='myChart' width='200' height='100'></canvas>";
 echo"</br>";
-echo "<canvas id='myChart2' width='160' height='80'></canvas>";
+echo "<canvas id='myChart2' width='200' height='100'></canvas>";
 
 // Chuyển đổi dữ liệu thành JSON để sử dụng trong JavaScript
 $json_data = json_encode($data);

@@ -1,14 +1,20 @@
 <?php include("../inc/top.php"); ?>
 
-<h3>Quản lý khóa học</h3>
-<br>
 <a href="index.php?action=them" class="btn btn-outline-primary">
 	<i class="fa-solid fa-plus fa-lg" style="color: #3be8c5;"></i>
 	Thêm Khóa Học
 </a>
-<br> <br>
+<br><br>
+<?php
+// Đếm số lượng khóa học
+$soluongkhoahoc = count($khoahoc);
+?>
+
 <table class="table table-hover" style="background-color: #e6e6fa; padding: 20px;">
+	<h1 class="">Danh sách khóa học: <?php echo $soluongkhoahoc; ?> khóa học</h1>
+
 	<tr>
+		<th>STT</th>
 		<th>Tên Khóa Học</th>
 		<th>Chi Tiết</th>
 		<th>Phí</th>
@@ -17,9 +23,11 @@
 		<th>Xóa</th>
 	</tr>
 	<?php
+	$stt = 1;
 	foreach ($khoahoc as $k) :
 	?>
 		<tr>
+			<td><?php echo $stt; ?></td>
 			<td>
 				<a href="index.php?action=chitiet&id=<?php echo $k["id"]; ?>">
 					<?php echo $k["tenkhoahoc"]; ?>
@@ -39,9 +47,11 @@
 			</td>
 		</tr>
 	<?php
+		$stt++;
 	endforeach;
 	?>
 </table>
+
 <script>
 	function confirmDelete(id) {
 		if (confirm("Bạn có chắc chắn muốn xóa mục này không?")) {

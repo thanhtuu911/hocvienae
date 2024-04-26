@@ -20,42 +20,17 @@ switch($action){
     case "xem":
         include("main.php");
         break;
-    case "sua": // hiển thị form
-    	$idsua = $_GET["id"];
-        $danhmuc = $dm->laydanhmuc();       
-        include("main.php");
-        break;
-    case "capnhat": // lưu dữ liệu sửa mới vào db
-    	// gán dữ liệu từ form
-    	$dmmoi = new DANHMUC();
-    	$dmmoi->setid($_POST["id"]);
-    	$dmmoi->settendanhmuc($_POST["ten"]);
-    	// sửa
-    	$dm->suadanhmuc($dmmoi);
-    	// load danh sách
-        $danhmuc = $dm->laydanhmuc();       
-        include("main.php");
-        break;
-    case "them":
-    	// gán dữ liệu từ form
-    	$dmmoi = new DANHMUC();
-    	$dmmoi->settendanhmuc($_POST["ten"]);
-    	// thêm
-    	$dm->themdanhmuc($dmmoi);
-    	// load danh sách
-        $danhmuc = $dm->laydanhmuc();       
-        include("main.php");
-        break;
-    case "xoa":
-    	// lấy dòng muốn xóa
-    	$dmxoa = new DANHMUC();
-    	$dmxoa->setid($_GET["id"]);
-    	// xóa
-    	$dm->xoadanhmuc($dmxoa);
-    	// load danh sách
-        $danhmuc = $dm->laydanhmuc();       
-        include("main.php");
-        break;
+    
+        case "xoa":
+            // Lấy ID của liên hệ cần xóa từ URL
+            $id = $_GET["id"];
+            // Xóa liên hệ
+            $lh->xoalienhe($id);
+            // Sau khi xóa xong, bạn có thể redirect hoặc làm gì đó khác, nhưng không cần load lại danh sách liên hệ
+            header("Location: index.php"); // Redirect lại trang index.php sau khi xóa
+            exit(); // Kết thúc script để đảm bảo không có mã PHP nào được thực thi sau khi redirect
+            break;
+        
     default:
         break;
 }

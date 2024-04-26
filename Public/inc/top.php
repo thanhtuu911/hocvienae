@@ -88,6 +88,7 @@
                             <a class="nav-link active  dropdown-toggle " style="color:wheat; " role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?php echo $_SESSION["khachhang"]["hoten"]; ?>
                             </a>
+                            <!-- <img src="" alt="" > -->
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="index.php?action=thongtin"><i class="fa-solid fa-circle-info fa-bounce fa-xl" style="color: #ea1a25;"></i> Thông Tin</a></li>
                                 <li><a class="dropdown-item" href="index.php?action=giohang"><i class="fa-brands fa-cc-amazon-pay fa-fade fa-xl"style="color: #ea1a25;"></i> Thanh Toán</a></li>

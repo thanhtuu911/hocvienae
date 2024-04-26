@@ -60,9 +60,6 @@
             }
             break;
 
-
-
-
         case "chitiet":
             if (isset($_GET["id"])) {
                 // Lấy thông tin của lớp học dựa trên ID
@@ -76,10 +73,10 @@
                     // Sử dụng model của HOCVIEN để lấy thông tin chi tiết của học viên
                     $hoc_vien = $hv->layhocvientheoid($hoc_vien_id);
                     // Kiểm tra xem học viên có tồn tại không trước khi thêm vào mảng chi tiết
-                    if ($hoc_vien) {
-                        // Lấy điểm của học viên trong lớp học hiện tại
-                        $thilan1 = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"], 'thilan1');
-                        $thilan2 = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"], 'thilan2');
+                    $diem_hoc_vien = $dkh->layDiemHocVienTrongLop($hoc_vien_id, $_GET["id"]);
+                    if ($diem_hoc_vien) {
+                        $thilan1 = $diem_hoc_vien['thilan1'];
+                        $thilan2 = $diem_hoc_vien['thilan2'];
                         // Tính điểm trung bình của hai lần thi
                         $diem_trung_binh = ($thilan1 + $thilan2) / 2;
                         // Kiểm tra và tính toán kết quả dựa trên điểm trung bình

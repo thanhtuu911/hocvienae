@@ -1,4 +1,5 @@
 <?php
+//qltailhoan
 class NGUOIDUNG{
 	private $id;
     private $email;
