@@ -267,6 +267,12 @@
 										<a class="dropdown-item" href="../ktnguoidung/index.php?action=matkhau">
 											<i class="align-middle me-1" data-feather="key"></i> Đổi mật khẩu
 										</a>
+										<?php if (isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"] == 1) { ?>
+
+										<a class="dropdown-item" href="../ktnguoidung/index.php?action=xembanghi">
+											<i class="align-middle me-1" data-feather="key"></i> Lịch sử truy cập
+										</a>
+										<?php } ?>
 
 
 										<div class="dropdown-divider"></div>

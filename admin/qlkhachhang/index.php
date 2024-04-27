@@ -4,6 +4,7 @@ if(!isset($_SESSION["nguoidung"]))
 
 require("../../model/database.php");
 require("../../model/nguoidung.php");
+require("../../model/banghi.php");
 
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];
@@ -60,11 +61,16 @@ switch($action){
         $hoten = $_POST["txthoten"];
         $loaind = $_POST["optloaind"];
         if($nguoidung->laythongtinnguoidung($email)){   // có thể kiểm tra thêm số đt không trùng
-            $tb = "Email này đã được cấp tài khoản!";
+            echo "<script>alert('Email này đã được cấp tài khoản!');</script>";
         }
         else{
             if(!$nguoidung->themnguoidung($email,$matkhau,$sodt,$hoten,$loaind)){
-                $tb = "Không thêm được!";
+                echo "<script>alert('Không thêm được!');</script>";
+            }
+            else {
+                // Ghi log khi thêm người dùng thành công
+                $banghi = new BANGHI();
+                $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thêm người dùng: '. ' ' . $hoten);
             }
         }
         $nguoidung = $nguoidung->laydanhsachnguoidung();

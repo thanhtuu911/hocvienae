@@ -5,6 +5,7 @@ if (!isset($_SESSION["nguoidung"]))
 require("../../model/database.php");
 require("../../model/hocvien.php");
 require("../../model/dangkyhoc.php");
+require("../../model/banghi.php");
 
 // Xét xem có thao tác nào được chọn
 if (isset($_REQUEST["action"])) {
@@ -44,6 +45,13 @@ switch ($action) {
         $hocvienhh->setdiachi($_POST["txtdiachi"]);
         $hocvienhh->sethinhanh($hinhanh);
         $hv->themhocvien($hocvienhh);
+        // Lấy thông tin học viên mới thêm
+        $ten_hoc_vien = $hocvienhh->gethoten();
+
+        // Ghi log khi thêm học viên thành công
+        $banghi = new BANGHI();
+        $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thêm học viên: '. ' ' . $ten_hoc_vien);
+
         $hocvien = $hv->layhocvien();
         include("main.php");
         break;
@@ -51,7 +59,13 @@ switch ($action) {
         if (isset($_GET["id"])) {
             $hocvienhh = new HOCVIEN();
             $hocvienhh->setid($_GET["id"]);
+            // Lấy thông tin học viên cần xóa
+            $ten_hoc_vien = $hv->layhocvientheoid($_GET["id"])["hoten"];
+
             $hv->xoahocvien($hocvienhh);
+            // Ghi log khi xóa học viên thành công
+            $banghi = new BANGHI();
+            $banghi->logAction($_SESSION["nguoidung"]["id"], 'Xóa học viên: '. ' ' . $ten_hoc_vien);
         }
         $hocvien = $hv->layhocvien();
         include("main.php");
@@ -98,6 +112,13 @@ switch ($action) {
         // Gọi hàm suahocvien để cập nhật thông tin học viên
         $hv->suahocvien($hocvienhh);
         // Hiển thị hình ảnh GIF
+        // Lấy thông tin học viên vừa sửa
+        $ten_hoc_vien = $hocvienhh->gethoten();
+
+        // Ghi log khi sửa học viên thành công
+        $banghi = new BANGHI();
+        $banghi->logAction($_SESSION["nguoidung"]["id"], 'Sửa thông tin học viên: '. ' ' . $ten_hoc_vien);
+
         $hocvien = $hv->layhocvien();
 
         include("main.php");

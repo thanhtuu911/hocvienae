@@ -4,6 +4,7 @@ if(!isset($_SESSION["nguoidung"]))
 
 require("../../model/database.php");
 require("../../model/lienhe.php");
+require("../../model/banghi.php");
 
 // Xét xem có thao tác nào được chọn
 if(isset($_REQUEST["action"])){

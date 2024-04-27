@@ -1,5 +1,4 @@
 <?php include("../inc/top.php"); ?>
-
 <body>
     <div class="container">
         <h2><?php echo $lop_hoc['tenlop']; ?></h2>
@@ -55,8 +54,6 @@
         </div>
         <a style="margin-top: 10px;" href="index.php?action=xem" class="btn btn-secondary">Quay lại</a>
     </div>
-
-    
     <script>
         function confirmDelete(hocvien_id, lophoc_id) {
             if (confirm("Bạn có chắc chắn muốn xóa học viên ra khỏi lớp không?")) {

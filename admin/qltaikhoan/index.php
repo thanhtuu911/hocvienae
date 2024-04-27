@@ -4,6 +4,7 @@ if (!isset($_SESSION["nguoidung"]))
 
 require("../../model/database.php");
 require("../../model/nguoidung.php");
+require("../../model/banghi.php");
 
 if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
@@ -50,9 +51,16 @@ switch ($action) {
     case "khoa":
         $mand = $_GET["mand"];
         $trangthai = $_GET["trangthai"];
+        $nguoi_dung_info = $nguoidung->laythongtinnguoidungByID($mand);
+        $hoten = $nguoi_dung_info['hoten']; // Lấy tên người dùng
+
         if (!$nguoidung->doitrangthai($mand, $trangthai)) {
-            $tb = "Đã đổi trạng thái!";
+            echo "<script>alert('Đã đổi trạng thái!');</script>";
+
         }
+        $banghi = new BANGHI();
+        $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thay đổi trạng thái người dùng: ' . $hoten . ' (ID: ' . $mand . ')');
+
         $nguoidung = $nguoidung->laydanhsachnguoidung();
         include("main.php");
         break;
@@ -61,17 +69,20 @@ switch ($action) {
         break;
 
     case "xlthem":
-        // $nd = $nguoidung ->laythongtinnguoidung($email);
         $email = $_POST["txtemail"];
         $matkhau = $_POST["txtmatkhau"];
         $sodt = $_POST["txtdienthoai"];
         $hoten = $_POST["txthoten"];
         $loaind = $_POST["optloaind"];
         if ($nguoidung->laythongtinnguoidung($email)) {   // có thể kiểm tra thêm số đt không trùng
-            $tb = "Email này đã được cấp tài khoản!";
+            echo "<script>alert('Email này đã được cấp tài khoản!');</script>";
         } else {
             if (!$nguoidung->themnguoidung($email, $matkhau, $sodt, $hoten, $loaind)) {
-                $tb = "Không thêm được!";
+                echo "<script>alert('Không thêm được!');</script>";
+            } else {
+                // Ghi log khi thêm người dùng thành công
+                $banghi = new BANGHI();
+                $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thêm tài khoản người dùng: ' . ' ' . $hoten . '' . 'và email: ' . ' ' . $email);
             }
         }
         $nguoidung = $nguoidung->laydanhsachnguoidung();
@@ -79,12 +90,19 @@ switch ($action) {
         break;
     case "doiloai":
         include("updateform.php");
-        break;    
+        break;
     case "doiloainguoidung":
         $email = $_POST["email"];
         $loai = $_POST["loai"];
+        $nguoi_dung_info = $nguoidung->laythongtinnguoidung($email);
+        $hoten = $nguoi_dung_info['hoten']; // Lấy tên người dùng
+
         if (!$nguoidung->doiloainguoidung($email, $loai)) {
-            $tb = "Không thay đổi được loại người dùng!";
+            echo "<script>alert('Không thay đổi được loại người dùng!');</script>";
+        } else {
+            // Ghi log khi thay đổi loại người dùng thành công
+            $banghi = new BANGHI();
+            $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thay đổi loại người dùng: ' . ' ' . $hoten . ' (Email: ' . ' ' . $email . ')');
         }
         $nguoidung = $nguoidung->laydanhsachnguoidung();
         include("main.php");

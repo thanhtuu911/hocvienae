@@ -8,6 +8,7 @@
     require("../../model/giaovien.php");
     require("../../model/hocvien.php");
     require("../../model/dangkyhoc.php");
+    require("../../model/banghi.php");
 
     // Xét xem có thao tác nào được chọn
     if (isset($_REQUEST["action"])) {
@@ -43,6 +44,10 @@
             $lophochh->setGiaoVienId($_POST["optgiaovien"]);
             $lophochh->setKhoaHocId($_POST["optkhoahoc"]);
             $lh->themLop($lophochh);
+            // Ghi log action
+            $banghi = new BANGHI();
+            $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thêm lớp học' . ' ' . $_POST["tenlop"]);
+
             $lophoc = $lh->laydanhsachLop();
             include("main.php");
             break;
@@ -50,7 +55,15 @@
         case "xoa":
             if (isset($_GET["id"])) {
                 $lop_id = $_GET["id"]; // Lấy ID của lớp học từ tham số trên URL
+                $lop_info = $lh->layLopTheoID($lop_id);
+                $ten_lop = $lop_info['tenlop']; // Lấy tên của lớp học
+
                 $lh->xoaLop($lop_id); // Truyền ID của lớp học vào hàm xóa
+                // Ghi log action
+                $banghi = new BANGHI();
+
+                $banghi->logAction($_SESSION["nguoidung"]["id"], 'Xóa lớp học: ' . ' ' . $ten_lop);
+
                 // Sau khi xóa xong, làm mới danh sách lớp học
                 $lophoc = $lh->laydanhsachLop();
                 include("main.php");
@@ -121,6 +134,9 @@
             $lophochh->setGiaoVienId($_POST["giaovien_id"]);
             $lophochh->setKhoaHocId($_POST["khoahoc_id"]);
             $lh->CapnhatLop($lophochh);
+            $ten_lop = $_POST["tenlop"];
+            $banghi = new BANGHI();
+            $banghi->logAction($_SESSION["nguoidung"]["id"], 'Sửa thông tin lớp học: ' . ' ' . $ten_lop);
 
             $lophoc = $lh->laydanhsachLop();
             include("main.php");
@@ -130,9 +146,18 @@
             if (isset($_GET["hocvien_id"]) && isset($_GET["lophoc_id"])) {
                 $hocvien_id = $_GET["hocvien_id"];
                 $lophoc_id = $_GET["lophoc_id"];
+                // Lấy thông tin của học viên trước khi xóa
+                $hocvien_info = $hv->layhocvientheoid($hocvien_id);
+                $lop_info = $lh->layLopTheoID($lophoc_id);
 
                 // Xóa học viên khỏi lớp học
                 if ($dkh->xoaHocVienKhoiLop($hocvien_id, $lophoc_id)) {
+                    // Ghi log action
+                    $ten_hocvien = $hocvien_info['hoten'];
+                    $ten_lop = $lop_info['tenlop'];
+                    $banghi = new BANGHI();
+                    $banghi->logAction($_SESSION["nguoidung"]["id"], 'Xóa học viên: ' . ' ' . $ten_hocvien . ' ' . ' khỏi lớp' . ' ' . $ten_lop);
+
                     // Chuyển hướng người dùng đến trang chính nếu xóa thành công
                     header("Location: index.php?action=chitiet&id=$lophoc_id");
                     exit();

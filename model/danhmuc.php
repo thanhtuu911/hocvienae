@@ -1,35 +1,40 @@
 <?php
-class DANHMUC{
+class DANHMUC
+{
     private $id;
     private $tendanhmuc;
 
-    public function getid(){
+    public function getid()
+    {
         return $this->id;
     }
 
-    public function setid($value){
+    public function setid($value)
+    {
         $this->id = $value;
     }
 
-    public function gettendanhmuc(){
+    public function gettendanhmuc()
+    {
         return $this->tendanhmuc;
     }
 
-    public function settendanhmuc($value){
+    public function settendanhmuc($value)
+    {
         $this->tendanhmuc = $value;
     }
 
     // Lấy danh sách
-    public function laydanhmuc(){
+    public function laydanhmuc()
+    {
         $dbcon = DATABASE::connect();
-        try{
+        try {
             $sql = "SELECT * FROM danhmuc";
             $cmd = $dbcon->prepare($sql);
             $cmd->execute();
             $result = $cmd->fetchAll();
             return $result;
-        }
-        catch(PDOException $e){
+        } catch (PDOException $e) {
             $error_message = $e->getMessage();
             echo "<p>Lỗi truy vấn: $error_message</p>";
             exit();
@@ -38,71 +43,85 @@ class DANHMUC{
 
 
     // Lấy danh mục theo id
-    public function laydanhmuctheoid($id){
+    public function laydanhmuctheoid($id)
+    {
         $dbcon = DATABASE::connect();
-        try{
+        try {
             $sql = "SELECT * FROM danhmuc WHERE id=:id";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":id", $id);
             $cmd->execute();
-            $result = $cmd->fetch();             
+            $result = $cmd->fetch();
             return $result;
-        }
-        catch(PDOException $e){
+        } catch (PDOException $e) {
             $error_message = $e->getMessage();
             echo "<p>Lỗi truy vấn: $error_message</p>";
             exit();
         }
     }
     // Thêm mới
-    public function themdanhmuc($danhmuc){
+    public function themdanhmuc($danhmuc)
+    {
         $dbcon = DATABASE::connect();
-        try{
+        try {
             $sql = "INSERT INTO danhmuc(tendanhmuc) VALUES(:tendanhmuc)";
             $cmd = $dbcon->prepare($sql);
             $cmd->bindValue(":tendanhmuc", $danhmuc->tendanhmuc);
             $result = $cmd->execute();
             return $result;
-        }
-            catch(PDOException $e){
+        } catch (PDOException $e) {
             $error_message = $e->getMessage();
             echo "<p>Lỗi truy vấn: $error_message</p>";
             exit();
         }
     }
     // Xóa 
-    public function xoadanhmuc($danhmuc){
-    $dbcon = DATABASE::connect();
-    try{
-    $sql = "DELETE FROM danhmuc WHERE id=:id";
-    $cmd = $dbcon->prepare($sql);
-    $cmd->bindValue(":id", $danhmuc->id);
-    $result = $cmd->execute();
-    return $result;
-    }
-    catch(PDOException $e){
-    $error_message = $e->getMessage();
-    echo "<p>Lỗi truy vấn: $error_message</p>";
-    exit();
-    }
+    public function xoadanhmuc($danhmuc)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "DELETE FROM danhmuc WHERE id=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":id", $danhmuc->id);
+            $result = $cmd->execute();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
     }
     // Cập nhật 
-    public function suadanhmuc($danhmuc){
-    $dbcon = DATABASE::connect();
-    try{
-    $sql = "UPDATE danhmuc SET tendanhmuc=:tendanhmuc WHERE id=:id";
-    $cmd = $dbcon->prepare($sql);
-    $cmd->bindValue(":tendanhmuc", $danhmuc->tendanhmuc);
-    $cmd->bindValue(":id", $danhmuc->id);
-    $result = $cmd->execute();
-    return $result;
+    public function suadanhmuc($danhmuc)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "UPDATE danhmuc SET tendanhmuc=:tendanhmuc WHERE id=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":tendanhmuc", $danhmuc->tendanhmuc);
+            $cmd->bindValue(":id", $danhmuc->id);
+            $result = $cmd->execute();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
     }
-    catch(PDOException $e){
-    $error_message = $e->getMessage();
-    echo "<p>Lỗi truy vấn: $error_message</p>";
-    exit();
+    public function layTenDanhMuc($id)
+    {
+        $dbcon = DATABASE::connect();
+        try {
+            $sql = "SELECT tendanhmuc FROM danhmuc WHERE id=:id";
+            $cmd = $dbcon->prepare($sql);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $result = $cmd->fetchColumn();
+            return $result;
+        } catch (PDOException $e) {
+            $error_message = $e->getMessage();
+            echo "<p>Lỗi truy vấn: $error_message</p>";
+            exit();
+        }
     }
-    }
-
 }
-?>

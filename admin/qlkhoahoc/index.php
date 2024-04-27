@@ -5,6 +5,7 @@ if(!isset($_SESSION["nguoidung"]))
 require("../../model/database.php");
 require("../../model/danhmuc.php");
 require("../../model/khoahoc.php");
+require("../../model/banghi.php");
 
 // Xét xem có thao tác nào được chọn
 if(isset($_REQUEST["action"])){
@@ -39,6 +40,10 @@ switch($action){
 		$khoahochh->setphi($_POST["txtphi"]);
         $khoahochh->sethinhanh($hinhanh);
         $kh->themkhoahoc($khoahochh);
+        // Ghi log
+    $banghi = new BANGHI();
+    $banghi->logAction($_SESSION["nguoidung"]["id"], 'Thêm khóa học: '. ' ' . $_POST["txttenkhoahoc"]);
+
 		$khoahoc = $kh->laykhoahoc();
 		include("main.php");
         break;
@@ -46,7 +51,13 @@ switch($action){
 		if(isset($_GET["id"])){
             $khoahochh = new khoahoc();        
             $khoahochh->setid($_GET["id"]);
+            $ten_khoahoc = $kh->laykhoahoctheoid($_GET["id"])['tenkhoahoc']; 
+            // Lấy tên khóa học để ghi log
 			$kh->xoakhoahoc($khoahochh);
+               // Ghi log
+        $banghi = new BANGHI();
+        $banghi->logAction($_SESSION["nguoidung"]["id"], 'Xóa khóa học: '. ' ' . $ten_khoahoc);
+    
         }
 		$khoahoc = $kh->laykhoahoc();
 		include("main.php");
@@ -93,6 +104,10 @@ switch($action){
         
         // sửa mặt hàng
         $kh->suakhoahoc($khoahochh);         
+    // Ghi log
+    $ten_khoahoc = $_POST["txttenhang"];
+    $banghi = new BANGHI();
+    $banghi->logAction($_SESSION["nguoidung"]["id"], 'Sửa thông tin khóa học: '. ' ' . $ten_khoahoc);
     
         // hiển thị ds mặt hàng
         $khoahoc = $kh->laykhoahoc();    
